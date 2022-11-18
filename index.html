@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>GIAC KSOES</title>
+</head>
+<body>
+    <main class="page">
+
+        <section class="heder">
+            <div class=" name">
+                <h1 class="name__title">ГИАЦ -</h1>
+                <input class="name__input" type="text" name="num-report" id="" placeholder="XXXX" required minlength="3" maxlength="5">
+            </div>
+
+            <div class="assingment">
+                <h2 class="">Задание &#8470;</h2>
+                <input type="text" name="num-assingment" id="" placeholder="XXXX" required>
+                <h2 class="">от</h2>
+                <input type="date" name="date-report" id="" required>
+                <h2>на выполнение работ КСОЭС</h2>
+            </div>
+        </section>
+
+        <section class="tasks table">
+            <h3 class="table__title">Задачи сегмента</h3>
+            <p class="table__column column__actuality">Актуальность</p>
+            <p class="table__column column__priority">Приоритет</p>
+            <div class="table__items">
+                <div class="table__item">
+                    <p class="item__text">Поддержание ПТС сегмента в работоспособном состоянии</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+                <div class="table__item">
+                    <p class="item__text">Применение сегмента по назначению</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+            </div>
+        </section>
+        <h4 class="table__title">Контроль и поддержание основных характеристик сегмента</h4>
+
+        <section class="area">
+            <p class="item__text area__text-title">Зона ответственности сегмента</p>
+            <div class="table__items">
+                <div class="table__item">
+                    <p class="item__text">По высотам от 200 км до 50000 км</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+                <div class="table__item">
+                    <p class="item__text">По периоду обращения ≥ 90 мин</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+                <div class="table__item">
+                    <p class="item__text">По наклонениям  от 0⁰ до 180⁰</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+                <div class="table__item">
+                    <p class="item__text">По точкам стояния КА на ГСО – от 180⁰ З.Д.</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+                <div class="table__item">
+                    <p class="item__text">до 180⁰В.Д</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+            </div>
+        </section>
+
+        <section class="danger table">
+            <h3 class="table__title">Контроль опасных ситуаций</h3>
+            <div class="table__item item_add_item">
+                <p class="item__text">Контроль сближений</p>
+                <button class="item__btn-add">Добавить</button>
+            </div>
+            <div class="data_list"></div>
+            <div class="table__item">
+                <p class="item__text">Контроль мероприятий по уводу отработавших КА, верхних ступеней РН и РБ в зоны «захоронения» или на орбиты с ОСС</p>
+                <input class="item__actuality" type="checkbox" name="actuality" id="">
+                <input class="item__priority" type="checkbox" name="priority" id="">
+            </div>
+            <div class="table__item item_add_item">
+                <p class="item__text">Контроль состояния КО</p>
+                <button class="item__btn-add">Добавить</button>
+            </div>
+            <div class="table__item item_add_item">
+                <p class="item__text">КО «риска» международный</p>
+                <button class="item__btn-add">Добавить</button>
+            </div>
+            <div class="table__item">
+                <p class="item__text">Выявление фактов разрушения КО</p>
+                <input class="item__actuality" type="checkbox" name="actuality" id="">
+                <input class="item__priority" type="checkbox" name="priority" id="">
+            </div>
+        </section>
+        
+        <section class="list">
+            <div class="table__item item_add_item">
+                <p class="item__text item__text_type_title">Изменение перечня контролируемых КА для выявления опасных сближений</p>
+                <button class="item__btn-add">Добавить</button>
+            </div>
+        </section>
+
+        <section class="massage">
+            <p>Неформализованные сообщения</p>
+            <input type="text" name="massage" id="">
+        </section>
+
+        <button class="form__btn-save">Добавить задание</button>
+        <button class="form__btn-reset">Очистить поля</button>
+
+
+        <section class="modal">
+            <h2>Добавление контроля сближений</h2>
+            <div class="type">
+                <p>Тип сближения</p>
+                <select name="" id="">
+                    <option disabled value="not">Выберите тип</option>
+                    <option value="gso">ГСО</option>
+                    <option value="svo">СВО</option>
+                    <option value="veo">ВЭО</option>
+                    <option value="noo">НОО</option>
+                </select>
+            </div>
+            <div class="objects">
+                <div class="objects__title">
+                    <p class="item__text item__text_place_one"></p>
+                    <p class="item__text item__text_place_one">международный №</p>
+                    <p class="item__text item__text_place_two">№NORAD</p>
+                    <p class="item__text item__text_place_three">№ГИАЦ АСПОС</p>
+                    
+                </div>
+                <div class="object__item">
+                    <p class="item__text item__text_place_one">КА </p>
+                    <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+                </div>
+                <div class="object__item">
+                    <p class="item__text item__text_place_one">КО</p>
+                    <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+                </div>
+            </div>
+            <div class="checkboxes">
+                <p class="table__column column__actuality">Актуальность</p>
+                <input class="item__actuality" type="checkbox" name="actuality" id="">
+                <p class="table__column column__priority">Приоритет</p>
+                <input class="item__priority" type="checkbox" name="priority" id="">
+            </div>
+            <button class="modal__btn-save">Добавить</button>
+        </section>
+
+        <section class="modal">
+            <h2>Изменение перечня контролируемых КА для выявления опасных сближений</h2>
+            <div class="close">
+                <p class="item__text item__text_place_one">Наименование КА</p>
+                <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="Polytech Universe-1">
+                <p class="item__text item__text_place_two">Международный № КА</p>
+                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="2000-000A">
+                <p class="item__text item__text_place_three">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
+                <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+                <p class="item__text item__text_place_one">№ КА в каталоге  NORAD</p>
+                <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+                
+                <div class="checkboxes">
+                    <p class="table__column column__actuality">Актуальность</p>
+                    <input class="item__actuality" type="checkbox" name="actuality" id="">
+                    <p class="table__column column__priority">Приоритет</p>
+                    <input class="item__priority" type="checkbox" name="priority" id="">
+                </div>
+            </div>
+            <button class="modal__btn-save">Добавить</button>
+        </section>
+
+    </main>
+</body>
+</html>

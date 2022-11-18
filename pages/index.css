@@ -1,0 +1,96 @@
+.page {
+    width: 90%;
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+section {
+    padding: 30px 0;
+}
+h1,h2,h3,h4,p {
+    margin: 0;
+}
+
+.name{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.assingment {
+    display: flex;
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: auto minmax(10%,150px) minmax(10%,150px);
+    grid-template-areas: 
+    'title . .'
+    '. actuality priority'
+    'items items items'
+    ;
+}
+
+.column__actuality {
+    grid-area: actuality ;
+}
+.column__priority {
+    grid-area: priority;
+}
+.table__items {
+    grid-area: items;
+}
+.table__item {
+    display: grid;
+    grid-template-columns: auto minmax(10%,150px) minmax(10%,150px);
+}
+
+.area {
+    display: grid;
+    grid-template-areas: 'title items';
+}
+
+.item_add_item {
+    display: grid;
+    grid-template-columns: auto minmax(20%,300px);
+}
+
+.massage {
+    display: grid;
+    grid-template-columns: 20% auto;
+}
+
+.objects__title {
+    display: grid;
+    grid-template-columns: 50px repeat(3,1fr);
+}
+
+.object__item {
+    display: grid;
+    grid-template-columns: 50px repeat(3,1fr);
+
+}
+
+.checkboxes {
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    'actuality checkActuality'
+    'priority checkPriority';
+}
+
+.close {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: repeat(5,auto);
+}
+
+.type {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.modal__btn-save {
+    margin-top: 10px;
+}
