@@ -1,0 +1,141 @@
+{
+  "Id": 3338,
+  "TaskNum": {
+    "Num": 1811,
+    "TaskEpoch": "2022-10-18 10:51:41",
+    "ShiftBoss": "Ампилова О.�.",
+    "TaskDescription": "Задание"
+  },
+  "Directive": {
+    "Control": {
+      "ObjectInfos": [
+        {
+          "Priority": null,
+          "ObjectNumber": 50360,
+          "NoradNumber": 47956,
+          "IntDes": "2021-022AA",
+          "LocalNumber": null
+        },
+        {
+          "Priority": null,
+          "ObjectNumber": 50356,
+          "NoradNumber": 47952,
+          "IntDes": "2021-022W",
+          "LocalNumber": null
+        }
+      ]
+    },
+    "CollisionApproach": {
+      "Pairs": [
+        {
+          "IdPairs": 1,
+          "FirstObject": {
+            "ObjectNumber": 21675,
+            "NoradNumber": 38978,
+            "IntDes": "2012-061B",
+            "LocalNumber": null
+          },
+          "SecondObject": {
+            "ObjectNumber": 36025,
+            "NoradNumber": 33749,
+            "IntDes": "2009-008A",
+            "LocalNumber": null
+          },
+          "CollisionApproachEpoch": " 2022-10-20 18:15:05.000"
+        },
+        {
+          "IdPairs": 2,
+          "FirstObject": {
+            "ObjectNumber": 23019,
+            "NoradNumber": 39133,
+            "IntDes": "2013-015D",
+            "LocalNumber": null
+          },
+          "SecondObject": {
+            "ObjectNumber": 50310,
+            "NoradNumber": 47909,
+            "IntDes": "2021-021BB",
+            "LocalNumber": null
+          },
+          "CollisionApproachEpoch": " 2022-10-20 20:01:55.000"
+        },
+        {
+          "IdPairs": 3,
+          "FirstObject": {
+            "ObjectNumber": 32071,
+            "NoradNumber": 40069,
+            "IntDes": "2014-037A",
+            "LocalNumber": null
+          },
+          "SecondObject": {
+            "ObjectNumber": 42390,
+            "NoradNumber": 42395,
+            "IntDes": "2000-055SP",
+            "LocalNumber": null
+          },
+          "CollisionApproachEpoch": " 2022-10-20 13:51:11.000"
+        }
+      ]
+    },
+    "BreakUp": {
+      "ObjectInfos": [
+      ]
+    },
+    "Deorbit": {
+      "ObjectInfos": [
+      ]
+    },
+    "Condition": {
+      "ObjectInfos": [
+        {
+          "ObjectNumber": 4793,
+          "NoradNumber": 37951,
+          "IntDes": "2011-074B",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 21075,
+          "NoradNumber": 38977,
+          "IntDes": "2012-061A",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 27020,
+          "NoradNumber": 39727,
+          "IntDes": "2014-023A",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 48378,
+          "NoradNumber": 45985,
+          "IntDes": "2020-053A",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 48379,
+          "NoradNumber": 45986,
+          "IntDes": "2020-053B",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 41099,
+          "NoradNumber": 41105,
+          "IntDes": "2015-074A",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 47293,
+          "NoradNumber": 44903,
+          "IntDes": "2019-095A",
+          "LocalNumber": null
+        },
+        {
+          "ObjectNumber": 41171,
+          "NoradNumber": 41122,
+          "IntDes": "2015-075B",
+          "LocalNumber": null
+        }
+      ]
+    }
+  }
+}
