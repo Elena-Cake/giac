@@ -1,30 +1,28 @@
 @import url(../block/page/page.css);
 
-@import url(../block/heder/heder.csss);
+@import url(../block/heder/heder.css);
 @import url(../block/heder/__title/heder__title.css);
+@import url(../block/heder/__input/heder__input.css);
 
 @import url(../block/danger/danger.css);
 
 @import url(../block/table/table.css);
 @import url(../block/table/__title/table__title.css);
-@import url(../block/table/__text/_type/table__text_type_title.css);
 @import url(../block/table/__item/table__item.css);
+@import url(../block/table/__text/table__text.css);
+@import url(../block/table/__btn-add/table__btn-add.css);
+@import url(../block/table/__list/table__list.css);
 
 @import url(../block/list/list.css);
 
 @import url(../block/massage/massage.css);
+@import url(../block/massage/__text/massage__text.css);
 
-section {
-    padding: 30px 0;
-}
+@import url(../block/form/__button/form__button.css);
+@import url(../block/form/__btn-save/form__btn-save.css);
+@import url(../block/form/__btn-reset/form__btn-reset.css);
 
-h1,h2,h3,h4,p {
-    margin: 0;
-}
-input {
-    max-width: 150px;
-    width: 100%;
-}
+
 
 .name{
     display: flex;
