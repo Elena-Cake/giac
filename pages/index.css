@@ -1,8 +1,11 @@
 @import url(../block/page/page.css);
+@import url(../block/header/header.css);
 
-@import url(../block/heder/heder.css);
-@import url(../block/heder/__title/heder__title.css);
-@import url(../block/heder/__input/heder__input.css);
+@import url(../block/main/main.css);
+
+@import url(../block/assingment/assingment.css);
+@import url(../block/assingment/__title/assingment__title.css);
+@import url(../block/assingment/__input/assingment__input.css);
 
 @import url(../block/danger/danger.css);
 
