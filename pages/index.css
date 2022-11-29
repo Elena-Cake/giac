@@ -25,62 +25,31 @@
 @import url(../block/form/__btn-save/form__btn-save.css);
 @import url(../block/form/__btn-reset/form__btn-reset.css);
 
+@import url(../block/modal/modal.css);
+@import url(../block/modal/__title/modal__title.css);
+@import url(../block/modal/__btn-save/modal__btn-save.css);
+@import url(../block/modal/__objects/modal__objects.css);
+@import url(../block/modal/__objects/_orientation/modal__objects_orientation_vertical.css);
 
+@import url(../block/objects/objects.css);
+@import url(../block/objects/__title/objects__title.css);
+@import url(../block/objects/__text/objects__text.css);
+@import url(../block/objects/__item/objects__item.css);
+@import url(../block/objects/__title/_orientation/objects__title_orientation_vertical.css);
 
-.name{
-    display: flex;
-    margin-bottom: 20px;
-}
+@import url(../block/item/item.css);
+@import url(../block/item/);
+@import url(../block/item/__text/item__text.css);
+@import url(../block/item/__input/item__input.css);
+@import url(../block/item/_orientation/item_orientation_vertical.css);
 
-.assingment {
-    display: flex;
-}
-
-.tasks {
-    display: grid;
-    grid-template-columns: auto minmax(10%,150px) minmax(10%,150px);
-    grid-template-areas: 
-    'title . .'
-    '. actuality priority'
-    'items items items'
-    ;
-}
-
-.column__actuality {
-    grid-area: actuality ;
-}
-.column__priority {
-    grid-area: priority;
-}
-.table__items {
-    grid-area: items;
-}
-.table__item {
-    display: grid;
-    grid-template-columns: auto minmax(10%,150px) minmax(10%,150px);
-}
-
-.area {
-    display: grid;
-    grid-template-areas: 'title items';
-}
-
-.item_add_item {
-    display: grid;
-    grid-template-columns: auto minmax(20%,300px);
-}
-
-.massage {
-    display: grid;
-    grid-template-columns: 20% auto;
-}
 
 .objects__title {
     display: grid;
     grid-template-columns: 50px repeat(3,1fr);
 }
 
-.object__item {
+.objects__item {
     display: grid;
     grid-template-columns: 50px repeat(3,1fr);
 
@@ -106,11 +75,7 @@
     grid-template-columns: repeat(6,1fr);
 }
 
-.modal {
-    max-width: 500px;
-    width: 70%;
-    margin: auto;
-}
+
 
 .modal__btn-save {
     margin-top: 10px;

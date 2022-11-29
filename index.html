@@ -66,19 +66,19 @@
 
     <section class="modal modal-ko">
         <h2 class="modal__title">Добавление КО</h2>
-        <div class="modal__objects">
+        <div class="modal__objects objects">
             <div class="objects__title">
-                <p class="item__text item__text_place_one"></p>
-                <p class="item__text item__text_place_one">международный №</p>
-                <p class="item__text item__text_place_two">№NORAD</p>
-                <p class="item__text item__text_place_three">№ГИАЦ АСПОС</p>
+                <p class="objects__text"></p>
+                <p class="objects__text">международный №</p>
+                <p class="objects__text">№NORAD</p>
+                <p class="objects__text">№ГИАЦ АСПОС</p>
                 
             </div>
-            <div class="objects__item">
-                <p class="item__text item__text_place_one">КО</p>
-                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="2000-000A">
-                <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
-                <input class="item__input item__input_place_four" type="text" name="" id="" placeholder="00000">
+            <div class="objects__item item">
+                <p class="item__text ">КО</p>
+                <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
             </div>
         </div>
         <button class="modal__btn-save">Добавить</button>
@@ -87,8 +87,8 @@
     <section class="modal">
         <h2>Добавление контроля сближений</h2>
         <div class="type">
-            <p>Тип сближения</p>
-            <select name="" id="">
+            <label for="type-orbite">Тип сближения</label>
+            <select name="" id="type-orbite">
                 <option disabled value="not">Выберите тип</option>
                 <option value="GEO">ГСО</option>
                 <option value="MOE">СВО</option>
@@ -96,25 +96,24 @@
                 <option value="LEO">НОО</option>
             </select>
         </div>
-        <div class="objects">
+        <div class="modal__objects objects">
             <div class="objects__title">
-                <p class="item__text item__text_place_one"></p>
-                <p class="item__text item__text_place_one">международный №</p>
-                <p class="item__text item__text_place_two">№NORAD</p>
-                <p class="item__text item__text_place_three">№ГИАЦ АСПОС</p>
-                
+                <p class="objects__text"></p>
+                <p class="objects__text">международный №</p>
+                <p class="objects__text">№NORAD</p>
+                <p class="objects__text">№ГИАЦ АСПОС</p>
             </div>
-            <div class="object__item">
-                <p class="item__text item__text_place_one">КА </p>
-                <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="2000-000A">
-                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="00000">
-                <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+            <div class="objects__item item">
+                <p class="item__text">КА </p>
+                <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
             </div>
-            <div class="object__item">
-                <p class="item__text item__text_place_one">КО</p>
-                <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="2000-000A">
-                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="00000">
-                <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+            <div class="objects__item item">
+                <p class="item__text">КО</p>
+                <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
+                <input class="item__input" type="text" name="" id="" placeholder="00000">
             </div>
         </div>
         <button class="modal__btn-save">Добавить</button>
@@ -122,16 +121,22 @@
 
     <section class="modal">
         <h2>Добавление контролируемого КА для выявления опасных сближений</h2>
+        
         <div class="close">
-            <p class="item__text item__text_place_one">Наименование КА</p>
-            <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="Polytech Universe-1">
-            <p class="item__text item__text_place_two">Международный № КА</p>
-            <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="2000-000A">
-            <p class="item__text item__text_place_three">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
-            <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
-            <p class="item__text item__text_place_one">№ КА в каталоге  NORAD</p>
-            <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
-            
+            <div class="modal__objects_orientation_vertical objects">
+                <div class="objects__title_orientation_vertical">
+                    <p class="objects__text">Наименование КА</p>
+                    <p class="objects__text">международный № КА</p>
+                    <p class="objects__text">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
+                    <p class="objects__text">№ КА в каталоге  NORAD</p>
+                </div>
+                <div class="objects__item item_orientation_vertical">
+                    <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="Polytech Universe-1">
+                    <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                </div>
+            </div>
         </div>
         <button class="modal__btn-save">Добавить</button>
     </section>

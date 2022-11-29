@@ -1,3 +1,5 @@
 .table__item {
     margin: 5px 0;
+    display: grid;
+    grid-template-columns: auto minmax(10%,150px) minmax(10%,150px);
 }
