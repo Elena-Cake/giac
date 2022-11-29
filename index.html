@@ -17,29 +17,61 @@
             <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
         </section>
 
-        <section class="danger table">
+       
+        <section class="close table">
             <h3 class="table__title">Контроль опасных ситуаций</h3>
             <div class="table__item ">
                 <p class="table__text">Контроль сближений</p>
-                <button class="table__btn-add">Добавить сближение</button>
             </div>
-            <div class="table__list">
-                <p>1   КО международный № 2011-074B, №NORAD 37951, №ГИАЦ АСПОС 4793</p>
-                <p>2   КО международный № 2011-074B, №NORAD 37951, №ГИАЦ АСПОС 4793</p>
+            <div class="close__select-type">
+                <label for="close__text">Тип сближения</label>
+                <select class="close__select" name="" id="type-orbite">
+                    <option disabled value="not">Выберите тип</option>
+                    <option value="GEO">ГСО</option>
+                    <option value="MOE">СВО</option>
+                    <option value="HEO">ВЭО</option>
+                    <option value="LEO">НОО</option>
+                </select>
             </div>
+            <div class="close__objects objects">
+                <div class="objects__title">
+                    <p class="objects__text"></p>
+                    <p class="objects__text">международный №</p>
+                    <p class="objects__text">№NORAD</p>
+                    <p class="objects__text">№ГИАЦ АСПОС</p>
+                </div>
+                <div class="objects__item item">
+                    <p class="item__text">КА </p>
+                    <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                </div>
+                <div class="objects__item item">
+                    <p class="item__text">КО</p>
+                    <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                </div>
+                <button class="close__btn-save">Добавить</button>
+            </div>
+            <div class="table__list"></div>  
+        </section>
 
+        <section class="list">
             <div class="table__item ">
                 <p class="table__text">Контроль состояния КО</p>
                 <button class="table__btn-add">Добавить КО</button>
             </div>
             <div class="table__list"></div>
-
+        </section>
+        <section class="list">
             <div class="table__item ">
                 <p class="table__text">Выявление фактов разрушения КО</p>
-                <button class="table_btn-add">Добавить КО</button>
+                <button class="table__btn-add">Добавить КО</button>
             </div>
             <div class="table__list"></div>
-
+        </section>
+        <section class="list">
             <div class="table__item ">
                 <p class="table__text">Выявление фактов схождения КО с орбиты</p>
                 <button class="table__btn-add">Добавить КО</button>

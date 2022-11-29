@@ -44,39 +44,34 @@
 @import url(../block/item/_orientation/item_orientation_vertical.css);
 
 
+@import url(../block/close/close.css);
+
+
+.close__objects {
+    display: block;
+}
 .objects__title {
     display: grid;
-    grid-template-columns: 50px repeat(3,1fr);
+    grid-template-columns: 100px repeat(3,1fr);
+    gap: 5px;
+    margin: 5px 0;
 }
-
+.objects__text{
+    margin: 0 auto 0 3px;
+}
 .objects__item {
     display: grid;
-    grid-template-columns: 50px repeat(3,1fr);
-
+    grid-template-columns: 100px repeat(3,1fr);
+    gap: 5px;
+    margin-bottom: 2px;
+}
+.item__text {
+    margin: 0;
 }
 
-.checkboxes {
-    width: 30%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas: 
-    'actuality checkActuality'
-    'priority checkPriority';
-}
-
-.close {
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-    grid-template-rows: repeat(5,auto);
-}
-
-.type {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-}
-
-
-
-.modal__btn-save {
-    margin-top: 10px;
+.close__btn-save {
+    position: absolute;
+    width: 100px;
+    margin: 0 0 0 auto;
+    right: 0;
 }
