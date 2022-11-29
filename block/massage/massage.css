@@ -1,4 +1,5 @@
 .massage {
     display: grid;
     grid-template-columns: 20% auto;
+    margin-bottom: 20px;
 }

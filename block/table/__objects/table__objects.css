@@ -1,0 +1,6 @@
+.table__objects {
+    display: grid;
+    grid-template-areas: 
+    'table table'
+    '. add';
+}

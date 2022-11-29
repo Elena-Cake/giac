@@ -1,0 +1,14 @@
+.button__add {
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgba(38, 29, 126, 0.445);
+    color: #000;
+    transition: background-color .5s ease;
+}
+
+.button__add:hover {
+    background-color: rgba(15, 3, 117, 0.788);
+    color: rgb(255, 253, 253);
+}

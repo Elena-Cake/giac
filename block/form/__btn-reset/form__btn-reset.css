@@ -1,0 +1,7 @@
+.form__btn-reset {
+    background-color: rgba(128, 0, 0, 0.541);
+}
+
+.form__btn-reset:hover {
+    background-color: rgba(128, 0, 0, 0.829);
+}

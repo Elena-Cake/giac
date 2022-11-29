@@ -1,1 +1,6 @@
-.objects__item {}
+.objects__item {
+    display: grid;
+    grid-template-columns: 100px repeat(3,1fr);
+    gap: 5px;
+    margin: 5px 0;
+}

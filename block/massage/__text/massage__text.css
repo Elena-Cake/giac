@@ -1,4 +1,7 @@
 .massage__text {
     width: 100%;
     margin: 0;
+    border: 0;
+    border-bottom: rgb(128, 128, 128) 1px solid;
+    padding: 5px 15px;
 }

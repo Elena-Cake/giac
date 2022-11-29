@@ -1,3 +1,6 @@
 .item__input {
-
+    padding: 3px;
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid rgb(155, 155, 155);
 }

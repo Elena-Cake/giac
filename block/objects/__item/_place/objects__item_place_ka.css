@@ -1,0 +1,6 @@
+.objects__item_place_ka {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+    margin: 5px 0;
+}

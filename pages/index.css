@@ -2,6 +2,7 @@
 @import url(../block/header/header.css);
 
 @import url(../block/main/main.css);
+@import url(../block/button/__add/button__add.css);
 
 @import url(../block/assingment/assingment.css);
 @import url(../block/assingment/__title/assingment__title.css);
@@ -13,8 +14,10 @@
 @import url(../block/table/__title/table__title.css);
 @import url(../block/table/__item/table__item.css);
 @import url(../block/table/__text/table__text.css);
-@import url(../block/table/__btn-add/table__btn-add.css);
+@import url(../block/table/__btn-save/table__btn-save.css);
 @import url(../block/table/__list/table__list.css);
+@import url(../block/table/__objects/table__objects.css);
+@import url(../block/table/__add-table/table__add-table.css);
 
 @import url(../block/list/list.css);
 
@@ -36,6 +39,8 @@
 @import url(../block/objects/__text/objects__text.css);
 @import url(../block/objects/__item/objects__item.css);
 @import url(../block/objects/__title/_orientation/objects__title_orientation_vertical.css);
+@import url(../block/objects/__table-add/objects__table-add.css);
+@import url(../block/objects/__item/_place/objects__item_place_ka.css);
 
 @import url(../block/item/item.css);
 @import url(../block/item/);
@@ -46,32 +51,3 @@
 
 @import url(../block/close/close.css);
 
-
-.close__objects {
-    display: block;
-}
-.objects__title {
-    display: grid;
-    grid-template-columns: 100px repeat(3,1fr);
-    gap: 5px;
-    margin: 5px 0;
-}
-.objects__text{
-    margin: 0 auto 0 3px;
-}
-.objects__item {
-    display: grid;
-    grid-template-columns: 100px repeat(3,1fr);
-    gap: 5px;
-    margin-bottom: 2px;
-}
-.item__text {
-    margin: 0;
-}
-
-.close__btn-save {
-    position: absolute;
-    width: 100px;
-    margin: 0 0 0 auto;
-    right: 0;
-}

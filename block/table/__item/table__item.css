@@ -1,5 +1,6 @@
 .table__item {
+    max-width: 750px;
+    display: flex;
+    justify-content: space-between;
     margin: 5px 0;
-    display: grid;
-    grid-template-columns: auto minmax(10%,58%);
 }
