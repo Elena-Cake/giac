@@ -10,56 +10,53 @@
     <main class="page">
 
         <section class="heder">
-
-            <div class="assingment">
-                <h2 class="">Задание &#8470;</h2>
-                <input type="text" name="num-assingment" id="" placeholder="XXXX" required>
-                <h2 class="">от</h2>
-                <input type="date" name="date-report" id="" required>
-                <h2>на выполнение работ КСОЭС</h2>
-            </div>
+            <h2 class="heder__title">Задание &#8470;</h2>
+            <input class="heder__input" type="text" name="num-assingment" id="" placeholder="XXXX" required>
+            <h2 class="heder__title">от</h2>
+            <input class="heder__input" type="date" name="date-report" id="" required>
+            <h2 class="heder__title">на выполнение работ КСОЭС</h2>
         </section>
 
         <section class="danger table">
             <h3 class="table__title">Контроль опасных ситуаций</h3>
-            <div class="table__item item_add_item">
-                <p class="item__text">Контроль сближений</p>
-                <button class="item__btn-add">Добавить сближение</button>
+            <div class="table__item ">
+                <p class="table__text">Контроль сближений</p>
+                <button class="table__btn-add">Добавить сближение</button>
             </div>
-            <div class="data_list">
+            <div class="table__list">
                 <p>КО международный № 2011-074B, №NORAD 37951, №ГИАЦ АСПОС 4793</p>
                 <p>КО международный № 2011-074B, №NORAD 37951, №ГИАЦ АСПОС 4793</p>
             </div>
 
-            <div class="table__item item_add_item">
-                <p class="item__text">Контроль состояния КО</p>
-                <button class="item__btn-add">Добавить КО</button>
+            <div class="table__item ">
+                <p class="table__text">Контроль состояния КО</p>
+                <button class="table__btn-add">Добавить КО</button>
             </div>
-            <div class="data_list"></div>
+            <div class="table__list"></div>
 
-            <div class="table__item item_add_item">
-                <p class="item__text">Выявление фактов разрушения КО</p>
-                <button class="item__btn-add">Добавить КО</button>
+            <div class="table__item ">
+                <p class="table__text">Выявление фактов разрушения КО</p>
+                <button class="table_btn-add">Добавить КО</button>
             </div>
-            <div class="data_list"></div>
+            <div class="table__list"></div>
 
-            <div class="table__item item_add_item">
-                <p class="item__text">Выявление фактов схождения КО с орбиты</p>
-                <button class="item__btn-add">Добавить КО</button>
+            <div class="table__item ">
+                <p class="table__text">Выявление фактов схождения КО с орбиты</p>
+                <button class="table__btn-add">Добавить КО</button>
             </div>
-            <div class="data_list"></div>
+            <div class="table__list"></div>
         </section>
         
         <section class="list">
-            <div class="table__item item_add_item">
-                <p class="item__text item__text_type_title">Изменение перечня контролируемых КА для выявления опасных сближений</p>
-                <button class="item__btn-add">Добавить КА</button>
+            <div class="table__item">
+                <p class="table__text table__title table__text_type_title">Изменение перечня контролируемых КА для выявления опасных сближений</p>
+                <button class="table__btn-add">Добавить КА</button>
             </div>
         </section>
 
         <section class="massage">
-            <p>Неформализованные сообщения</p>
-            <input type="text" name="massage" id="" placeholder="Напишите сообщение">
+            <p class="table__title">Неформализованные сообщения</p>
+            <input class="table__text"type="text" name="massage" id="" placeholder="Напишите сообщение">
         </section>
 
         <button class="form__btn-save">Добавить задание</button>
@@ -67,9 +64,9 @@
 
     </main>
 
-    <section class="modal">
-        <h2>Добавление КО</h2>
-        <div class="objects">
+    <section class="modal modal-ko">
+        <h2 class="modal__title">Добавление КО</h2>
+        <div class="modal__objects">
             <div class="objects__title">
                 <p class="item__text item__text_place_one"></p>
                 <p class="item__text item__text_place_one">международный №</p>
@@ -77,11 +74,11 @@
                 <p class="item__text item__text_place_three">№ГИАЦ АСПОС</p>
                 
             </div>
-            <div class="object__item">
+            <div class="objects__item">
                 <p class="item__text item__text_place_one">КО</p>
-                <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="2000-000A">
-                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="00000">
+                <input class="item__input item__input_place_two" type="text" name="" id="" placeholder="2000-000A">
                 <input class="item__input item__input_place_three" type="text" name="" id="" placeholder="00000">
+                <input class="item__input item__input_place_four" type="text" name="" id="" placeholder="00000">
             </div>
         </div>
         <button class="modal__btn-save">Добавить</button>

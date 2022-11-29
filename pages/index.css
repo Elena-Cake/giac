@@ -1,9 +1,18 @@
-.page {
-    width: 90%;
-    max-width: 1070px;
-    margin: 0 auto;
-    padding: 0;
-}
+@import url(../block/page/page.css);
+
+@import url(../block/heder/heder.csss);
+@import url(../block/heder/__title/heder__title.css);
+
+@import url(../block/danger/danger.css);
+
+@import url(../block/table/table.css);
+@import url(../block/table/__title/table__title.css);
+@import url(../block/table/__text/_type/table__text_type_title.css);
+@import url(../block/table/__item/table__item.css);
+
+@import url(../block/list/list.css);
+
+@import url(../block/massage/massage.css);
 
 section {
     padding: 30px 0;
