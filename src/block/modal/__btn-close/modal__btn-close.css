@@ -1,0 +1,13 @@
+.modal__btn-close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: opacity .5s ease;
+}
+
+.modal__btn-close:hover {
+    opacity: .5;
+}

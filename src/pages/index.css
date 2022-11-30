@@ -33,6 +33,7 @@
 @import url(../block/modal/_opened/modal_opened.css);
 @import url(../block/modal/__window/modal__window.css);
 @import url(../block/modal/__title/modal__title.css);
+@import url(../block/modal/__btn-close/modal__btn-close.css);
 @import url(../block/modal/__btn-add/modal__btn-add.css);
 @import url(../block/modal/__objects/modal__objects.css);
 @import url(../block/modal/__objects/_orientation/modal__objects_orientation_vertical.css);
