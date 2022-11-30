@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>GIAC KSOES</title>
 </head>
 <body class="page">
@@ -11,20 +10,20 @@
     <main class="main">
         <section class="assingment">
             <h2 class="assingment__title">Задание &#8470;</h2>
-            <input class="assingment__input" type="text" name="num-assingment" id="" placeholder="XXXX" required>
+            <input class="assingment__input assingment__input-num" type="text" name="num-assingment" id="" placeholder="XXXX" required>
             <h2 class="assingment__title">от</h2>
-            <input class="assingment__input" type="date" name="date-report" id="" required>
+            <input class="assingment__input assingment__input-date" type="date" name="date-report" id="" required>
             <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
         </section>
 
        
-        <section class="close table">
+        <section class="approach table">
             <h3 class="table__title">Контроль опасных ситуаций</h3>
             <p class="table__text">Контроль сближений</p>
             <div class="table__add-table">
                 <div class="table__select-type">
                     <label for="table__text">Тип сближения</label>
-                    <select class="table__select" name="" id="type-orbite">
+                    <select class="table__select approach__type-orbit" name="" id="type-orbite">
                         <option disabled value="not">Выберите тип</option>
                         <option value="GEO">ГСО</option>
                         <option value="MOE">СВО</option>
@@ -42,64 +41,64 @@
                         </div>
                         <div class="objects__item ">
                             <p class="item__text">КА </p>
-                            <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input approach_ka_inter" type="text" name="" id="" placeholder="2000-000A">
+                            <input class="item__input approach_ka_norad" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input approach_ka_giac" type="text" name="" id="" placeholder="00000">
                         </div>
                         <div class="objects__item ">
                             <p class="item__text">КО</p>
-                            <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input approach_ko_inter" type="text" name="" id="" placeholder="2000-000A">
+                            <input class="item__input approach_ko_norad" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input approach_ko_giac" type="text" name="" id="" placeholder="00000">
                         </div>
                     </div>
-                    <button class="table__btn-save button__add">Добавить</button>
+                    <button class="table__btn-save button__add approach__btn-add">Добавить</button>
                 </div>
             </div>
-            <div class="table__list"></div>  
+            <div class="table__list approach__list"></div>  
         </section>
 
-        <section class="list">
+        <section class="list condition">
             <div class="table__item ">
                 <p class="table__text">Контроль состояния КО</p>
-                <button class="table__btn-save button__add">Добавить КО</button>
+                <button class="table__btn-save button__add condition__btn-add">Добавить КО</button>
             </div>
-            <div class="table__list"></div>
+            <div class="table__list condition__list"></div>
         </section>
-        <section class="list">
+        <section class="list destroy">
             <div class="table__item ">
                 <p class="table__text">Выявление фактов разрушения КО</p>
-                <button class="table__btn-save button__add">Добавить КО</button>
+                <button class="table__btn-save button__add destroy__btn-add">Добавить КО</button>
             </div>
-            <div class="table__list"></div>
+            <div class="table__list destroy__list"></div>
         </section>
-        <section class="list">
+        <section class="list deorbit">
             <div class="table__item ">
                 <p class="table__text">Выявление фактов схождения КО с орбиты</p>
-                <button class="table__btn-save button__add">Добавить КО</button>
+                <button class="table__btn-save button__add deorbit__btn-add">Добавить КО</button>
             </div>
-            <div class="table__list"></div>
+            <div class="table__list deorbit__list"></div>
         </section>
 
-        <section class="list">
+        <section class="list spacecraft">
             <p class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</p>
             <div class="table__add-table">
                 <div class="table__objects objects">
                     <div class="objects__table-add">
                         <div class="objects__item_place_ka">
-                            <p class="objects__text">Наименование КА</p>
-                            <p class="objects__text">Международный № КА</p>
-                            <p class="objects__text">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
-                            <p class="objects__text">№ КА в каталоге  NORAD</p>
+                            <p class="objects__text ">Наименование КА</p>
+                            <p class="objects__text ">Международный № КА</p>
+                            <p class="objects__text ">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
+                            <p class="objects__text ">№ КА в каталоге  NORAD</p>
                         </div>
                         <div class="objects__item_place_ka">
-                            <input class="item__input item__input_place_one" type="text" name="" id="" placeholder="Polytech Universe-1">
-                            <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
-                            <input class="item__input" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input spacecraft_ka_name" type="text" name="" id="" placeholder="Polytech Universe-1">
+                            <input class="item__input spacecraft_ka_inter" type="text" name="" id="" placeholder="2000-000A">
+                            <input class="item__input spacecraft_ka_giac" type="text" name="" id="" placeholder="00000">
+                            <input class="item__input spacecraft_ka_norad" type="text" name="" id="" placeholder="00000">
                         </div>
                     </div>
-                    <button class="table__btn-save button__add">Добавить</button>
+                    <button class="table__btn-save button__add spacecraft__btn-add">Добавить</button>
                 </div>
             </div>
         </section>
@@ -127,9 +126,9 @@
                 </div>
                 <div class="objects__item item">
                     <p class="item__text ">КО</p>
-                    <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
-                    <input class="item__input" type="text" name="" id="" placeholder="00000">
-                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="inter" id="" placeholder="2000-000A">
+                    <input class="item__input" type="text" name="norad" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="giac" id="" placeholder="00000">
                 </div>
             </div>
             <button class="button__add modal__btn-add">Добавить</button>
