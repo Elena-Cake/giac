@@ -1,6 +1,10 @@
 .modal {
     width: 100%;
     height: 100%;
-    position: relative;
-    background-color: rgba(191, 194, 247, 0.356);
+    position: fixed;
+    background-color: rgba(191, 194, 247, .3);
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity ease 0.2s;
 }

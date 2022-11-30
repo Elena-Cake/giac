@@ -20,3 +20,6 @@ import {
 
 } from '../utils/constans.js'
 
+import Popup from '../scripts/Popup.js';
+import Object from '../scripts/Object.js';
+import Section from '../scripts/Section.js';

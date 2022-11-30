@@ -1,4 +1,4 @@
-.madal__window {
+.modal__window {
     max-width: 800px;
     width: 70%;
     margin: auto;
@@ -10,4 +10,5 @@
     'title title'
     'item item'
     '. button';
+    position: relative;
 }
