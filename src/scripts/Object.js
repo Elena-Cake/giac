@@ -5,28 +5,29 @@
 // попап просмотра фото
 
 export default class Object{
-    constructor(data, selectorContainerTable) {
-
-        this._containerTable =  document.querySelector(selectorContainerTable)
+    constructor(data, selectorTemplate, selectorContainerTable) {
+      this._containerCards =  document.querySelector('.elements__list-ko') //selectorTemplate
+      this._containerTable =  document.querySelector(selectorContainerTable)
+      this._interNum = data.IntDes;
+      this._giacNum = data.ObjectNumber;
+      this._noradNum = data.NoradNumber;
     }
   
     createCard() {
       this._element = this._getTemplate();
-      this._cardFoto = this._element.querySelector(this._selectorFoto);
-      this._cardName = this._element.querySelector('.element__name');
-      this._cardLikeCounter = this._element.querySelector(this._selectorCounter)
-      this._cardTrash = this._element.querySelector(this._selectorTrash)
-      this._cardLike = this._element.querySelector(this._selectorLike)
+      this._interContainer = this._element.querySelector('.element_ko_inter')
+      this._noradContainer = this._element.querySelector('.element_ko_norad')
+      this._giacContainer = this._element.querySelector('.element_ko_giac')
+      this._cardTrash = this._element.querySelector('.element__btn-trash')
+
+      this._interContainer.textContent = this._interNum;
+      this._noradContainer.textContent = this._noradNum;
+      this._giacContainer.textContent = this._giacNum;
 
       this._setEventListeners();
-      
-      
       return this._element;
     };
 
-    _isOwnedCard() {
-      return this._userIdCard !== this._userId
-    }
   
     _getTemplate() {
       const cardElement = 
@@ -34,46 +35,13 @@ export default class Object{
         .content
         .querySelector('.element')
         .cloneNode(true);
-  
       return cardElement;
     }
   
     _setEventListeners() {
-      this._cardFoto.addEventListener('click', this._openFoto);
-      this._cardLike.addEventListener ('click', this._like);
-      this._cardTrash.addEventListener ('click', this._openPopupRemove);
+      this._cardTrash.addEventListener ('click', this._remove);
       }
   
-    _openFoto = () => {
-      this._handleCardClick( this._name, this._link);
-    }
-  
-    _like = (evt) => {
-     if ( evt.target.classList.contains('element__btn-like_active') ) {
-        this._api.deleteLike(this._idCard)
-          .then((res) => {
-            this._assignLikeCount(res)
-            evt.target.classList.remove('element__btn-like_active')
-          })
-          .catch((err) => {
-            console.log(err); 
-          });
-        
-     } else {
-        this._api.sendLike(this._idCard)
-          .then((res) => {
-            this._assignLikeCount(res)
-            evt.target.classList.add('element__btn-like_active')
-          })
-          .catch((err) => {
-            console.log(err); 
-          });
-     }
-    }
-
-    _assignLikeCount (cardInfo) {
-      this._cardLikeCounter.textContent = cardInfo.likes.length
-    }
 
     _openPopupRemove = () => {
       this._popupDelete.open(this._idCard, this._element)
