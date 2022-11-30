@@ -1,0 +1,4 @@
+.modal__btn-add {
+    margin: 15px 0;
+    grid-area: button;
+}

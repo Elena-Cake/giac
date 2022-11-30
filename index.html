@@ -88,7 +88,7 @@
                     <div class="objects__table-add">
                         <div class="objects__item_place_ka">
                             <p class="objects__text">Наименование КА</p>
-                            <p class="objects__text">международный № КА</p>
+                            <p class="objects__text">Международный № КА</p>
                             <p class="objects__text">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
                             <p class="objects__text">№ КА в каталоге  NORAD</p>
                         </div>
@@ -115,24 +115,25 @@
     </main>
 
     <section class="modal modal-ko">
-        <h2 class="modal__title">Добавление КО</h2>
-        <div class="modal__objects objects">
-            <div class="objects__item">
-                <p class="objects__text"></p>
-                <p class="objects__text">международный №</p>
-                <p class="objects__text">№NORAD</p>
-                <p class="objects__text">№ГИАЦ АСПОС</p>
-                
+        <div class="madal__window">
+            <h2 class="modal__title">Добавление КО</h2>
+            <div class="modal__objects objects">
+                <div class="objects__item">
+                    <p class="objects__text"></p>
+                    <p class="objects__text">Международный №</p>
+                    <p class="objects__text">№NORAD</p>
+                    <p class="objects__text">№ГИАЦ АСПОС</p>
+                    
+                </div>
+                <div class="objects__item item">
+                    <p class="item__text ">КО</p>
+                    <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                    <input class="item__input" type="text" name="" id="" placeholder="00000">
+                </div>
             </div>
-            <div class="objects__item item">
-                <p class="item__text ">КО</p>
-                <input class="item__input" type="text" name="" id="" placeholder="2000-000A">
-                <input class="item__input" type="text" name="" id="" placeholder="00000">
-                <input class="item__input" type="text" name="" id="" placeholder="00000">
-            </div>
-        </div>
-        <button class="button__add">Добавить</button>
-    </section>
-
+            <button class="button__add modal__btn-add">Добавить</button>
+        </section>
+    </div>
 </body>
 </html>

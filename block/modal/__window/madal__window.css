@@ -1,0 +1,13 @@
+.madal__window {
+    max-width: 800px;
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    'title title'
+    'item item'
+    '. button';
+}
