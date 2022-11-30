@@ -55,7 +55,67 @@
                     <button class="table__btn-save button__add approach__btn-add">Добавить</button>
                 </div>
             </div>
-            <div class="table__list approach__list"></div>  
+
+            <div class="table__list approach__list">
+                <div class="element" id="ko">
+                    <!-- <p class="element__counter"></p> -->
+                    <div class="element__items">
+                        <div class="element__item">
+                            <p class="element__text">КА</p>
+                            <p class="element__text">международный № </p>
+                            <p class="element__text element_ka_inter">2000-000A</p>
+                            <p class="element__text">№NORAD </p>
+                            <p class="element__text element_ka_norad">00000</p>
+                            <p class="element__text">№ГИАЦ АСПОС </p>
+                            <p class="element__text element_ka_giac">00000</p>
+                        </div>
+                        <div class="element__item">
+                            <p class="element__text">КО</p>
+                            <p class="element__text">международный №</p>
+                            <p class="element__text element_ko_inter">2000-000A</p>
+                            <p class="element__text">№NORAD </p>
+                            <p class="element__text element_ko_norad">00000</p>
+                            <p class="element__text">№ГИАЦ АСПОС </p>
+                            <p class="element__text element_ko_giac">00000</p>
+                        </div>
+                    </div>
+                    <button class="element__btn-trash">
+                        <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.45787 17.86C2.51882 18.52 3.06735 19 3.73778 19H14.2615C14.9319 19 15.4804 18.5 15.5414 17.86L16.7197 5.69995H1.27954L2.45787 17.86Z" fill="black"/>
+                            <path d="M16.7201 1.9H11.5801V1.26C11.5801 0.560001 11.0113 0 10.3002 0H7.72009C7.00903 0 6.44018 0.560001 6.44018 1.26V1.9H1.27991C0.568849 1.9 0 2.46 0 3.16C0 3.86001 0.568849 4.42001 1.27991 4.42001H16.7201C17.4312 4.42001 18 3.86001 18 3.16C18 2.46 17.4312 1.9 16.7201 1.9Z" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="element" id="ko">
+                    <!-- <p class="element__counter"></p> -->
+                    <div class="element__items">
+                        <div class="element__item">
+                            <p class="element__text">КА</p>
+                            <p class="element__text">международный № </p>
+                            <p class="element__text element_ka_inter">2000-000A</p>
+                            <p class="element__text">№NORAD </p>
+                            <p class="element__text element_ka_norad">00000</p>
+                            <p class="element__text">№ГИАЦ АСПОС </p>
+                            <p class="element__text element_ka_giac">00000</p>
+                        </div>
+                        <div class="element__item">
+                            <p class="element__text">КО</p>
+                            <p class="element__text">международный №</p>
+                            <p class="element__text element_ko_inter">2000-000A</p>
+                            <p class="element__text">№NORAD </p>
+                            <p class="element__text element_ko_norad">00000</p>
+                            <p class="element__text">№ГИАЦ АСПОС </p>
+                            <p class="element__text element_ko_giac">00000</p>
+                        </div>
+                    </div>
+                    <button class="element__btn-trash">
+                        <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.45787 17.86C2.51882 18.52 3.06735 19 3.73778 19H14.2615C14.9319 19 15.4804 18.5 15.5414 17.86L16.7197 5.69995H1.27954L2.45787 17.86Z" fill="black"/>
+                            <path d="M16.7201 1.9H11.5801V1.26C11.5801 0.560001 11.0113 0 10.3002 0H7.72009C7.00903 0 6.44018 0.560001 6.44018 1.26V1.9H1.27991C0.568849 1.9 0 2.46 0 3.16C0 3.86001 0.568849 4.42001 1.27991 4.42001H16.7201C17.4312 4.42001 18 3.86001 18 3.16C18 2.46 17.4312 1.9 16.7201 1.9Z" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>  
         </section>
 
         <section class="list condition">
@@ -113,7 +173,7 @@
 
     </main>
 
-    <section class="modal modal-ko">
+    <div class="modal modal-ko">
         <div class="madal__window">
             <h2 class="modal__title">Добавление КО</h2>
             <div class="modal__objects objects">
@@ -132,7 +192,81 @@
                 </div>
             </div>
             <button class="button__add modal__btn-add">Добавить</button>
-        </section>
+        </div>
     </div>
+
+    <template class="elements__list-approach">
+        <div class="element" id="ko">
+            <!-- <p class="element__counter"></p> -->
+            <div class="element__item">
+                <p class="element__text">КА</p>
+                <p class="element__text">международный №</p>
+                <p class="element__text element_ka_inter"></p>
+                <p class="element__text">№NORAD </p>
+                <p class="element__text element_ka_norad"></p>
+                <p class="element__text">№ГИАЦ АСПОС </p>
+                <p class="element__text element_ka_giac"></p>
+            </div>
+            <div class="element__item">
+                <p class="element__text">КО</p>
+                <p class="element__text">международный №</p>
+                <p class="element__text element_ko_inter">2000-000A</p>
+                <p class="element__text">№NORAD </p>
+                <p class="element__text element_ko_norad">00000</p>
+                <p class="element__text">№ГИАЦ АСПОС </p>
+                <p class="element__text element_ko_giac">00000</p>
+            </div>
+            <button class="element__btn-trash">
+                <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.45787 17.86C2.51882 18.52 3.06735 19 3.73778 19H14.2615C14.9319 19 15.4804 18.5 15.5414 17.86L16.7197 5.69995H1.27954L2.45787 17.86Z" fill="black"/>
+                    <path d="M16.7201 1.9H11.5801V1.26C11.5801 0.560001 11.0113 0 10.3002 0H7.72009C7.00903 0 6.44018 0.560001 6.44018 1.26V1.9H1.27991C0.568849 1.9 0 2.46 0 3.16C0 3.86001 0.568849 4.42001 1.27991 4.42001H16.7201C17.4312 4.42001 18 3.86001 18 3.16C18 2.46 17.4312 1.9 16.7201 1.9Z" fill="black"/>
+                </svg>
+            </button>
+        </div>
+    </template>
+
+    <template class="elements__list-ko">
+        <div class="element" id="ko">
+            <!-- <p class="element__counter"></p> -->
+            <div class="element__item">
+                <p class="element__text">КО</p>
+                <p class="element__text">международный №</p>
+                <p class="element__text element_ko_inter">2000-000A</p>
+                <p class="element__text">№NORAD </p>
+                <p class="element__text element_ko_norad">00000</p>
+                <p class="element__text">№ГИАЦ АСПОС </p>
+                <p class="element__text element_ko_giac">00000</p>
+            </div>
+            <button class="element__btn-trash">
+                <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.45787 17.86C2.51882 18.52 3.06735 19 3.73778 19H14.2615C14.9319 19 15.4804 18.5 15.5414 17.86L16.7197 5.69995H1.27954L2.45787 17.86Z" fill="black"/>
+                    <path d="M16.7201 1.9H11.5801V1.26C11.5801 0.560001 11.0113 0 10.3002 0H7.72009C7.00903 0 6.44018 0.560001 6.44018 1.26V1.9H1.27991C0.568849 1.9 0 2.46 0 3.16C0 3.86001 0.568849 4.42001 1.27991 4.42001H16.7201C17.4312 4.42001 18 3.86001 18 3.16C18 2.46 17.4312 1.9 16.7201 1.9Z" fill="black"/>
+                </svg>
+            </button>
+        </div>
+    </template>
+
+    <template class="elements__list-ka">
+        <div class="element" id="ko">
+            <!-- <p class="element__counter"></p> -->
+            <div class="element__item">
+                <p class="element__text">КА</p>
+                <p class="element__text element_ka_name"></p>
+                <p class="element__text">международный № </p>
+                <p class="element__text element_ka_inter"></p>
+                <p class="element__text">№NORAD </p>
+                <p class="element__text element_ka_norad"></p>
+                <p class="element__text">№ГИАЦ АСПОС </p>
+                <p class="element__text element_ka_giac"></p>
+            </div>
+            <button class="element__btn-trash">
+                <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.45787 17.86C2.51882 18.52 3.06735 19 3.73778 19H14.2615C14.9319 19 15.4804 18.5 15.5414 17.86L16.7197 5.69995H1.27954L2.45787 17.86Z" fill="black"/>
+                    <path d="M16.7201 1.9H11.5801V1.26C11.5801 0.560001 11.0113 0 10.3002 0H7.72009C7.00903 0 6.44018 0.560001 6.44018 1.26V1.9H1.27991C0.568849 1.9 0 2.46 0 3.16C0 3.86001 0.568849 4.42001 1.27991 4.42001H16.7201C17.4312 4.42001 18 3.86001 18 3.16C18 2.46 17.4312 1.9 16.7201 1.9Z" fill="black"/>
+                </svg>
+            </button>
+        </div>
+    </template>
+
 </body>
 </html>

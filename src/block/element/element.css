@@ -1,0 +1,6 @@
+.element {
+    margin: 0;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-around;
+}

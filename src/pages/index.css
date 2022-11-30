@@ -52,3 +52,9 @@
 
 @import url(../block/approach/approach.css);
 
+@import url(../block/element/element.css);
+@import url(../block/element/__items/element__items.css);
+@import url(../block/element/__item/element__item.css);
+@import url(../block/element/__text/element__text.css);
+@import url(../block/element/__btn-trash/element__btn-trash.css);
+

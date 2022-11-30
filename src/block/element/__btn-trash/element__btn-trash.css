@@ -1,0 +1,10 @@
+.element__btn-trash {
+    border: 0;
+    background-color: transparent;
+    padding: 5px;
+    transition: opacity .5s ease;
+}
+
+.element__btn-trash:hover {
+    opacity: .5;
+}

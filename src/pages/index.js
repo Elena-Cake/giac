@@ -20,5 +20,3 @@ import {
 
 } from '../utils/constans.js'
 
-
-console.log(inputMassage)
