@@ -1,0 +1,7 @@
+.modal__form {
+    display: grid;
+    grid-template-areas:
+    'title title'
+    'item item'
+    '. button';
+}

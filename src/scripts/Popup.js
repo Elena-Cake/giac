@@ -5,10 +5,9 @@
 export default class Popup {
     constructor (selectorPopup) {
         this._popup = document.querySelector(selectorPopup)
-        this._btnCloseSelector = '.popup__btn-close'
+        this._btnCloseSelector = '.modal__btn-close'
         this._btnClose = this._popup.querySelector(this._btnCloseSelector)
-        this._popupOpenSelector = 'popup_opened'
-
+        this._popupOpenSelector = 'modal_opened'
     }
 
     _setEventListeners() {
@@ -28,7 +27,7 @@ export default class Popup {
         this._setEventListeners();
     }
 
-    close () {
+    close() {
         this._removeEventListeners();
         this._popup.classList.remove(this._popupOpenSelector);
     }
@@ -40,7 +39,7 @@ export default class Popup {
     }
 
     _handleListenOverlay = (evt) => {
-        if (evt.target.classList.contains('popup')){
+        if (evt.target.classList.contains('modal')){
             this.close();
           }
     }

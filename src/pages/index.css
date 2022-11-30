@@ -32,6 +32,7 @@
 @import url(../block/modal/modal.css);
 @import url(../block/modal/_opened/modal_opened.css);
 @import url(../block/modal/__window/modal__window.css);
+@import url(../block/modal/__form/modal__form.css);
 @import url(../block/modal/__title/modal__title.css);
 @import url(../block/modal/__btn-close/modal__btn-close.css);
 @import url(../block/modal/__btn-add/modal__btn-add.css);

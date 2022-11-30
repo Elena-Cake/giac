@@ -1,5 +1,6 @@
 .table__btn-save {
     grid-area: add;
-    width: 120px;
+    width: 200px;
     margin: 0 0 0 auto;
+    min-height: 40px;
 }
