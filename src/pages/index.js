@@ -6,7 +6,7 @@ import {
     inputApproachTypeOrbit,
     inputApproachInternationalNumKA, inputApproachNoradNumKA, inputApproachGiacNumKA,
     inputApproachInternationalNumKO, inputApproachNoradNumKO, inputApproachGiacNumKO,
-    buttonAddApproach,
+    buttonAddApproach,               formApproach,            inputListApproach,
 
     buttonAddCondition,
     buttonAddDestroy,
@@ -14,7 +14,8 @@ import {
 
     inputSpacecraftNameKA,      inputSpacecraftInternationalNumKA,
     inputSpacecraftNoradNumKA,  inputSpacecraftGiacNumKA,
-    buttonAddSpacecraft,        inputListSpacecraf,
+    buttonAddSpacecraft,        inputListSpacecraft,
+    formSpacecraft,
 
     inputMassage
 
@@ -22,11 +23,11 @@ import {
 
 import PopupWithForm from '../scripts/PopupWithForm.js';
 import Object from '../scripts/Object.js';
+import ObjectKA from '../scripts/ObjectKA.js';
+import ObjectCollision from '../scripts/ObjectCollision.js';
 import Section from '../scripts/Section.js';
 
 
-// buttonAddApproach.addEventListener('click',  )
-// buttonAddSpacecraft.addEventListener('click',  )
 
 // списки для добавления
 
@@ -71,6 +72,13 @@ const objectListCondition = new Section({
   }, '.spacecraft__list');
 
 
+  // добавление карточки
+function generateCard (dataCard ) {
+  const card = new  Object(dataCard, selectorTemplate,'.elements__list')
+                    .createCard()
+  return card                 
+}
+
   // экземпляры классов
 
 const modalAddCondition = new PopupWithForm ('.modal', 'Добавить КО для контроля состояния'
@@ -85,24 +93,37 @@ buttonAddCondition.addEventListener('click', () => modalAddCondition.open());
 buttonAddDestroy.addEventListener('click', () => modalAddDestroy.open());
 buttonAddDeorbit.addEventListener('click', () => modalAddDeorbit.open());
 
-// buttonAddApproach.addEventListener('click',  )
-buttonAddSpacecraft.addEventListener('click', () => {
-  submitForm(getInputValues(inputListSpacecraf), '.elements__list-ka', objectListSpacecraft)
-  
+buttonAddApproach.addEventListener('click', (evt) => {
+  evt.preventDefault()
+  const inputsValues = getInputValues(inputListApproach)
+  submitFormObjectCollision(inputsValues, '.elements__list-approach', objectListApproach)
+  formApproach.reset()
 })
 
-// добавление карточки
-function generateCard (dataCard ) {
-  const card = new  Object(dataCard, selectorTemplate,'.elements__list')
-                    .createCard()
-  return card                 
-}
 
-// функция добавления
+buttonAddSpacecraft.addEventListener('click', (evt) => {
+  evt.preventDefault()
+  const inputsValues = getInputValues(inputListSpacecraft)
+  submitFormKA(inputsValues, '.elements__list-ka', objectListSpacecraft)
+  formSpacecraft.reset()
+})
+
+// функция добавления из попапа
 function submitForm (dataObject, selectorTemplate, listClass) {
   const obj = new Object(dataObject, selectorTemplate).createCard()
   addCard (listClass, obj)
+}
 
+// функция добавления КА из формы
+function submitFormKA (dataObject, selectorTemplate, listClass) {
+  const obj = new ObjectKA (dataObject, selectorTemplate).createCard()
+  addCard (listClass, obj)
+}
+
+// функция добавления сближения из формы
+function submitFormObjectCollision (dataObject, selectorTemplate, listClass) {
+  const obj = new ObjectCollision (dataObject, selectorTemplate).createCard()
+  addCard (listClass, obj)
 }
 
 function addCard( listClass, obj) {

@@ -51,6 +51,7 @@
 @import url(../block/item/__text/item__text.css);
 @import url(../block/item/__input/item__input.css);
 @import url(../block/item/_orientation/item_orientation_vertical.css);
+@import url(../block/element/__item/_place/element__item_place_KA.css);
 
 
 @import url(../block/approach/approach.css);
@@ -60,4 +61,7 @@
 @import url(../block/element/__item/element__item.css);
 @import url(../block/element/__text/element__text.css);
 @import url(../block/element/__btn-trash/element__btn-trash.css);
+@import url(../block/element/__approach/element__approach.css);
+@import url(../block/element/__type-orbit/element__type-orbit.css);
+@import url(../block/element/__item/_place/element__item_place_approach.css);
 

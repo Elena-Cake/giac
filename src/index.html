@@ -24,10 +24,10 @@
         <section class="approach table">
             <h3 class="table__title">Контроль опасных ситуаций</h3>
             <p class="table__text">Контроль сближений</p>
-            <div class="table__add-table">
+            <form class="table__add-table approach__form">
                 <div class="table__select-type">
                     <label for="table__text">Тип сближения</label>
-                    <select class="table__select approach__type-orbit" name="typeOrbite" id="type-orbite">
+                    <select class="item__input table__select approach__type-orbit" name="typeOrbite" id="type-orbite">
                         <option disabled value="not">Выберите тип</option>
                         <option value="GEO">ГСО</option>
                         <option value="MOE">СВО</option>
@@ -39,26 +39,26 @@
                     <div class="objects__table-add">
                         <div class="objects__item">
                             <p class="objects__text"></p>
-                            <p class="objects__text">Международный №</p>
+                            <p class="objects__text">Международный&nbsp;№</p>
                             <p class="objects__text">№NORAD</p>
                             <p class="objects__text">№ГИАЦ АСПОС</p>
                         </div>
                         <div class="objects__item ">
                             <p class="item__text">КА </p>
-                            <input class="item__input approach_ka_inter" type="text" name="IntDes" id="" placeholder="2000-000A">
-                            <input class="item__input approach_ka_norad" type="text" name="NoradNumber" id="" placeholder="00000">
-                            <input class="item__input approach_ka_giac" type="text" name="ObjectNumber" id="" placeholder="00000">
+                            <input class="item__input approach_ka_inter" type="text" name="IntDesKA" id="" placeholder="2000-000A">
+                            <input class="item__input approach_ka_norad" type="text" name="NoradNumberKA" id="" placeholder="00000">
+                            <input class="item__input approach_ka_giac" type="text" name="ObjectNumberKA" id="" placeholder="00000">
                         </div>
                         <div class="objects__item ">
                             <p class="item__text">КО</p>
-                            <input class="item__input approach_ko_inter" type="text" name="IntDes" id="" placeholder="2000-000A">
-                            <input class="item__input approach_ko_norad" type="text" name="NoradNumber" id="" placeholder="00000">
-                            <input class="item__input approach_ko_giac" type="text" name="ObjectNumber" id="" placeholder="00000">
+                            <input class="item__input approach_ko_inter" type="text" name="IntDesKO" id="" placeholder="2000-000A">
+                            <input class="item__input approach_ko_norad" type="text" name="NoradNumberKO" id="" placeholder="00000">
+                            <input class="item__input approach_ko_giac" type="text" name="ObjectNumberKO" id="" placeholder="00000">
                         </div>
                     </div>
                     <button class="table__btn-save button__add approach__btn-add">Добавить</button>
                 </div>
-            </div>
+            </form>
 
             <div class="table__list approach__list">
                 
@@ -88,9 +88,9 @@
         </section>
 
         <section class="list spacecraft">
-            <p class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</p>
+            <p class="table__text">Изменение перечня контролируемых КА для выявления опасных сближений:</p>
             <div class="table__add-table">
-                <div class="table__objects objects">
+                <form class="table__objects objects spacecraft__form">
                     <div class="objects__table-add spacecraft__table-add">
                         <div class="objects__item_place_ka">
                             <p class="objects__text ">Наименование КА</p>
@@ -106,13 +106,13 @@
                         </div>
                     </div>
                     <button class="table__btn-save button__add spacecraft__btn-add">Добавить</button>
-                </div>
+                </form>
             </div>
             <div class="table__list spacecraft__list"></div>
         </section>
 
         <section class="massage">
-            <p class="massage__title table__title">Неформализованные сообщения</p>
+            <p class="massage__title table__text">Неформализованные сообщения</p>
             <input class="massage__text"type="text" name="massage" id="" placeholder="Напишите сообщение">
         </section>
 
@@ -133,7 +133,7 @@
                 <div class="modal__objects objects">
                     <div class="objects__item">
                         <p class="objects__text"></p>
-                        <p class="objects__text">Международный №</p>
+                        <p class="objects__text">Международный&nbsp;№</p>
                         <p class="objects__text">№NORAD</p>
                         <p class="objects__text">№ГИАЦ АСПОС</p>
                     </div>
@@ -150,26 +150,28 @@
     </div>
 
     <template class="elements__list-approach">
-        <div class="element" id="ko">
+        <div class="element element__approach" id="ko">
             <!-- <p class="element__counter"></p> -->
             <p class="element__type-orbit"></p>
-            <div class="element__item">
-                <p class="element__text">КА</p>
-                <p class="element__text">международный №</p>
-                <p class="element__text element_ka_inter"></p>
-                <p class="element__text">№NORAD </p>
-                <p class="element__text element_ka_norad"></p>
-                <p class="element__text">№ГИАЦ АСПОС </p>
-                <p class="element__text element_ka_giac"></p>
-            </div>
-            <div class="element__item">
-                <p class="element__text">КО</p>
-                <p class="element__text">международный №</p>
-                <p class="element__text element_ko_inter">2000-000A</p>
-                <p class="element__text">№NORAD </p>
-                <p class="element__text element_ko_norad">00000</p>
-                <p class="element__text">№ГИАЦ АСПОС </p>
-                <p class="element__text element_ko_giac">00000</p>
+            <div class="element__items">
+                <div class="element__item element__item_place_approach">
+                    <p class="element__text table__text"></p>
+                    <p class="element__text table__text">Международный&nbsp;№</p>
+                    <p class="element__text table__text">№NORAD </p>
+                    <p class="element__text table__text">№ГИАЦ АСПОС </p>
+                </div>
+                <div class="element__item element__item_place_approach">
+                    <p class="element__text">КА</p>
+                    <p class="element__text element_ka_inter"></p>
+                    <p class="element__text element_ka_norad"></p>
+                    <p class="element__text element_ka_giac"></p>
+                </div>
+                <div class="element__item element__item_place_approach">
+                    <p class="element__text">КО</p>
+                    <p class="element__text element_ko_inter"></p>
+                    <p class="element__text element_ko_norad"></p>
+                    <p class="element__text element_ko_giac"></p>
+                </div>
             </div>
             <button class="element__btn-trash">
                 <svg width="16" height="18" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +187,7 @@
             <!-- <p class="element__counter"></p> -->
             <div class="element__item">
                 <p class="element__text">КО</p>
-                <p class="element__text">международный №</p>
+                <p class="element__text">международный&nbsp;№</p>
                 <p class="element__text element_ko_inter">2000-000A</p>
                 <p class="element__text">№NORAD </p>
                 <p class="element__text element_ko_norad">00000</p>
@@ -204,10 +206,10 @@
     <template class="elements__list-ka">
         <div class="element" id="ko">
             <!-- <p class="element__counter"></p> -->
-            <div class="element__item">
+            <div class="element__item_place_KA">
                 <p class="element__text">КА</p>
                 <p class="element__text element_ka_name"></p>
-                <p class="element__text">международный № </p>
+                <p class="element__text">международный&nbsp;№ </p>
                 <p class="element__text element_ka_inter"></p>
                 <p class="element__text">№NORAD </p>
                 <p class="element__text element_ka_norad"></p>

@@ -1,0 +1,3 @@
+.element__item_place_approach {
+    grid-template-columns: 80px repeat(3,1fr);
+}

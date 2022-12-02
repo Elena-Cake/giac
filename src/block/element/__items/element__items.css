@@ -1,3 +1,4 @@
 .element__items {
     display: block;
+    min-width: 70%;
 }
