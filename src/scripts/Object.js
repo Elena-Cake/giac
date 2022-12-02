@@ -5,9 +5,9 @@
 // попап просмотра фото
 
 export default class Object{
-    constructor(data, selectorTemplate, selectorContainerTable) {
-      this._containerCards =  document.querySelector('.elements__list-ko') //selectorTemplate
-      this._containerTable =  document.querySelector(selectorContainerTable)
+    constructor(data, selectorTemplate) {
+      this.selectorTemplate = selectorTemplate
+      this._containerCards =  document.querySelector(this.selectorTemplate) 
       this._interNum = data.IntDes;
       this._giacNum = data.ObjectNumber;
       this._noradNum = data.NoradNumber;

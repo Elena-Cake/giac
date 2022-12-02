@@ -16,6 +16,10 @@
             <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
         </section>
 
+        <section class="assingment">
+            <h2 class="assingment__title">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
+            <input class="assingment__input assingment__input-num" type="text" name="num-assingment" id="" placeholder="Иванов А.А.">
+        </section>
        
         <section class="approach table">
             <h3 class="table__title">Контроль опасных ситуаций</h3>
@@ -87,7 +91,7 @@
             <p class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</p>
             <div class="table__add-table">
                 <div class="table__objects objects">
-                    <div class="objects__table-add">
+                    <div class="objects__table-add spacecraft__table-add">
                         <div class="objects__item_place_ka">
                             <p class="objects__text ">Наименование КА</p>
                             <p class="objects__text ">Международный № КА</p>
@@ -135,9 +139,9 @@
                     </div>
                     <div class="objects__item item">
                         <p class="item__text ">КО</p>
-                        <input class="item__input" type="text" name="inter" id="IntDes" placeholder="2000-000A">
-                        <input class="item__input" type="text" name="norad" id="NoradNumber" placeholder="00000">
-                        <input class="item__input" type="text" name="giac" id="ObjectNumber" placeholder="00000">
+                        <input class="item__input" type="text" name="IntDes" id="IntDes" placeholder="2000-000A">
+                        <input class="item__input" type="text" name="NoradNumber" id="NoradNumber" placeholder="00000">
+                        <input class="item__input" type="text" name="ObjectNumber" id="ObjectNumber" placeholder="00000">
                     </div>
                 </div> 
                 <button class="button__add modal__btn-add">Добавить</button>
@@ -148,6 +152,7 @@
     <template class="elements__list-approach">
         <div class="element" id="ko">
             <!-- <p class="element__counter"></p> -->
+            <p class="element__type-orbit"></p>
             <div class="element__item">
                 <p class="element__text">КА</p>
                 <p class="element__text">международный №</p>

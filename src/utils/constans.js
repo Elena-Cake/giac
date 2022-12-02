@@ -32,5 +32,8 @@ export const inputSpacecraftInternationalNumKA =  document.querySelector('.space
 export const inputSpacecraftNoradNumKA = document.querySelector('.spacecraft_ka_norad');
 export const inputSpacecraftGiacNumKA = document.querySelector('.spacecraft_ka_giac');
 
+export const inputListSpacecraf = document.querySelector('.spacecraft__table-add')
+                                            querySelectorAll('.item__input')
+
 // massage
 export const inputMassage = document.querySelector('.massage__text');

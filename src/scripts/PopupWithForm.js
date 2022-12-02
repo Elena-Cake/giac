@@ -5,7 +5,7 @@
 import Popup from './Popup.js'
 
 export default class PopupWithForm extends Popup {
-    constructor (selectorPopup, textTitle, submitForm) {
+    constructor (selectorPopup, textTitle, submitForm , listClass) {
         super(selectorPopup)
         this._popupTitle = this._popup.querySelector('.modal__title')
         this._inputList = this._popup.querySelectorAll('.item__input')
@@ -13,6 +13,8 @@ export default class PopupWithForm extends Popup {
         this._functionSubmitForm = submitForm
         this._buttonSubmit = this._popup.querySelector('.popup__btn-save')
         this._textTitle = textTitle
+        this.selectorTemplate = '.elements__list-ko'
+        this.listClass = listClass
     }
     open() {
         super.open()
@@ -39,8 +41,9 @@ export default class PopupWithForm extends Popup {
 
     _submitForm = (evt) => {
         evt.preventDefault();
-        this._functionSubmitForm(this._getInputValues()); 
+        this._functionSubmitForm(this._getInputValues(),this.selectorTemplate, this.listClass); 
         this._formElement.removeEventListener('submit', this._submitForm)
+        this.close()
     } 
 
     _reset () {

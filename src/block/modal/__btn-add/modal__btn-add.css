@@ -1,5 +1,5 @@
 .modal__btn-add {
     min-height: 40px;
-    margin: 10px 0;
+    margin: 20px 0 0 0 ;
     grid-area: button;
 }
