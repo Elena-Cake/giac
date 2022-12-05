@@ -1,7 +1,7 @@
 .approach__list-structure {
     grid-template-columns: 70px calc(30px + 132px + 80px + 130px + 10px) auto repeat(2,30px);
     grid-template-areas: 
-        'type item time save delete';
+        'type item time save trash';
     align-items: center;
     gap: 2%;
 }

@@ -1,0 +1,5 @@
+.condition__list-structure {
+    display: grid;
+    grid-template-areas: 'item save trash';
+    grid-template-columns: minmax(400px, 40%) 50px 50px;
+}

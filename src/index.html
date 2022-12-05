@@ -46,11 +46,13 @@
                 <button class="table__btn-save button__add condition__btn-add">Добавить КО</button>
             </div>
             <div class="table__list condition__list">
-            <div class="list__header-table element">
-                <p class="objects__text">Международный&nbsp;№</p>
-                <p class="objects__text">№NORAD</p>
-                <p class="objects__text">№ГИАЦ АСПОС</p>
-            </div>
+                <div class="list__header-table condition__list-structure element">
+                    <div class="list__item">
+                        <p class="objects__text list__inter">Международный&nbsp;№</p>
+                        <p class="objects__text list__norad">№NORAD</p>
+                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -60,10 +62,12 @@
                 <button class="table__btn-save button__add destroy__btn-add">Добавить разрушенный КО</button>
             </div>
             <div class="table__list destroy__list">
-                <div class="list__header-table element">
-                    <p class="objects__text">Международный&nbsp;№</p>
-                    <p class="objects__text">№NORAD</p>
-                    <p class="objects__text">№ГИАЦ АСПОС</p>
+                <div class="list__header-table condition__list-structure element">
+                    <div class="list__item">
+                        <p class="objects__text list__inter">Международный&nbsp;№</p>
+                        <p class="objects__text list__norad">№NORAD</p>
+                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,10 +78,12 @@
                 <button class="table__btn-save button__add deorbit__btn-add">Добавить сошедший с орбиты КО</button>
             </div>
             <div class="table__list deorbit__list">
-                <div class="list__header-table element">
-                    <p class="objects__text">Международный&nbsp;№</p>
-                    <p class="objects__text">№NORAD</p>
-                    <p class="objects__text">№ГИАЦ АСПОС</p>
+                <div class="list__header-table condition__list-structure element">
+                    <div class="list__item">
+                        <p class="objects__text list__inter">Международный&nbsp;№</p>
+                        <p class="objects__text list__norad">№NORAD</p>
+                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -89,11 +95,11 @@
             </div>
             
             <div class="table__list spacecraft__list">
-                <div class="spacecraft__header-table element">
-                    <p class="objects__text ">Наименование КА</p>
-                    <p class="objects__text ">Международный № КА</p>
-                    <p class="objects__text ">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
-                    <p class="objects__text ">№ КА в каталоге  NORAD</p>
+                <div class="spacecraft__header-table spacecraft__list-structure element">
+                    <p class="objects__text list__name">Наименование КА</p>
+                    <p class="objects__text list__inter">Международный № КА</p>
+                    <p class="objects__text list__giac">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
+                    <p class="objects__text list__norad">№ КА в каталоге  NORAD</p>
                 </div>
             </div>
         </section>
@@ -152,13 +158,13 @@
     </template>
 
     <template class="elements__list-ko">
-        <div class="element" id="ko">
+        <div class="element condition__list-structure" id="ko">
             <!-- <p class="element__counter"></p> -->
-            <div class="objects__item item">
-                <p class="item__text ">КО</p>
-                <input class="item__input" type="text" name="IntDes" id="IntDes" placeholder="2000-000A">
-                <input class="item__input" type="text" name="NoradNumber" id="NoradNumber" placeholder="00000">
-                <input class="item__input" type="text" name="ObjectNumber" id="ObjectNumber" placeholder="00000">
+            <div class=" list__item">
+                <p class="item__text list__object">КО</p>
+                <input class="item__input list__inter" type="text" name="IntDes" id="IntDes" placeholder="2000-000A">
+                <input class="item__input list__norad" type="text" name="NoradNumber" id="NoradNumber" placeholder="00000">
+                <input class="item__input list__giac" type="text" name="ObjectNumber" id="ObjectNumber" placeholder="00000">
             </div>
             <button class="element__btn-done">
                 <svg width="33" height="31" viewBox="0 0 33 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,11 +189,11 @@
         <div class="element">
             <div class="table__objects objects spacecraft__form">
                 <div class="objects__table-add spacecraft__table-add">
-                    <div class="objects__item_place_ka">
-                        <input class="item__input spacecraft_ka_name" type="text" name="Name" id="" placeholder="Polytech Universe-1">
-                        <input class="item__input spacecraft_ka_inter" type="text" name="IntDes" id="" placeholder="2000-000A">
-                        <input class="item__input spacecraft_ka_giac" type="text" name="ObjectNumber" id="" placeholder="00000">
-                        <input class="item__input spacecraft_ka_norad" type="text" name="NoradNumber" id="" placeholder="00000">
+                    <div class="objects__item_place_ka spacecraft__list-structure">
+                        <input class="item__input list__name spacecraft_ka_name" type="text" name="Name" id="" placeholder="Polytech Universe-1">
+                        <input class="item__input list__inter spacecraft_ka_inter" type="text" name="IntDes" id="" placeholder="2000-000A">
+                        <input class="item__input list__giac spacecraft_ka_giac" type="text" name="ObjectNumber" id="" placeholder="00000">
+                        <input class="item__input list__norad spacecraft_ka_norad" type="text" name="NoradNumber" id="" placeholder="00000">
                     </div>
                 </div>
             </div>

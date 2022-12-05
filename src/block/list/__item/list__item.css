@@ -4,4 +4,5 @@
     grid-template-areas: 'object inter norad giac';
     grid-template-columns: 30px 132px 80px 120px;
     gap: 2%;
+    align-self: center;
 }

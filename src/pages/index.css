@@ -57,8 +57,10 @@
 @import url(../block/element/__item/_place/element__item_place_approach.css);
 
 @import url(../block/approach/__header-table/approach__header-table.css);
-@import url(../block/approach/__list-structure/approach__list-structure.css);
 
+@import url(../block/approach/__list-structure/approach__list-structure.css);
+@import url(../block/condition/__list-structure/condition__list-structure.css);
+@import url(../block/spacecraft/__list-structure/spacecraft__list-structure.css);
 
 @import url(../block/spacecraft/__header-table/spacecraft__header-table.css);
 
@@ -70,3 +72,4 @@
 @import url(../block/list/__norad/list__norad.css);
 @import url(../block/list/__giac/list__giac.css);
 @import url(../block/list/__time/list__time.css);
+@import url(../block/list/__name/list__name.css);
