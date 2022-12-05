@@ -1,0 +1,11 @@
+.element__btn-done {
+    border: 0;
+    background-color: transparent;
+    padding: 5px;
+    transition: opacity .5s ease;
+    opacity: .6;
+}
+
+.element__btn-done:hover {
+    opacity: .4;
+}

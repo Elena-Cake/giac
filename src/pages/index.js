@@ -6,7 +6,7 @@ import {
     inputApproachTypeOrbit,
     inputApproachInternationalNumKA, inputApproachNoradNumKA, inputApproachGiacNumKA,
     inputApproachInternationalNumKO, inputApproachNoradNumKO, inputApproachGiacNumKO,
-    buttonAddApproach,               formApproach,            inputListApproach,
+    buttonAddApproach,               formApproach,            
 
     buttonAddCondition,
     buttonAddDestroy,
@@ -14,7 +14,7 @@ import {
 
     inputSpacecraftNameKA,      inputSpacecraftInternationalNumKA,
     inputSpacecraftNoradNumKA,  inputSpacecraftGiacNumKA,
-    buttonAddSpacecraft,        inputListSpacecraft,
+    buttonAddSpacecraft,        
     formSpacecraft,
 
     inputMassage
@@ -33,96 +33,82 @@ import Section from '../scripts/Section.js';
 
 //  approach
 const objectListApproach = new Section({
-    renderer: (item) => {
-      const obj = generateCard(item);
+    renderer: () => {
+      const obj = generateCard();
       objectListApproach.addItem(card);
     }
   }, '.approach__list');
 
 //   condition
 const objectListCondition = new Section({
-    renderer: (item) => {
-      const card = generateCard(item);
+    renderer: () => {
+      const card = generateCard();
       objectListCondition.addItem(card);
     }
   }, '.condition__list');
 
 //   destroy
   const objectListDestroy = new Section({
-    renderer: (item) => {
-      const card = generateCard(item);
+    renderer: () => {
+      const card = generateCard();
       objectListDestroy.addItem(card);
     }
   }, '.destroy__list');
 
 //   deorbit
   const objectListDeorbit = new Section({
-    renderer: (item) => {
-      const card = generateCard(item);
+    renderer: () => {
+      const card = generateCard();
       objectListDeorbit.addItem(card);
     }
   }, '.deorbit__list');
 
 //   spacecraft
   const objectListSpacecraft = new Section({
-    renderer: (item) => {
-      const card = generateCard(item);
+    renderer: () => {
+      const card = generateCard();
       objectListSpacecraft.addItem(card);
     }
   }, '.spacecraft__list');
 
 
   // добавление карточки
-function generateCard (dataCard ) {
+function generateCard () { 
   const card = new  Object(dataCard, selectorTemplate,'.elements__list')
                     .createCard()
   return card                 
 }
 
-  // экземпляры классов
 
-const modalAddCondition = new PopupWithForm ('.modal', 'Добавить КО для контроля состояния'
-, submitForm, objectListCondition);
-const modalAddDestroy = new PopupWithForm ('.modal', 'Добавить разрушение КО'
-, submitForm, objectListDestroy );
-const modalAddDeorbit = new PopupWithForm ('.modal', 'Добавить сошедший с орбиты КО'
-, submitForm, objectListDeorbit);
+buttonAddCondition.addEventListener('click', ()=>addKO(objectListCondition));
 
+buttonAddDestroy.addEventListener('click', ()=>addKO(objectListDestroy));
 
-buttonAddCondition.addEventListener('click', () => modalAddCondition.open());
-buttonAddDestroy.addEventListener('click', () => modalAddDestroy.open());
-buttonAddDeorbit.addEventListener('click', () => modalAddDeorbit.open());
+buttonAddDeorbit.addEventListener('click',()=> addKO(objectListDeorbit));
 
-buttonAddApproach.addEventListener('click', (evt) => {
-  evt.preventDefault()
-  const inputsValues = getInputValues(inputListApproach)
-  submitFormObjectCollision(inputsValues, '.elements__list-approach', objectListApproach)
-  formApproach.reset()
-})
+buttonAddApproach.addEventListener('click', ()=>
+  addObjectCollision('.elements__list-approach', objectListApproach)
+)
 
+buttonAddSpacecraft.addEventListener('click', ()=>
+  addKA( '.elements__list-ka', objectListSpacecraft)
+)
 
-buttonAddSpacecraft.addEventListener('click', (evt) => {
-  evt.preventDefault()
-  const inputsValues = getInputValues(inputListSpacecraft)
-  submitFormKA(inputsValues, '.elements__list-ka', objectListSpacecraft)
-  formSpacecraft.reset()
-})
-
-// функция добавления из попапа
-function submitForm (dataObject, selectorTemplate, listClass) {
-  const obj = new Object(dataObject, selectorTemplate).createCard()
+// функция добавления КO
+function addKO(listClass) {
+  const obj = new Object( '.elements__list-ko').createCard()
   addCard (listClass, obj)
 }
 
-// функция добавления КА из формы
-function submitFormKA (dataObject, selectorTemplate, listClass) {
-  const obj = new ObjectKA (dataObject, selectorTemplate).createCard()
+// функция добавления КА 
+function addKA ( selectorTemplate, listClass) {
+  const obj = new ObjectKA (selectorTemplate).createCard()
   addCard (listClass, obj)
 }
 
-// функция добавления сближения из формы
-function submitFormObjectCollision (dataObject, selectorTemplate, listClass) {
-  const obj = new ObjectCollision (dataObject, selectorTemplate).createCard()
+// функция добавления сближения 
+function addObjectCollision ( selectorTemplate, listClass) {
+  const obj = new ObjectCollision ( selectorTemplate).createCard()
   addCard (listClass, obj)
 }
 

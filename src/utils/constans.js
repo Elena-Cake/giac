@@ -19,7 +19,7 @@ export const inputAssingmentDate = document.querySelector('.assingment__input-da
 export const formApproach = document.querySelector('.approach__form');
 export const inputApproachTypeOrbit = document.querySelector('.approach__type-orbit');
 
-export const inputListApproach = formApproach.querySelectorAll('.item__input')
+// export const inputListApproach = formApproach.querySelectorAll('.item__input')
 
 // KA
 export const inputApproachInternationalNumKA =  document.querySelector('.approach_ka_inter');
@@ -37,9 +37,6 @@ export const inputSpacecraftNoradNumKA = document.querySelector('.spacecraft_ka_
 export const inputSpacecraftGiacNumKA = document.querySelector('.spacecraft_ka_giac');
 
 export const formSpacecraft = document.querySelector('.spacecraft__form');
-
-export const inputListSpacecraft = formSpacecraft.querySelectorAll('.item__input')
-
 
 // massage
 export const inputMassage = document.querySelector('.massage__text');

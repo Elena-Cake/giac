@@ -1,0 +1,6 @@
+.approach__header-table {
+    display: grid;
+    grid-template-columns: 100px repeat(3,1fr) 250px;
+    gap: 2%;
+    font-weight: 500;
+}

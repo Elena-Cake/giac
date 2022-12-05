@@ -1,17 +1,17 @@
 export default class ObjectCollision {
-    constructor (data, selectorTemplate) {
+    constructor ( selectorTemplate) {
         
         this.selectorTemplate = selectorTemplate
         this._containerCards =  document.querySelector(this.selectorTemplate) 
-        this._typeOrbit = data.typeOrbite;
+        // this._typeOrbit = data.typeOrbite;
 
-        this._interNumKO = data.IntDesKO;
-        this._giacNumKO = data.ObjectNumberKO;
-        this._noradNumKO = data.NoradNumberKO;
+        // this._interNumKO = data.IntDesKO;
+        // this._giacNumKO = data.ObjectNumberKO;
+        // this._noradNumKO = data.NoradNumberKO;
         
-        this._interNumKA = data.IntDesKA;
-        this._giacNumKA = data.ObjectNumberKA;
-        this._noradNumKA = data.NoradNumberKA;
+        // this._interNumKA = data.IntDesKA;
+        // this._giacNumKA = data.ObjectNumberKA;
+        // this._noradNumKA = data.NoradNumberKA;
     }
 
     createCard() {
@@ -28,16 +28,16 @@ export default class ObjectCollision {
 
         this._cardTrash = this._element.querySelector('.element__btn-trash')
 
-        this._typeOrbitContainer.textContent = this._typeOrbit
-        console.log(this._typeOrbit)
+        // this._typeOrbitContainer.textContent = this._typeOrbit
+        // console.log(this._typeOrbit)
   
-        this._interContainerKO.textContent = this._interNumKO;
-        this._noradContainerKO.textContent = this._noradNumKO;
-        this._giacContainerKO.textContent = this._giacNumKO;
+        // this._interContainerKO.textContent = this._interNumKO;
+        // this._noradContainerKO.textContent = this._noradNumKO;
+        // this._giacContainerKO.textContent = this._giacNumKO;
 
-        this._interContainer.textContent = this._interNumKA;
-        this._noradContainer.textContent = this._noradNumKA;
-        this._giacContainer.textContent = this._giacNumKA;
+        // this._interContainer.textContent = this._interNumKA;
+        // this._noradContainer.textContent = this._noradNumKA;
+        // this._giacContainer.textContent = this._giacNumKA;
 
 
         this._setEventListeners();

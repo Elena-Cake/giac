@@ -1,13 +1,13 @@
 
 export default class ObjectKA {
-    constructor (data, selectorTemplate) {
+    constructor ( selectorTemplate) {
         
         this.selectorTemplate = selectorTemplate
         this._containerCards =  document.querySelector(this.selectorTemplate) 
-        this._interNum = data.IntDes;
-        this._giacNum = data.ObjectNumber;
-        this._noradNum = data.NoradNumber;
-        this._nameObj = data.Name
+        // this._interNum = data.IntDes;
+        // this._giacNum = data.ObjectNumber;
+        // this._noradNum = data.NoradNumber;
+        // this._nameObj = data.Name
         console.log(this._containerCards)
     }
 
@@ -19,10 +19,10 @@ export default class ObjectKA {
         this._giacContainer = this._element.querySelector('.element_ka_giac')
         this._cardTrash = this._element.querySelector('.element__btn-trash')
   
-        this._nameContainer.textContent = this._nameObj;
-        this._interContainer.textContent = this._interNum;
-        this._noradContainer.textContent = this._noradNum;
-        this._giacContainer.textContent = this._giacNum;
+        // this._nameContainer.textContent = this._nameObj;
+        // this._interContainer.textContent = this._interNum;
+        // this._noradContainer.textContent = this._noradNum;
+        // this._giacContainer.textContent = this._giacNum;
 
 
         this._setEventListeners();

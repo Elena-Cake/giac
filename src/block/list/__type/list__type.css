@@ -1,0 +1,4 @@
+.list__type {
+    grid-area: type;
+    width: 70px;
+}

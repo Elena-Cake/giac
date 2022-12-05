@@ -1,7 +1,5 @@
 .element {
-    margin: 0;
+    margin: 5px 0;
     padding: 0;
     display: flex;
-    justify-content: space-between;
-    gap: 5%;
 }

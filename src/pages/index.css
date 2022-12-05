@@ -21,6 +21,7 @@
 @import url(../block/table/__select/table__select.css);
 
 @import url(../block/list/list.css);
+@import url(../block/list/__header-table/list__header-table.css);
 
 @import url(../block/massage/massage.css);
 @import url(../block/massage/__text/massage__text.css);
@@ -28,16 +29,6 @@
 @import url(../block/form/__button/form__button.css);
 @import url(../block/form/__btn-save/form__btn-save.css);
 @import url(../block/form/__btn-reset/form__btn-reset.css);
-
-@import url(../block/modal/modal.css);
-@import url(../block/modal/_opened/modal_opened.css);
-@import url(../block/modal/__window/modal__window.css);
-@import url(../block/modal/__form/modal__form.css);
-@import url(../block/modal/__title/modal__title.css);
-@import url(../block/modal/__btn-close/modal__btn-close.css);
-@import url(../block/modal/__btn-add/modal__btn-add.css);
-@import url(../block/modal/__objects/modal__objects.css);
-@import url(../block/modal/__objects/_orientation/modal__objects_orientation_vertical.css);
 
 @import url(../block/objects/objects.css);
 @import url(../block/objects/__title/objects__title.css);
@@ -53,7 +44,6 @@
 @import url(../block/item/_orientation/item_orientation_vertical.css);
 @import url(../block/element/__item/_place/element__item_place_KA.css);
 
-
 @import url(../block/approach/approach.css);
 
 @import url(../block/element/element.css);
@@ -61,7 +51,22 @@
 @import url(../block/element/__item/element__item.css);
 @import url(../block/element/__text/element__text.css);
 @import url(../block/element/__btn-trash/element__btn-trash.css);
+@import url(../block/element/__btn-done/element__btn-done.css);
 @import url(../block/element/__approach/element__approach.css);
 @import url(../block/element/__type-orbit/element__type-orbit.css);
 @import url(../block/element/__item/_place/element__item_place_approach.css);
 
+@import url(../block/approach/__header-table/approach__header-table.css);
+@import url(../block/approach/__list-structure/approach__list-structure.css);
+
+
+@import url(../block/spacecraft/__header-table/spacecraft__header-table.css);
+
+@import url(../block/list/__items/list__items.css);
+@import url(../block/list/__item/list__item.css);
+@import url(../block/list/__type/list__type.css);
+@import url(../block/list/__object/list__object.css);
+@import url(../block/list/__inter/list__inter.css);
+@import url(../block/list/__norad/list__norad.css);
+@import url(../block/list/__giac/list__giac.css);
+@import url(../block/list/__time/list__time.css);

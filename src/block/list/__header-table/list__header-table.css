@@ -1,0 +1,6 @@
+.list__header-table {
+    display: grid;
+    grid-template-columns: repeat(3,200px) ;
+    gap: 2%;
+    font-weight: 500;
+}
