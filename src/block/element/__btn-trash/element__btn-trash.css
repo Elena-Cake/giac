@@ -4,6 +4,7 @@
     padding: 5px;
     transition: opacity .5s ease;
     opacity: .6;
+    grid-area: trash;
 }
 
 .element__btn-trash:hover {

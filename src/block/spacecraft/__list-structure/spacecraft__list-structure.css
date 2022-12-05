@@ -2,4 +2,5 @@
     display: grid;
     grid-template-areas: 'name inter giac norad save trash';
     grid-template-columns: repeat(4,150px) 50px 50px;
+    gap: 2%;
 }
