@@ -14,6 +14,7 @@ export const buttonResetForm = document.querySelector('.form__btn-reset');
 // assingment
 export const inputAssingmentNum = document.querySelector('.assingment__input-num');
 export const inputAssingmentDate = document.querySelector('.assingment__input-date');
+export const inputAssingmentName = document.querySelector('.assingment__input-name');
 
 // approach
 export const formApproach = document.querySelector('.approach__form');
@@ -41,6 +42,9 @@ export const formSpacecraft = document.querySelector('.spacecraft__form');
 // massage
 export const inputMassage = document.querySelector('.massage__text');
 
+//main button
+export const buttonSaveAll = document.querySelector('.form__btn-save') 
+
 // table-list
 export const listTableApproach = document.querySelector('.approach__list');
 export const listTableCondition = document.querySelector('.condition__list');
@@ -54,3 +58,7 @@ export const headerTableCondition = document.querySelector('.condition__header-t
 export const headerTableDestroy = document.querySelector('.destroy__header-table');
 export const headerTableDeorbit = document.querySelector('.deorbit__header-table');
 export const headerTableSpacecraft = document.querySelector('.spacecraft__header-table');
+
+export const selectorTemplateKO = '.elements__list-ko';
+export const selectorTemplateKA = '.elements__list-ka';
+export const selectorTemplateCollision = '.elements__list-approach';

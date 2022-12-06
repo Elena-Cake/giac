@@ -1,36 +1,30 @@
 import './index.css';
 import {
-    buttonAddApproach,                       
+    inputAssingmentNum, inputAssingmentDate, inputAssingmentName,
 
-    buttonAddCondition,
-    buttonAddDestroy,
-    buttonAddDeorbit,
-
-    buttonAddSpacecraft,        
+    buttonAddApproach, buttonAddCondition, buttonAddDestroy,
+    buttonAddDeorbit, buttonAddSpacecraft,        
 
     inputMassage,
+    buttonSaveAll,
 
-    listTableCondition,
-    listTableDestroy,
-    listTableDeorbit,
-    listTableApproach,
+    listTableCondition, listTableDestroy,
+    listTableDeorbit, listTableApproach,
     listTableSpacecraft,
 
-    headerTableApproach,
-    headerTableCondition,
-    headerTableDestroy,
-    headerTableDeorbit,
-    headerTableSpacecraft
+    headerTableApproach, headerTableCondition,
+    headerTableDestroy, headerTableDeorbit,
+    headerTableSpacecraft,
+
+    selectorTemplateKO,
+    selectorTemplateKA,
+    selectorTemplateCollision
 
 } from '../utils/constans.js'
 
 import Object from '../scripts/Object.js';
 import Section from '../scripts/Section.js';
 
-// selector templates 
-const selectorTemplateKO = '.elements__list-ko';
-const selectorTemplateKA = '.elements__list-ka';
-const selectorTemplateCollision = '.elements__list-approach'
 
 
 // видимость хедеров таблиц
@@ -141,10 +135,10 @@ function addElement(selectorTemplate, listClass, checkVisibleTableHeader, elemen
   addCard (listClass, obj)
 }
 
-
 function addCard(listClass, obj) {
   listClass.addItem(obj)
 }
+
 
 function getInputValues (inputList) {
   const inputsValues = {}
@@ -153,3 +147,25 @@ function getInputValues (inputList) {
   });
   return inputsValues
 }
+
+const data = {}
+// сбор данных в объект
+buttonSaveAll.addEventListener('click', () =>{
+    data.TaskNum = {
+      Num:        inputAssingmentNum.value,
+      TaskEpoch:  inputAssingmentDate.value,
+      ShiftBoss:  inputAssingmentName.value
+    }
+    // data.Directive = {
+    //   CollisionApproach: {},
+    //   Condition:      {},
+    //   BreakUp:    {},
+    //   Deorbit:    {},
+    //   ConditionKA:  {}
+    // }
+    data.Message = inputMassage.value
+
+
+
+    console.log (data)
+})
