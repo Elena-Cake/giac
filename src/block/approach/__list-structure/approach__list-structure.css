@@ -1,6 +1,6 @@
 .approach__list-structure {
     display: grid;
-    grid-template-columns: 70px calc(30px + 132px + 80px + 130px + 10px) 230px repeat(2,50px);
+    grid-template-columns: 70px calc(30px + 150px + 90px + 130px + 10px) 230px repeat(2,50px);
     grid-template-areas: 
         'type item time save trash';
     align-items: center;

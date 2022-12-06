@@ -40,3 +40,17 @@ export const formSpacecraft = document.querySelector('.spacecraft__form');
 
 // massage
 export const inputMassage = document.querySelector('.massage__text');
+
+// table-list
+export const listTableApproach = document.querySelector('.approach__list');
+export const listTableCondition = document.querySelector('.condition__list');
+export const listTableDestroy = document.querySelector('.destroy__list');
+export const listTableDeorbit = document.querySelector('.deorbit__list');
+export const listTableSpacecraft = document.querySelector('.spacecraft__list');
+
+// header-table
+export const headerTableApproach = document.querySelector('.approach__header-table');
+export const headerTableCondition = document.querySelector('.condition__header-table');
+export const headerTableDestroy = document.querySelector('.destroy__header-table');
+export const headerTableDeorbit = document.querySelector('.deorbit__header-table');
+export const headerTableSpacecraft = document.querySelector('.spacecraft__header-table');

@@ -1,33 +1,48 @@
 import './index.css';
 import {
-    inputAssingmentNum,
-    inputAssingmentDate,
-
-    inputApproachTypeOrbit,
-    inputApproachInternationalNumKA, inputApproachNoradNumKA, inputApproachGiacNumKA,
-    inputApproachInternationalNumKO, inputApproachNoradNumKO, inputApproachGiacNumKO,
-    buttonAddApproach,               formApproach,            
+    buttonAddApproach,                       
 
     buttonAddCondition,
     buttonAddDestroy,
     buttonAddDeorbit,
 
-    inputSpacecraftNameKA,      inputSpacecraftInternationalNumKA,
-    inputSpacecraftNoradNumKA,  inputSpacecraftGiacNumKA,
     buttonAddSpacecraft,        
-    formSpacecraft,
 
-    inputMassage
+    inputMassage,
+
+    listTableCondition,
+    listTableDestroy,
+    listTableDeorbit,
+    listTableApproach,
+    listTableSpacecraft,
+
+    headerTableApproach,
+    headerTableCondition,
+    headerTableDestroy,
+    headerTableDeorbit,
+    headerTableSpacecraft
 
 } from '../utils/constans.js'
 
-import PopupWithForm from '../scripts/PopupWithForm.js';
 import Object from '../scripts/Object.js';
-import ObjectKA from '../scripts/ObjectKA.js';
-import ObjectCollision from '../scripts/ObjectCollision.js';
 import Section from '../scripts/Section.js';
 
+// selector templates 
+const selectorTemplateKO = '.elements__list-ko';
+const selectorTemplateKA = '.elements__list-ka';
+const selectorTemplateCollision = '.elements__list-approach'
 
+
+// видимость хедеров таблиц
+
+const checkVisibleTableHeader = (elementsList, headerTable) => {
+  if (elementsList.querySelectorAll('.element').length < 2) {
+    headerTable.classList.add('header-table_hidden')
+  } else {
+    headerTable.classList.remove('header-table_hidden')
+  }
+
+}
 
 // списки для добавления
 
@@ -80,39 +95,54 @@ function generateCard () {
 }
 
 
-buttonAddCondition.addEventListener('click', ()=>addKO(objectListCondition));
+// проверка пустоты таблиц
+checkVisibleTableHeader (listTableCondition, headerTableCondition)
+checkVisibleTableHeader (listTableDestroy, headerTableDestroy)
+checkVisibleTableHeader (listTableDeorbit, headerTableDeorbit)
+checkVisibleTableHeader (listTableApproach, headerTableApproach)
+checkVisibleTableHeader (listTableSpacecraft, headerTableSpacecraft)
 
-buttonAddDestroy.addEventListener('click', ()=>addKO(objectListDestroy));
 
-buttonAddDeorbit.addEventListener('click',()=> addKO(objectListDeorbit));
+// кнопки добавления объектов
+buttonAddCondition.addEventListener('click', ()=>{
+  addElement(selectorTemplateKO, objectListCondition, checkVisibleTableHeader
+            , listTableCondition, headerTableCondition)
+  checkVisibleTableHeader (listTableCondition, headerTableCondition)
+});
 
-buttonAddApproach.addEventListener('click', ()=>
-  addObjectCollision('.elements__list-approach', objectListApproach)
-)
+buttonAddDestroy.addEventListener('click', ()=>{
+  addElement(selectorTemplateKO, objectListDestroy, checkVisibleTableHeader
+            , listTableDestroy, headerTableDestroy)
+  checkVisibleTableHeader (listTableDestroy, headerTableDestroy)
+});
 
-buttonAddSpacecraft.addEventListener('click', ()=>
-  addKA( '.elements__list-ka', objectListSpacecraft)
-)
+buttonAddDeorbit.addEventListener('click',()=> {
+  addElement(selectorTemplateKO, objectListDeorbit, checkVisibleTableHeader
+          , listTableDeorbit, headerTableDeorbit)
+  checkVisibleTableHeader (listTableDeorbit, headerTableDeorbit)
+});
 
-// функция добавления КO
-function addKO(listClass) {
-  const obj = new Object( '.elements__list-ko').createCard()
+buttonAddApproach.addEventListener('click', ()=>{
+  addElement( selectorTemplateCollision , objectListApproach, checkVisibleTableHeader
+            , listTableApproach, headerTableApproach)
+  checkVisibleTableHeader (listTableApproach, headerTableApproach)
+});
+
+buttonAddSpacecraft.addEventListener('click', ()=> {
+  addElement( selectorTemplateKA, objectListSpacecraft, checkVisibleTableHeader
+            , listTableSpacecraft, headerTableSpacecraft)
+  checkVisibleTableHeader (listTableSpacecraft, headerTableSpacecraft)
+});
+
+// функция добавления КO, KA, Collision
+function addElement(selectorTemplate, listClass, checkVisibleTableHeader, elementsList, headerTable) {
+  const obj = new Object( selectorTemplate, checkVisibleTableHeader
+                        , elementsList, headerTable).createCard()
   addCard (listClass, obj)
 }
 
-// функция добавления КА 
-function addKA ( selectorTemplate, listClass) {
-  const obj = new ObjectKA (selectorTemplate).createCard()
-  addCard (listClass, obj)
-}
 
-// функция добавления сближения 
-function addObjectCollision ( selectorTemplate, listClass) {
-  const obj = new ObjectCollision ( selectorTemplate).createCard()
-  addCard (listClass, obj)
-}
-
-function addCard( listClass, obj) {
+function addCard(listClass, obj) {
   listClass.addItem(obj)
 }
 

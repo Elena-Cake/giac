@@ -2,7 +2,7 @@
     grid-area: item;
     display: grid;
     grid-template-areas: 'object inter norad giac';
-    grid-template-columns: 30px 132px 80px 120px;
+    grid-template-columns: 30px 150px 90px 120px;
     gap: 2%;
     align-self: center;
 }

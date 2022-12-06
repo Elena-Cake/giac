@@ -41,6 +41,7 @@
 @import url(../block/item/item.css);
 @import url(../block/item/__text/item__text.css);
 @import url(../block/item/__input/item__input.css);
+@import url(../block/item/__input/_type/item__input_type_readonly.css);
 @import url(../block/item/_orientation/item_orientation_vertical.css);
 @import url(../block/element/__item/_place/element__item_place_KA.css);
 
@@ -74,3 +75,5 @@
 @import url(../block/list/__giac/list__giac.css);
 @import url(../block/list/__time/list__time.css);
 @import url(../block/list/__name/list__name.css);
+
+@import url(../block/header-table/_hidden/header-table_hidden.css);
