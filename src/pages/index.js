@@ -31,15 +31,36 @@ const checkTableNotEmpty = (listTable) => {
   return listTable.querySelector('.element') ? true : false
 }
 
+// rendererCard
+function rendererCard  (wrap)  {
+  const card = generateCard();
+  wrap.addItem(card);
+}
+
+// добавление карточки
+function generateCard () { 
+  const card = new  Object(dataCard, selectorTemplate,'.elements__list')
+                    .createCard()
+  return card                 
+}
+
 // списки для добавления
+ 
+// const renderItem = (thisContainer, list) => {
+//   return new Section({
+//         renderer: rendererCard(thisContainer)
+//       }, list);
+//     }
+//     const objectListApproach = renderItem(objectListApproach, '.approach__list');
+
 
 //  approach
 const objectListApproach = new Section({
-    renderer: () => {
-      const card = generateCard();
-      objectListApproach.addItem(card);
-    }
-  }, '.approach__list');
+  renderer: () => {
+    const card = generateCard();
+    objectListApproach.addItem(card);
+  }
+}, '.approach__list');
 
 //   condition
 const objectListCondition = new Section({
@@ -72,15 +93,6 @@ const objectListCondition = new Section({
       objectListSpacecraft.addItem(card);
     }
   }, '.spacecraft__list');
-
-
-  // добавление карточки
-function generateCard () { 
-  const card = new  Object(dataCard, selectorTemplate,'.elements__list')
-                    .createCard()
-  return card                 
-}
-
 
 // проверка пустоты таблиц
 checkVisibleTableHeader (checkTableNotEmpty(Condition.listTable), Condition.headerTable)
