@@ -18,13 +18,14 @@ import Section from '../scripts/Section.js';
 
 // видимость хедеров таблиц
 
-function checkVisibleTableHeader (listTable, headerTable) {
+const checkVisibleTableHeader = (listTable, headerTable) => {
   console.log(listTable)
-  if (listTable.querySelectorAll('.element') !== 0) {
-    headerTable.classList.add('header-table_hidden')
-  } else {
+  if (listTable.querySelector('.element')) {
     headerTable.classList.remove('header-table_hidden')
+  } else {
+    headerTable.classList.add('header-table_hidden')
   }
+
 }
 
 // списки для добавления
@@ -113,8 +114,9 @@ Spacecraft.buttonAdd.addEventListener('click', ()=> {
 });
 
 // функция добавления КO, KA, Collision
-function addElement(section, elementsList, checkVisibleTableHeader) {
-  const obj = new Object( section, checkVisibleTableHeader).createCard()
+function addElement({selectorTemplate, listTable, headerTable}, elementsList, checkVisibleTableHeader) {
+  const obj = new Object( selectorTemplate, checkVisibleTableHeader
+                        , listTable, headerTable).createCard()
   addCard (elementsList, obj)
 }
 
