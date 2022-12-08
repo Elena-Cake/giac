@@ -6,6 +6,7 @@
 
 @import url(../block/assingment/assingment.css);
 @import url(../block/assingment/__title/assingment__title.css);
+@import url(../block/assingment/__title/_type/assingment__title_type_start.css);
 @import url(../block/assingment/__input/assingment__input.css);
 
 @import url(../block/danger/danger.css);
