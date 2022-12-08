@@ -1,24 +1,13 @@
 import './index.css';
 import {
-    inputAssingmentNum, inputAssingmentDate, inputAssingmentName,
+  Assingment,
 
-    buttonAddApproach, buttonAddCondition, buttonAddDestroy,
-    buttonAddDeorbit, buttonAddSpacecraft,        
-
-    inputMassage,
-    buttonSaveAll,
-
-    listTableCondition, listTableDestroy,
-    listTableDeorbit, listTableApproach,
-    listTableSpacecraft,
-
-    headerTableApproach, headerTableCondition,
-    headerTableDestroy, headerTableDeorbit,
-    headerTableSpacecraft,
-
-    selectorTemplateKO,
-    selectorTemplateKA,
-    selectorTemplateCollision
+  Approach,
+  Condition,Destroy,Deorbit,
+  Spacecraft,
+     
+  inputMassage,
+  buttonSaveAll,
 
 } from '../utils/constans.js'
 
@@ -29,13 +18,13 @@ import Section from '../scripts/Section.js';
 
 // видимость хедеров таблиц
 
-const checkVisibleTableHeader = (elementsList, headerTable) => {
-  if (elementsList.querySelectorAll('.element').length < 2) {
+function checkVisibleTableHeader (listTable, headerTable) {
+  console.log(listTable)
+  if (listTable.querySelectorAll('.element') !== 0) {
     headerTable.classList.add('header-table_hidden')
   } else {
     headerTable.classList.remove('header-table_hidden')
   }
-
 }
 
 // списки для добавления
@@ -43,7 +32,7 @@ const checkVisibleTableHeader = (elementsList, headerTable) => {
 //  approach
 const objectListApproach = new Section({
     renderer: () => {
-      const obj = generateCard();
+      const card = generateCard();
       objectListApproach.addItem(card);
     }
   }, '.approach__list');
@@ -90,49 +79,43 @@ function generateCard () {
 
 
 // проверка пустоты таблиц
-checkVisibleTableHeader (listTableCondition, headerTableCondition)
-checkVisibleTableHeader (listTableDestroy, headerTableDestroy)
-checkVisibleTableHeader (listTableDeorbit, headerTableDeorbit)
-checkVisibleTableHeader (listTableApproach, headerTableApproach)
-checkVisibleTableHeader (listTableSpacecraft, headerTableSpacecraft)
+checkVisibleTableHeader (Condition.listTable, Condition.headerTable)
+checkVisibleTableHeader (Destroy.listTable, Destroy.headerTable)
+checkVisibleTableHeader (Deorbit.listTable, Deorbit.headerTable)
+checkVisibleTableHeader (Approach.listTable, Approach.headerTable)
+checkVisibleTableHeader (Spacecraft.listTable, Spacecraft.headerTable)
 
 
 // кнопки добавления объектов
-buttonAddCondition.addEventListener('click', ()=>{
-  addElement(selectorTemplateKO, objectListCondition, checkVisibleTableHeader
-            , listTableCondition, headerTableCondition)
-  checkVisibleTableHeader (listTableCondition, headerTableCondition)
+Condition.buttonAdd.addEventListener('click', ()=>{
+  addElement(Condition, objectListCondition, checkVisibleTableHeader)
+  checkVisibleTableHeader (Condition.listTable, Condition.headerTable)
 });
 
-buttonAddDestroy.addEventListener('click', ()=>{
-  addElement(selectorTemplateKO, objectListDestroy, checkVisibleTableHeader
-            , listTableDestroy, headerTableDestroy)
-  checkVisibleTableHeader (listTableDestroy, headerTableDestroy)
+Destroy.buttonAdd.addEventListener('click', ()=>{
+  addElement(Destroy, objectListDestroy, checkVisibleTableHeader)
+  checkVisibleTableHeader (Destroy.listTable, Destroy.headerTable)
 });
 
-buttonAddDeorbit.addEventListener('click',()=> {
-  addElement(selectorTemplateKO, objectListDeorbit, checkVisibleTableHeader
-          , listTableDeorbit, headerTableDeorbit)
-  checkVisibleTableHeader (listTableDeorbit, headerTableDeorbit)
+Deorbit.buttonAdd.addEventListener('click',()=> {
+  addElement(Deorbit, objectListDeorbit, checkVisibleTableHeader)
+  checkVisibleTableHeader (Deorbit.listTable, Deorbit.headerTable)
 });
 
-buttonAddApproach.addEventListener('click', ()=>{
-  addElement( selectorTemplateCollision , objectListApproach, checkVisibleTableHeader
-            , listTableApproach, headerTableApproach)
-  checkVisibleTableHeader (listTableApproach, headerTableApproach)
+Approach.buttonAdd.addEventListener('click', ()=>{
+  addElement( Approach , objectListApproach, checkVisibleTableHeader)
+  checkVisibleTableHeader (Approach.listTable, Approach.headerTable)
 });
 
-buttonAddSpacecraft.addEventListener('click', ()=> {
-  addElement( selectorTemplateKA, objectListSpacecraft, checkVisibleTableHeader
-            , listTableSpacecraft, headerTableSpacecraft)
-  checkVisibleTableHeader (listTableSpacecraft, headerTableSpacecraft)
+Spacecraft.buttonAdd.addEventListener('click', ()=> {
+  addElement( Spacecraft, objectListSpacecraft, checkVisibleTableHeader)
+  checkVisibleTableHeader (Spacecraft.listTable, Spacecraft.headerTable)
 });
 
 // функция добавления КO, KA, Collision
-function addElement(selectorTemplate, listClass, checkVisibleTableHeader, elementsList, headerTable) {
-  const obj = new Object( selectorTemplate, checkVisibleTableHeader
-                        , elementsList, headerTable).createCard()
-  addCard (listClass, obj)
+function addElement(section, elementsList, checkVisibleTableHeader) {
+  const obj = new Object( section, checkVisibleTableHeader).createCard()
+  addCard (elementsList, obj)
 }
 
 function addCard(listClass, obj) {
