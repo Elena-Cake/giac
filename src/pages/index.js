@@ -17,14 +17,18 @@ import Section from '../scripts/Section.js';
 
 
 // видимость хедеров таблиц
-
-const checkVisibleTableHeader = (listTable, headerTable) => {
-  if (listTable.querySelector('.element')) {
+const checkVisibleTableHeader = (resultCheckTableEmpty, headerTable) => {
+  if (resultCheckTableEmpty) {
     headerTable.classList.remove('header-table_hidden')
   } else {
     headerTable.classList.add('header-table_hidden')
   }
 
+}
+
+// проверка пустоты таблицы
+const checkTableNotEmpty = (listTable) => {
+  return listTable.querySelector('.element') ? true : false
 }
 
 // списки для добавления
@@ -79,42 +83,32 @@ function generateCard () {
 
 
 // проверка пустоты таблиц
-checkVisibleTableHeader (Condition.listTable, Condition.headerTable)
-checkVisibleTableHeader (Destroy.listTable, Destroy.headerTable)
-checkVisibleTableHeader (Deorbit.listTable, Deorbit.headerTable)
-checkVisibleTableHeader (Approach.listTable, Approach.headerTable)
-checkVisibleTableHeader (Spacecraft.listTable, Spacecraft.headerTable)
+checkVisibleTableHeader (checkTableNotEmpty(Condition.listTable), Condition.headerTable)
+checkVisibleTableHeader (checkTableNotEmpty(Destroy.listTable), Destroy.headerTable)
+checkVisibleTableHeader (checkTableNotEmpty(Deorbit.listTable), Deorbit.headerTable)
+checkVisibleTableHeader (checkTableNotEmpty(Approach.listTable), Approach.headerTable)
+checkVisibleTableHeader (checkTableNotEmpty(Spacecraft.listTable), Spacecraft.headerTable)
 
+
+// прожатие кнопки добавления объектов
+function addListenerButtonAdd (section, objectList, checkVisibleTableHeader, checkTableNotEmpty) {
+  section.buttonAdd.addEventListener('click', ()=>{
+    addElement(section, objectList, checkVisibleTableHeader, checkTableNotEmpty)
+    checkVisibleTableHeader (checkTableNotEmpty(section.listTable), section.headerTable)
+  });
+}
 
 // кнопки добавления объектов
-Condition.buttonAdd.addEventListener('click', ()=>{
-  addElement(Condition, objectListCondition, checkVisibleTableHeader)
-  checkVisibleTableHeader (Condition.listTable, Condition.headerTable)
-});
+addListenerButtonAdd(Condition, objectListCondition, checkVisibleTableHeader, checkTableNotEmpty)
+addListenerButtonAdd(Destroy, objectListDestroy, checkVisibleTableHeader, checkTableNotEmpty)
+addListenerButtonAdd(Deorbit, objectListDeorbit, checkVisibleTableHeader, checkTableNotEmpty)
+addListenerButtonAdd(Approach , objectListApproach, checkVisibleTableHeader, checkTableNotEmpty)
+addListenerButtonAdd(Spacecraft, objectListSpacecraft, checkVisibleTableHeader, checkTableNotEmpty)
 
-Destroy.buttonAdd.addEventListener('click', ()=>{
-  addElement(Destroy, objectListDestroy, checkVisibleTableHeader)
-  checkVisibleTableHeader (Destroy.listTable, Destroy.headerTable)
-});
-
-Deorbit.buttonAdd.addEventListener('click',()=> {
-  addElement(Deorbit, objectListDeorbit, checkVisibleTableHeader)
-  checkVisibleTableHeader (Deorbit.listTable, Deorbit.headerTable)
-});
-
-Approach.buttonAdd.addEventListener('click', ()=>{
-  addElement( Approach , objectListApproach, checkVisibleTableHeader)
-  checkVisibleTableHeader (Approach.listTable, Approach.headerTable)
-});
-
-Spacecraft.buttonAdd.addEventListener('click', ()=> {
-  addElement( Spacecraft, objectListSpacecraft, checkVisibleTableHeader)
-  checkVisibleTableHeader (Spacecraft.listTable, Spacecraft.headerTable)
-});
 
 // функция добавления КO, KA, Collision
-function addElement({selectorTemplate, listTable, headerTable}, elementsList, checkVisibleTableHeader) {
-  const obj = new Object( selectorTemplate, checkVisibleTableHeader
+function addElement({selectorTemplate, listTable, headerTable}, elementsList, checkVisibleTableHeader, checkTableNotEmpty) {
+  const obj = new Object( selectorTemplate, checkVisibleTableHeader, checkTableNotEmpty
                         , listTable, headerTable).createCard()
   addCard (elementsList, obj)
 }
@@ -132,24 +126,82 @@ function getInputValues (inputList) {
   return inputsValues
 }
 
+
 const data = {}
 // сбор данных в объект
 buttonSaveAll.addEventListener('click', () =>{
-    data.TaskNum = {
-      Num:        inputAssingmentNum.value,
-      TaskEpoch:  inputAssingmentDate.value,
-      ShiftBoss:  inputAssingmentName.value
-    }
-    // data.Directive = {
-    //   CollisionApproach: {},
-    //   Condition:      {},
-    //   BreakUp:    {},
-    //   Deorbit:    {},
-    //   ConditionKA:  {}
-    // }
+    data.TaskNum = getInputValues (Assingment.inputList)
+    data.Directive = {}
     data.Message = inputMassage.value
 
 
+// Condition
+if (checkTableNotEmpty(Condition.listTable)) {
+  data.Directive.Condition  = {}
+  const info = data.Directive.Condition.ObjectInfos = []
+  const elementsList = (document.querySelector('.condition__list').querySelectorAll('.element'));
+  
+  elementsList.forEach((element) => {
+    const inputList = element.querySelectorAll('.item__input')
+    info.push(getInputValues(inputList))
+  })
+}
+// Destroy
+if (checkTableNotEmpty(Destroy.listTable)) {
+  data.Directive.BreakUp  = {}
+  const info = data.Directive.BreakUp.ObjectInfos = []
+  const elementsList = (document.querySelector('.destroy__list').querySelectorAll('.element'));
+  
+  elementsList.forEach((element) => {
+    const inputList = element.querySelectorAll('.item__input')
+    info.push(getInputValues(inputList))
+  })
+}
+// Deorbit
+if (checkTableNotEmpty(Deorbit.listTable)) {
+  data.Directive.Deorbit  = {}
+  const info = data.Directive.Deorbit.ObjectInfos = []
+  const elementsList = (document.querySelector('.deorbit__list').querySelectorAll('.element'));
+  
+  elementsList.forEach((element) => {
+    const inputList = element.querySelectorAll('.item__input')
+    info.push(getInputValues(inputList))
+  })
+}
+// Spacecraft
+if (checkTableNotEmpty(Spacecraft.listTable)) {
+  data.Directive.ConditionKA  = {}
+  const info = data.Directive.ConditionKA.ObjectInfos = []
+  const elementsList = (document.querySelector('.spacecraft__list').querySelectorAll('.element'));
+  
+  elementsList.forEach((element) => {
+    const inputList = element.querySelectorAll('.item__input')
+    info.push(getInputValues(inputList))
+  })
+}
+// Approach
+if (checkTableNotEmpty(Approach.listTable)) {
+  data.Directive.CollisionApproach  = {}
+  const info = data.Directive.CollisionApproach.Pairs = []
+  const elementsList = (document.querySelector('.approach__list').querySelectorAll('.element'));
+  const id = 1
+  
+  elementsList.forEach((element, index) => {
+    const obj = {}
+    obj.IdPairs = index+1
+    obj.CollisionApproachEpoch = element.querySelector('.item__input_type_time').value
+    obj.OrbiteType = element.querySelector('.item__input_type_orbite').value
+
+    const itemList = element.querySelectorAll('.objects__item')
+    const inputList1 = itemList[0].querySelectorAll('.item__input')
+    const inputList2 = itemList[1].querySelectorAll('.item__input')
+
+    obj.FirstObject = (getInputValues(inputList1))
+    obj.SecondObject = (getInputValues(inputList2))
+
+    info.push(obj)
+  })
+}
 
     console.log (data)
 })

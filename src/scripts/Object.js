@@ -5,10 +5,11 @@
 // попап просмотра фото
 
 export default class Object{
-    constructor( selectorTemplate, checkVisibleTableHeader, elementsList, headerTable) {
+    constructor( selectorTemplate, checkVisibleTableHeader, checkTableNotEmpty, elementsList, headerTable) {
       this.selectorTemplate = selectorTemplate
       this._containerCards =  document.querySelector(this.selectorTemplate) 
       this._checkVisibleTableHeader = checkVisibleTableHeader
+      this._checkTableEmpty = checkTableNotEmpty
       this._elementsList = elementsList
       this._headerTable = headerTable
     }
@@ -62,7 +63,7 @@ export default class Object{
      _remove (elementsList,headerTable) {
       this._removeEventListeners()
       this._element.remove()
-      this._checkVisibleTableHeader(elementsList, headerTable)
+      this._checkVisibleTableHeader(this._checkTableEmpty(elementsList), headerTable)
     }
 
   }

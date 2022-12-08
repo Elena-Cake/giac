@@ -10,12 +10,13 @@
     <main class="main">
         <section class="assingment">
             <h2 class="assingment__title">Задание &#8470;</h2>
-            <input class="assingment__input assingment__input-num" type="text" name="num-assingment" id="" placeholder="XXXX" required>
+            <input class="assingment__input assingment__input-num" type="text" name="Num" id="" placeholder="XXXX" required>
             <h2 class="assingment__title">от</h2>
-            <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" name="date-report" id="" required>
+            <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
+                    name="TaskEpoch" id="" required>
             <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
             <h2 class="assingment__title assingment__title_type_start">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
-            <input class="assingment__input assingment__input-name" type="text" name="num-assingment" id="" placeholder="Иванов А.А.">
+            <input class="assingment__input assingment__input-name" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
         </section>
        
         <section class="approach list">
@@ -113,7 +114,7 @@
 
     <template class="elements__list-approach">
         <div class="element approach__list-structure" id="ko">
-            <select class="item__input list__type table__select approach__type-orbit" name="typeOrbite" id="type-orbite">
+            <select class="item__input list__type table__select approach__type-orbit item__input_type_orbite" name="typeOrbite" id="type-orbite">
                 <option disabled value="not">Выберите тип</option>
                 <option value="GEO">ГСО</option>
                 <option value="MOE">СВО</option>
@@ -134,7 +135,7 @@
                     <input class="item__input list__giac approach_ko_giac" type="text" name="ObjectNumberKO" id="" placeholder="00000">
                 </div>
             </div>
-            <input class="assingment__input item__input list__time assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" name="date-report" id="" required>
+            <input class="assingment__input item__input list__time assingment__input-date item__input_type_time" type="datetime-local" value="2013-10-24T20:36:00" step="1" name="CollisionApproachEpoch" id="" required>
 
             <button class="element__btn-done"></button>
             <button class="element__btn-trash"></button>

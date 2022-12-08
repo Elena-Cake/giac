@@ -13,9 +13,7 @@ export const buttonSaveAll = document.querySelector('.form__btn-save')
 
 
 export const Assingment = {
-    inputAssingmentNum : document.querySelector('.assingment__input-num'),
-    inputAssingmentDate : document.querySelector('.assingment__input-date'),
-    inputAssingmentName : document.querySelector('.assingment__input-name')
+    inputList : document.querySelector('.assingment').querySelectorAll('.assingment__input')
 }
 
 export const Approach = {
@@ -23,33 +21,38 @@ export const Approach = {
     inputTypeOrbit :    document.querySelector('.approach__type-orbit'),
     listTable :         document.querySelector('.approach__list'),
     headerTable :       document.querySelector('.approach__header-table'),
-    selectorTemplate : '.elements__list-approach'
+    selectorTemplate : '.elements__list-approach',
+    elementsList :      document.querySelector('.approach__list').querySelectorAll('.element')
 }
 
 export const Condition = {
-    buttonAdd :    document.querySelector('.condition__btn-add'),
-    listTable :    document.querySelector('.condition__list'),
-    headerTable :  document.querySelector('.condition__header-table'),
-    selectorTemplate :      '.elements__list-ko'
+    buttonAdd :         document.querySelector('.condition__btn-add'),
+    listTable :         document.querySelector('.condition__list'),
+    headerTable :       document.querySelector('.condition__header-table'),
+    selectorTemplate :  '.elements__list-ko',
+    elementsList :      document.querySelector('.condition__list').querySelectorAll('.element')
 }
 
 export const Destroy = {
-    buttonAdd :      document.querySelector('.destroy__btn-add'),
-    listTable :      document.querySelector('.destroy__list'),
-    headerTable :    document.querySelector('.destroy__header-table'),
-    selectorTemplate :      '.elements__list-ko'
+    buttonAdd :         document.querySelector('.destroy__btn-add'),
+    listTable :         document.querySelector('.destroy__list'),
+    headerTable :       document.querySelector('.destroy__header-table'),
+    selectorTemplate :  '.elements__list-ko',
+    elementsList :      document.querySelector('.destroy__list').querySelectorAll('.element')
 }
 
 export const Deorbit = {
-    buttonAdd :      document.querySelector('.deorbit__btn-add'),
-    listTable :      document.querySelector('.deorbit__list'),
-    headerTable :    document.querySelector('.deorbit__header-table'),
-    selectorTemplate :      '.elements__list-ko'
+    buttonAdd :         document.querySelector('.deorbit__btn-add'),
+    listTable :         document.querySelector('.deorbit__list'),
+    headerTable :       document.querySelector('.deorbit__header-table'),
+    selectorTemplate :  '.elements__list-ko',
+    elementsList :      document.querySelector('.deorbit__list').querySelectorAll('.element')
 }
 
 export const Spacecraft = {
-    buttonAdd :   document.querySelector('.spacecraft__btn-add'),
-    listTable :   document.querySelector('.spacecraft__list'),
-    headerTable : document.querySelector('.spacecraft__header-table'),
-    selectorTemplate :      '.elements__list-ka'
+    buttonAdd :         document.querySelector('.spacecraft__btn-add'),
+    listTable :         document.querySelector('.spacecraft__list'),
+    headerTable :       document.querySelector('.spacecraft__header-table'),
+    selectorTemplate :  '.elements__list-ka',
+    elementsList :      document.querySelector('.spacecraft__list').querySelectorAll('.element')
 }
