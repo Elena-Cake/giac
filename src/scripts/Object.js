@@ -34,8 +34,9 @@ export default class Object{
     }
   
     _setEventListeners() {
-      this._buttonTrash.addEventListener('click', this.removeButton = () =>{ 
-        this._remove(this._elementsList, this._headerTable)})
+      this._buttonTrash.addEventListener('click', this.removeButton = () => { 
+        this._remove(this._elementsList, this._headerTable)
+      })
       this._buttonSave.addEventListener('click', this._save);
     }
 

@@ -19,7 +19,6 @@ import Section from '../scripts/Section.js';
 // видимость хедеров таблиц
 
 const checkVisibleTableHeader = (listTable, headerTable) => {
-  console.log(listTable)
   if (listTable.querySelector('.element')) {
     headerTable.classList.remove('header-table_hidden')
   } else {
