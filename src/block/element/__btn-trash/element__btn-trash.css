@@ -1,10 +1,15 @@
 .element__btn-trash {
+    height: 30px;
     border: 0;
     background-color: transparent;
     padding: 5px;
     transition: opacity .5s ease;
     opacity: .6;
     grid-area: trash;
+    background-image: url(../../../images/trash.svg) ;
+    background-repeat: no-repeat;
+    background-size: 20px 28px;
+    background-position: center;
 }
 
 .element__btn-trash:hover {

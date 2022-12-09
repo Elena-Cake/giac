@@ -1,0 +1,6 @@
+.element__btn-done_type_edit {
+    background-image: url(../../../../images/edit.svg) ;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+}

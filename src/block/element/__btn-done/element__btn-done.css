@@ -1,10 +1,15 @@
 .element__btn-done {
+    height: 30px;
     border: 0;
     background-color: transparent;
     padding: 5px;
     transition: opacity .5s ease;
     opacity: .6;
     grid-area: save;
+    background-image: url(../../../images/done.svg) ;
+    background-repeat: no-repeat;
+    background-size: 38px 35px;
+    background-position: center;
 }
 
 .element__btn-done:hover {
