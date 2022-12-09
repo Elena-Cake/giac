@@ -9,6 +9,8 @@ import {
   inputMassage,
   buttonSaveAll,
 
+  listTableLists
+
 } from '../utils/constans.js'
 
 import Object from '../scripts/Object.js';
@@ -17,43 +19,51 @@ import Section from '../scripts/Section.js';
 
 
 // видимость хедеров таблиц
-const checkVisibleTableHeader = (resultCheckTableEmpty, headerTable) => {
-  if (resultCheckTableEmpty) {
-    headerTable.classList.remove('header-table_hidden')
-  } else {
-    headerTable.classList.add('header-table_hidden')
-  }
+const checkVisibleTableHeader = () => {
+  listTableLists.forEach(tableList => {
+    const resultCheckTableEmpty = isTableNotEmpty(tableList)
+    if (resultCheckTableEmpty) {
+      tableList.classList.remove('header-table_hidden')
+    } else {
+      tableList.classList.add('header-table_hidden')
+    }
+  })
 
 }
 
 // проверка пустоты таблицы
-const checkTableNotEmpty = (listTable) => {
+const isTableNotEmpty = (listTable) => {
   return listTable.querySelector('.element') ? true : false
 }
 
 // rendererCard
-function rendererCard  (wrap)  {
-  const card = generateCard();
-  wrap.addItem(card);
+function rendererCard  (data, section, wrap)  {
+  const card = generateCard(section);
+  wrap.addItem(card, section.listTable);
 }
 
 // добавление карточки
-function generateCard () { 
-  const card = new  Object(dataCard, selectorTemplate,'.elements__list')
+function generateCard (section) { 
+  const card = new Object(section, checkVisibleTableHeader)
                     .createCard()
   return card                 
 }
 
 // списки для добавления
  
-// const renderItem = (thisContainer, list) => {
+// const renderItem = (thisContainer, selectorList) => {
 //   return new Section({
 //         renderer: rendererCard(thisContainer)
 //       }, list);
 //     }
-//     const objectListApproach = renderItem(objectListApproach, '.approach__list');
+//     const objectListApproach = renderItem(objectListApproach, selectorList);
 
 
+const section = (selectorContauner) => { new Section({
+  data: cards,
+  renderer: rendererCard
+}, selectorContauner);
+}
 //  approach
 const objectListApproach = new Section({
   renderer: () => {
@@ -95,39 +105,36 @@ const objectListCondition = new Section({
   }, '.spacecraft__list');
 
 // проверка пустоты таблиц
-checkVisibleTableHeader (checkTableNotEmpty(Condition.listTable), Condition.headerTable)
-checkVisibleTableHeader (checkTableNotEmpty(Destroy.listTable), Destroy.headerTable)
-checkVisibleTableHeader (checkTableNotEmpty(Deorbit.listTable), Deorbit.headerTable)
-checkVisibleTableHeader (checkTableNotEmpty(Approach.listTable), Approach.headerTable)
-checkVisibleTableHeader (checkTableNotEmpty(Spacecraft.listTable), Spacecraft.headerTable)
+checkVisibleTableHeader ()
 
 
 // прожатие кнопки добавления объектов
-function addListenerButtonAdd (section, objectList, checkVisibleTableHeader, checkTableNotEmpty) {
+function addListenerButtonAdd (section, objectList) {
   section.buttonAdd.addEventListener('click', ()=>{
-    addElement(section, objectList, checkVisibleTableHeader, checkTableNotEmpty)
-    checkVisibleTableHeader (checkTableNotEmpty(section.listTable), section.headerTable)
+    addElement(section, objectList)
+    checkVisibleTableHeader ()
   });
 }
 
-// кнопки добавления объектов
-addListenerButtonAdd(Condition, objectListCondition, checkVisibleTableHeader, checkTableNotEmpty)
-addListenerButtonAdd(Destroy, objectListDestroy, checkVisibleTableHeader, checkTableNotEmpty)
-addListenerButtonAdd(Deorbit, objectListDeorbit, checkVisibleTableHeader, checkTableNotEmpty)
-addListenerButtonAdd(Approach , objectListApproach, checkVisibleTableHeader, checkTableNotEmpty)
-addListenerButtonAdd(Spacecraft, objectListSpacecraft, checkVisibleTableHeader, checkTableNotEmpty)
-
 
 // функция добавления КO, KA, Collision
-function addElement({selectorTemplate, listTable, headerTable}, elementsList, checkVisibleTableHeader, checkTableNotEmpty) {
-  const obj = new Object( selectorTemplate, checkVisibleTableHeader, checkTableNotEmpty
-                        , listTable, headerTable).createCard()
+function addElement({selectorTemplate, listTable, headerTable}, elementsList) {
+  const obj = new Object( {selectorTemplate, listTable, headerTable}
+                        , checkVisibleTableHeader).createCard()
   addCard (elementsList, obj)
 }
 
 function addCard(listClass, obj) {
   listClass.addItem(obj)
 }
+
+
+// кнопки добавления объектов
+addListenerButtonAdd(Condition, objectListCondition)
+addListenerButtonAdd(Destroy, objectListDestroy)
+addListenerButtonAdd(Deorbit, objectListDeorbit)
+addListenerButtonAdd(Approach , objectListApproach)
+addListenerButtonAdd(Spacecraft, objectListSpacecraft)
 
 
 function getInputValues (inputList) {
@@ -148,7 +155,7 @@ buttonSaveAll.addEventListener('click', () =>{
 
 
 // Condition
-if (checkTableNotEmpty(Condition.listTable)) {
+if (isTableNotEmpty(Condition.listTable)) {
   data.Directive.Condition  = {}
   const info = data.Directive.Condition.ObjectInfos = []
   const elementsList = (document.querySelector('.condition__list').querySelectorAll('.element'));
@@ -159,7 +166,7 @@ if (checkTableNotEmpty(Condition.listTable)) {
   })
 }
 // Destroy
-if (checkTableNotEmpty(Destroy.listTable)) {
+if (isTableNotEmpty(Destroy.listTable)) {
   data.Directive.BreakUp  = {}
   const info = data.Directive.BreakUp.ObjectInfos = []
   const elementsList = (document.querySelector('.destroy__list').querySelectorAll('.element'));
@@ -170,7 +177,7 @@ if (checkTableNotEmpty(Destroy.listTable)) {
   })
 }
 // Deorbit
-if (checkTableNotEmpty(Deorbit.listTable)) {
+if (isTableNotEmpty(Deorbit.listTable)) {
   data.Directive.Deorbit  = {}
   const info = data.Directive.Deorbit.ObjectInfos = []
   const elementsList = (document.querySelector('.deorbit__list').querySelectorAll('.element'));
@@ -181,7 +188,7 @@ if (checkTableNotEmpty(Deorbit.listTable)) {
   })
 }
 // Spacecraft
-if (checkTableNotEmpty(Spacecraft.listTable)) {
+if (isTableNotEmpty(Spacecraft.listTable)) {
   data.Directive.ConditionKA  = {}
   const info = data.Directive.ConditionKA.ObjectInfos = []
   const elementsList = (document.querySelector('.spacecraft__list').querySelectorAll('.element'));
@@ -192,7 +199,7 @@ if (checkTableNotEmpty(Spacecraft.listTable)) {
   })
 }
 // Approach
-if (checkTableNotEmpty(Approach.listTable)) {
+if (isTableNotEmpty(Approach.listTable)) {
   data.Directive.CollisionApproach  = {}
   const info = data.Directive.CollisionApproach.Pairs = []
   const elementsList = (document.querySelector('.approach__list').querySelectorAll('.element'));

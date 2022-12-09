@@ -11,6 +11,7 @@ export const inputMassage = document.querySelector('.massage__text');
 //main button
 export const buttonSaveAll = document.querySelector('.form__btn-save') 
 
+export const listTableLists = document.querySelectorAll('.table__list') 
 
 export const Assingment = {
     inputList : document.querySelector('.assingment').querySelectorAll('.assingment__input')
