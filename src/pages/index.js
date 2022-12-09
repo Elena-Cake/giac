@@ -16,7 +16,9 @@ import {
 import Object from '../scripts/Object.js';
 import Section from '../scripts/Section.js';
 
-
+//___________________________________
+//  Проверка таблиц
+//___________________________________
 
 // видимость хедеров таблиц
 const checkVisibleTableHeader = () => {
@@ -28,13 +30,20 @@ const checkVisibleTableHeader = () => {
       tableList.classList.add('header-table_hidden')
     }
   })
-
 }
 
 // проверка пустоты таблицы
 const isTableNotEmpty = (listTable) => {
   return listTable.querySelector('.element') ? true : false
 }
+
+// проверка пустоты таблиц при загрузке
+checkVisibleTableHeader ()
+
+
+//___________________________________
+//  Отрисовка карточек
+//___________________________________
 
 // rendererCard
 function rendererCard  (data, section, wrap)  {
@@ -44,98 +53,48 @@ function rendererCard  (data, section, wrap)  {
 
 // добавление карточки
 function generateCard (section) { 
-  const card = new Object(section, checkVisibleTableHeader)
-                    .createCard()
+  const card = new Object(section, checkVisibleTableHeader).createCard()
   return card                 
 }
 
-// списки для добавления
- 
-// const renderItem = (thisContainer, selectorList) => {
-//   return new Section({
-//         renderer: rendererCard(thisContainer)
-//       }, list);
-//     }
-//     const objectListApproach = renderItem(objectListApproach, selectorList);
-
-
-const section = (selectorContauner) => { new Section({
-  data: cards,
+const section =  new Section({
   renderer: rendererCard
-}, selectorContauner);
-}
-//  approach
-const objectListApproach = new Section({
-  renderer: () => {
-    const card = generateCard();
-    objectListApproach.addItem(card);
-  }
-}, '.approach__list');
+});
 
-//   condition
-const objectListCondition = new Section({
-    renderer: () => {
-      const card = generateCard();
-      objectListCondition.addItem(card);
-    }
-  }, '.condition__list');
 
-//   destroy
-  const objectListDestroy = new Section({
-    renderer: () => {
-      const card = generateCard();
-      objectListDestroy.addItem(card);
-    }
-  }, '.destroy__list');
-
-//   deorbit
-  const objectListDeorbit = new Section({
-    renderer: () => {
-      const card = generateCard();
-      objectListDeorbit.addItem(card);
-    }
-  }, '.deorbit__list');
-
-//   spacecraft
-  const objectListSpacecraft = new Section({
-    renderer: () => {
-      const card = generateCard();
-      objectListSpacecraft.addItem(card);
-    }
-  }, '.spacecraft__list');
-
-// проверка пустоты таблиц
-checkVisibleTableHeader ()
-
+//___________________________________
+//  Кнопки добавления
+//___________________________________
 
 // прожатие кнопки добавления объектов
-function addListenerButtonAdd (section, objectList) {
+function addListenerButtonAdd (section) {
   section.buttonAdd.addEventListener('click', ()=>{
-    addElement(section, objectList)
+    addElement(section)
     checkVisibleTableHeader ()
   });
 }
 
-
 // функция добавления КO, KA, Collision
-function addElement({selectorTemplate, listTable, headerTable}, elementsList) {
+function addElement({selectorTemplate, listTable, headerTable}) {
   const obj = new Object( {selectorTemplate, listTable, headerTable}
                         , checkVisibleTableHeader).createCard()
-  addCard (elementsList, obj)
+  addCard(listTable, obj)
 }
 
-function addCard(listClass, obj) {
-  listClass.addItem(obj)
+function addCard(listTable, obj) {
+  section.addItem(obj, listTable)
 }
-
 
 // кнопки добавления объектов
-addListenerButtonAdd(Condition, objectListCondition)
-addListenerButtonAdd(Destroy, objectListDestroy)
-addListenerButtonAdd(Deorbit, objectListDeorbit)
-addListenerButtonAdd(Approach , objectListApproach)
-addListenerButtonAdd(Spacecraft, objectListSpacecraft)
+addListenerButtonAdd(Condition)
+addListenerButtonAdd(Destroy)
+addListenerButtonAdd(Deorbit)
+addListenerButtonAdd(Approach)
+addListenerButtonAdd(Spacecraft)
 
+//___________________________________
+//  Сборка объекта
+//___________________________________
 
 function getInputValues (inputList) {
   const inputsValues = {}
@@ -145,6 +104,15 @@ function getInputValues (inputList) {
   return inputsValues
 }
 
+function createSimpleObject (section, info) {
+  const elementsList = (section.listTable.querySelectorAll('.element'));
+  
+  elementsList.forEach((element) => {
+    const inputList = element.querySelectorAll('.item__input')
+    info.push(getInputValues(inputList))
+  })
+  return info
+}
 
 const data = {}
 // сбор данных в объект
@@ -157,46 +125,26 @@ buttonSaveAll.addEventListener('click', () =>{
 // Condition
 if (isTableNotEmpty(Condition.listTable)) {
   data.Directive.Condition  = {}
-  const info = data.Directive.Condition.ObjectInfos = []
-  const elementsList = (document.querySelector('.condition__list').querySelectorAll('.element'));
-  
-  elementsList.forEach((element) => {
-    const inputList = element.querySelectorAll('.item__input')
-    info.push(getInputValues(inputList))
-  })
+  let info = data.Directive.Condition.ObjectInfos = []
+  info = createSimpleObject(Condition, info)
 }
 // Destroy
 if (isTableNotEmpty(Destroy.listTable)) {
   data.Directive.BreakUp  = {}
-  const info = data.Directive.BreakUp.ObjectInfos = []
-  const elementsList = (document.querySelector('.destroy__list').querySelectorAll('.element'));
-  
-  elementsList.forEach((element) => {
-    const inputList = element.querySelectorAll('.item__input')
-    info.push(getInputValues(inputList))
-  })
+  let info = data.Directive.BreakUp.ObjectInfos = []
+  info = createSimpleObject(Destroy, info)
 }
 // Deorbit
 if (isTableNotEmpty(Deorbit.listTable)) {
   data.Directive.Deorbit  = {}
-  const info = data.Directive.Deorbit.ObjectInfos = []
-  const elementsList = (document.querySelector('.deorbit__list').querySelectorAll('.element'));
-  
-  elementsList.forEach((element) => {
-    const inputList = element.querySelectorAll('.item__input')
-    info.push(getInputValues(inputList))
-  })
+  let info = data.Directive.Deorbit.ObjectInfos = []
+  info = createSimpleObject(Deorbit, info)
 }
 // Spacecraft
 if (isTableNotEmpty(Spacecraft.listTable)) {
   data.Directive.ConditionKA  = {}
-  const info = data.Directive.ConditionKA.ObjectInfos = []
-  const elementsList = (document.querySelector('.spacecraft__list').querySelectorAll('.element'));
-  
-  elementsList.forEach((element) => {
-    const inputList = element.querySelectorAll('.item__input')
-    info.push(getInputValues(inputList))
-  })
+  let info = data.Directive.ConditionKA.ObjectInfos = []
+  info = createSimpleObject(Spacecraft, info)
 }
 // Approach
 if (isTableNotEmpty(Approach.listTable)) {
@@ -221,6 +169,6 @@ if (isTableNotEmpty(Approach.listTable)) {
     info.push(obj)
   })
 }
-
+// итоговый объект
     console.log (data)
 })
