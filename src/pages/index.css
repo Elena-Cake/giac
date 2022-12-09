@@ -17,6 +17,7 @@
 @import url(../block/table/__text/table__text.css);
 @import url(../block/table/__btn-save/table__btn-save.css);
 @import url(../block/table/__list/table__list.css);
+@import url(../block/table/__list/_size_l/table__list_size_l.css);
 @import url(../block/table/__objects/table__objects.css);
 @import url(../block/table/__add-table/table__add-table.css);
 @import url(../block/table/__select/table__select.css);
