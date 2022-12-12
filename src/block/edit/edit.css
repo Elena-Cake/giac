@@ -1,13 +1,3 @@
 .edit{
-    display: wrap;
-}
-
-.edit__title {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.item__input {
-    min-width: 200px;
-    width: 10%;
+    padding: 20px 0;
 }

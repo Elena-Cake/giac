@@ -10,25 +10,32 @@
     <header class="header"></header>
     <main class="main">
         <section class="edit">
-            <h2 class="edit__title">Задание &#8470;</h2>
-                <input class="item__input" type="text" name="Num" id="" placeholder="XXXX" required>
-                <h2 class="edit__title">от</h2>
-                <input class="item__input" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
+            <h2 class="edit__title">Поиск и редактирование существующих заданий:</h2>
+            <form class="edit__data">
+                <p class="edit__title">Задание &#8470;</p>
+                <input class="edit__input" type="text" name="Num" id="" placeholder="XXXX" required>
+                <p class="edit__title">от</p>
+                <input class="edit__input" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
                         name="TaskEpoch" id="" required>
-                <h2 class="edit__title">на выполнение работ КСОЭС</h2>
-                <h2 class="edit__title">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
-                <input class="item__input" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+                <p class="edit__title">на выполнение работ КСОЭС</p>
+                <p class="edit__title">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</p>
+                <input class="edit__input" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+                <button class="button__add edit__btn-add">Найти</button>
+            </form>
         </section>
         <form class="form">
             <section class="assingment">
-                <h2 class="assingment__title">Задание &#8470;</h2>
-                <input class="assingment__input assingment__input-num" type="text" name="Num" id="" placeholder="XXXX" required>
-                <h2 class="assingment__title">от</h2>
-                <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
-                        name="TaskEpoch" id="" required>
-                <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
-                <h2 class="assingment__title assingment__title_type_start">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
-                <input class="assingment__input assingment__input-name" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+                <h2 class="assingment__title">Создание заданий:</h2>
+                <div class="assingment__data">
+                    <h2 class="assingment__title">Задание &#8470;</h2>
+                    <input class="assingment__input assingment__input-num" type="text" name="Num" id="" placeholder="XXXX" required>
+                    <h2 class="assingment__title">от</h2>
+                    <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
+                            name="TaskEpoch" id="" required>
+                    <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
+                    <h2 class="assingment__title assingment__title_type_start">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
+                    <input class="assingment__input assingment__input-name" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+                </div>
             </section>
         
             <section class="approach list">

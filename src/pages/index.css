@@ -5,8 +5,13 @@
 @import url(../block/button/__add/button__add.css);
 
 @import url(../block/edit/edit.css);
+@import url(../block/edit/__data/edit__data.css);
+@import url(../block/edit/__title/edit__title.css);
+@import url(../block/edit/__input/edit__input.css);
+@import url(../block/edit/__btn-add/edit__btn-add.css);
 
 @import url(../block/assingment/assingment.css);
+@import url(../block/assingment/__data/assingment__data.css);
 @import url(../block/assingment/__title/assingment__title.css);
 @import url(../block/assingment/__title/_type/assingment__title_type_start.css);
 @import url(../block/assingment/__input/assingment__input.css);
