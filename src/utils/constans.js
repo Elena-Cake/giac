@@ -1,5 +1,5 @@
 
-
+export const formFindDocument = document.querySelector('.edit__data');
 export const formAddDocument = document.querySelector('.form');
 
 // buttons
@@ -15,6 +15,10 @@ export const inputMassage = document.querySelector('.massage__text');
 export const buttonSaveAll = document.querySelector('.form__btn-save') 
 
 export const listTableLists = document.querySelectorAll('.table__list') 
+
+export const Edit = {
+    inputList : document.querySelector('.edit').querySelectorAll('.edit__input')
+}
 
 export const Assingment = {
     inputList : document.querySelector('.assingment').querySelectorAll('.assingment__input')

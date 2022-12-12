@@ -1,3 +1,4 @@
 .edit__btn-add {
-    width: 100px;
+    max-width: 100px;
+    margin:  0 0 0 10%;
 }
