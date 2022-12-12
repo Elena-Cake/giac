@@ -9,108 +9,126 @@
 <body class="page">
     <header class="header"></header>
     <main class="main">
-        <section class="assingment">
-            <h2 class="assingment__title">Задание &#8470;</h2>
-            <input class="assingment__input assingment__input-num" type="text" name="Num" id="" placeholder="XXXX" required>
-            <h2 class="assingment__title">от</h2>
-            <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
-                    name="TaskEpoch" id="" required>
-            <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
-            <h2 class="assingment__title assingment__title_type_start">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
-            <input class="assingment__input assingment__input-name" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+        <section class="edit">
+            <h2 class="edit__title">Поиск и редактирование существующих заданий:</h2>
+            <form class="edit__data">
+                <p class="edit__title">Задание &#8470;</p>
+                <input class="edit__input" type="text" name="Num" id="" placeholder="XXXX" required>
+                <p class="edit__title">от</p>
+                <input class="edit__input" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
+                        name="TaskEpoch" id="">
+                <p class="edit__title">на выполнение работ КСОЭС</p>
+                <p class="edit__title">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</p>
+                <input class="edit__input" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
+                <button class="button__add edit__btn-add" type="submit">Найти</button>
+            </form>
         </section>
-       
-        <section class="approach list">
-            <h3 class="table__title">Контроль опасных ситуаций</h3>
-            <div class="table__item ">
-                <h4 class="table__title">Контроль сближений</h4>
-                <button class="button__add approach__btn-add">Добавить сближение</button>
-            </div>
-            <div class="table__list approach__list table__list_size_l">
-                <div class="list__header-table approach__header-table approach__list-structure">
-                    <p class="objects__text list__type">Тип орбиты</p>
-                    <div class="list__item">
-                        <p class="objects__text list__inter">Международный&nbsp;№</p>
-                        <p class="objects__text list__norad">№NORAD</p>
-                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
-                    </div>
-                    <p class="objects__text list__time">Время сближения</p>
+        <form class="form">
+            <section class="assingment">
+                <h2 class="assingment__title">Создание заданий:</h2>
+                <div class="assingment__data">
+                    <h2 class="assingment__title">Задание &#8470;</h2>
+                    <input class="assingment__input assingment__input-num" type="text" name="Num" id="" placeholder="XXXX" required>
+                    <h2 class="assingment__title">от</h2>
+                    <input class="assingment__input assingment__input-date" type="datetime-local" value="2013-10-24T20:36:00" step="1" 
+                            name="TaskEpoch" id="" required>
+                    <h2 class="assingment__title">на выполнение работ КСОЭС</h2>
+                    <h2 class="assingment__title assingment__title_type_start">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</h2>
+                    <input class="assingment__input assingment__input-name" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
                 </div>
-            </div>  
-        </section>
-
-        <section class="list condition">
-            <div class="table__item ">
-                <h4 class="table__title">Контроль состояния КО</h4>
-                <button class="button__add condition__btn-add">Добавить КО</button>
-            </div>
-            <div class="table__list condition__list">
-                <div class="list__header-table condition__header-table condition__list-structure">
-                    <div class="list__item">
-                        <p class="objects__text list__inter">Международный&nbsp;№</p>
-                        <p class="objects__text list__norad">№NORAD</p>
-                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
-                    </div>
+            </section>
+        
+            <section class="approach list">
+                <h3 class="table__title">Контроль опасных ситуаций</h3>
+                <div class="table__item ">
+                    <h4 class="table__title">Контроль сближений</h4>
+                    <button class="button__add approach__btn-add">Добавить сближение</button>
                 </div>
-            </div>
-        </section>
-
-        <section class="list destroy">
-            <div class="table__item ">
-                <h4 class="table__text">Выявление фактов разрушения КО</h4>
-                <button class=" button__add destroy__btn-add">Добавить разрушенный КО</button>
-            </div>
-            <div class="table__list destroy__list">
-                <div class="list__header-table destroy__header-table condition__list-structure">
-                    <div class="list__item">
-                        <p class="objects__text list__inter">Международный&nbsp;№</p>
-                        <p class="objects__text list__norad">№NORAD</p>
-                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                <div class="table__list approach__list table__list_size_l">
+                    <div class="list__header-table approach__header-table approach__list-structure">
+                        <p class="objects__text list__type">Тип орбиты</p>
+                        <div class="list__item">
+                            <p class="objects__text list__inter">Международный&nbsp;№</p>
+                            <p class="objects__text list__norad">№NORAD</p>
+                            <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                        </div>
+                        <p class="objects__text list__time">Время сближения</p>
                     </div>
-                </div>
-            </div>
-        </section>
+                </div>  
+            </section>
 
-        <section class="list deorbit">
-            <div class="table__item ">
-                <h4 class="table__text">Выявление фактов схождения КО с орбиты</h4>
-                <button class="button__add deorbit__btn-add">Добавить сошедший с орбиты КО</button>
-            </div>
-            <div class="table__list deorbit__list">
-                <div class="list__header-table deorbit__header-table condition__list-structure">
-                    <div class="list__item">
-                        <p class="objects__text list__inter">Международный&nbsp;№</p>
-                        <p class="objects__text list__norad">№NORAD</p>
-                        <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+            <section class="list condition">
+                <div class="table__item ">
+                    <h4 class="table__title">Контроль состояния КО</h4>
+                    <button class="button__add condition__btn-add">Добавить КО</button>
+                </div>
+                <div class="table__list condition__list">
+                    <div class="list__header-table condition__header-table condition__list-structure">
+                        <div class="list__item">
+                            <p class="objects__text list__inter">Международный&nbsp;№</p>
+                            <p class="objects__text list__norad">№NORAD</p>
+                            <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="list spacecraft table">
-            <div class="table__item ">
-                <h4 class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</h4>
-                <button class="button__add spacecraft__btn-add">Добавить КА</button>
-            </div>
-            
-            <div class="table__list spacecraft__list table__list_size_l">
-                <div class="list__header-table spacecraft__header-table spacecraft__list-structure">
-                    <p class="objects__text list__name">Наименование КА</p>
-                    <p class="objects__text list__inter">Международный № КА</p>
-                    <p class="objects__text list__giac">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
-                    <p class="objects__text list__norad">№ КА в каталоге  NORAD</p>
+            <section class="list destroy">
+                <div class="table__item ">
+                    <h4 class="table__text">Выявление фактов разрушения КО</h4>
+                    <button class=" button__add destroy__btn-add">Добавить разрушенный КО</button>
                 </div>
-            </div>
-        </section>
+                <div class="table__list destroy__list">
+                    <div class="list__header-table destroy__header-table condition__list-structure">
+                        <div class="list__item">
+                            <p class="objects__text list__inter">Международный&nbsp;№</p>
+                            <p class="objects__text list__norad">№NORAD</p>
+                            <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section class="massage">
-            <p class="massage__title table__text">Неформализованные сообщения</p>
-            <input class="massage__text"type="text" name="massage" id="" placeholder="Напишите сообщение">
-        </section>
+            <section class="list deorbit">
+                <div class="table__item ">
+                    <h4 class="table__text">Выявление фактов схождения КО с орбиты</h4>
+                    <button class="button__add deorbit__btn-add">Добавить сошедший с орбиты КО</button>
+                </div>
+                <div class="table__list deorbit__list">
+                    <div class="list__header-table deorbit__header-table condition__list-structure">
+                        <div class="list__item">
+                            <p class="objects__text list__inter">Международный&nbsp;№</p>
+                            <p class="objects__text list__norad">№NORAD</p>
+                            <p class="objects__text list__giac">№ГИАЦ АСПОС</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <button class=" form__btn-save button__add">Добавить задание</button>
-        <!-- <button class=" button__add form__btn-reset">Очистить поля</button> -->
+            <section class="list spacecraft table">
+                <div class="table__item ">
+                    <h4 class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</h4>
+                    <button class="button__add spacecraft__btn-add">Добавить КА</button>
+                </div>
+                
+                <div class="table__list spacecraft__list table__list_size_l">
+                    <div class="list__header-table spacecraft__header-table spacecraft__list-structure">
+                        <p class="objects__text list__name">Наименование КА</p>
+                        <p class="objects__text list__inter">Международный № КА</p>
+                        <p class="objects__text list__giac">№ КА в каталоге  ГИАЦ АСПОС ОКП</p>
+                        <p class="objects__text list__norad">№ КА в каталоге  NORAD</p>
+                    </div>
+                </div>
+            </section>
 
+            <section class="massage">
+                <p class="massage__title table__text">Неформализованные сообщения</p>
+                <input class="massage__text"type="text" name="massage" id="" placeholder="Напишите сообщение">
+            </section>
+
+            <button class=" form__btn-save button__add" type="submit">Добавить задание</button>
+            <button class=" button__add form__btn-reset" type="reset">Очистить поля</button>
+        </form>
     </main>
 
     <template class="elements__list-approach">

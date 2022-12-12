@@ -1,5 +1,9 @@
 import './index.css';
 import {
+  formFindDocument,
+  formAddDocument,
+
+  Edit,
   Assingment,
 
   Approach,
@@ -113,9 +117,12 @@ function createSimpleObject (section, info) {
   return info
 }
 
-const data = {}
+let data = {}
 // сбор данных в объект
-buttonSaveAll.addEventListener('click', () =>{
+
+formAddDocument.addEventListener('submit', (evt) =>{
+  data = {}
+    evt.preventDefault();
     data.TaskNum = getInputValues (Assingment.inputList)
     data.Directive = {}
     data.Message = inputMassage.value
@@ -170,4 +177,17 @@ if (isTableNotEmpty(Approach.listTable)) {
 }
 // итоговый объект
     console.log (data)
+})
+
+
+//___________________________________
+//  запрос объекта (сбор из полей)
+//___________________________________
+
+formFindDocument.addEventListener('submit', (evt)=> {
+  data = {}
+    evt.preventDefault();
+    data.TaskNum = getInputValues (Edit.inputList)
+
+  console.log(data)
 })
