@@ -5,7 +5,7 @@
 // попап просмотра фото
 
 export default class Object{
-    constructor( selectorTemplate, checkVisibleTableHeader, elementsList, headerTable) {
+    constructor({selectorTemplate, elementsList, headerTable}, checkVisibleTableHeader) {
       this.selectorTemplate = selectorTemplate
       this._containerCards =  document.querySelector(this.selectorTemplate) 
       this._checkVisibleTableHeader = checkVisibleTableHeader
@@ -34,12 +34,14 @@ export default class Object{
     }
   
     _setEventListeners() {
-      this._buttonTrash.addEventListener('click', this._remove);
+      this._buttonTrash.addEventListener('click', this.removeButton = () => { 
+        this._remove()
+      })
       this._buttonSave.addEventListener('click', this._save);
     }
 
     _removeEventListeners() {
-      this._buttonTrash.removeEventListener('click', this._remove);
+      this._buttonTrash.removeEventListener('click', this.removeButton);
       this._buttonSave.removeEventListener('click', this._save);
     }
   
@@ -57,10 +59,10 @@ export default class Object{
       })
     }
 
-     _remove = () => {
+     _remove () {
       this._removeEventListeners()
       this._element.remove()
-      this._checkVisibleTableHeader(this._elementsList, this._headerTable)
+      this._checkVisibleTableHeader()
     }
 
   }

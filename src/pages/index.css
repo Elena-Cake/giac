@@ -6,6 +6,7 @@
 
 @import url(../block/assingment/assingment.css);
 @import url(../block/assingment/__title/assingment__title.css);
+@import url(../block/assingment/__title/_type/assingment__title_type_start.css);
 @import url(../block/assingment/__input/assingment__input.css);
 
 @import url(../block/danger/danger.css);
@@ -14,8 +15,8 @@
 @import url(../block/table/__title/table__title.css);
 @import url(../block/table/__item/table__item.css);
 @import url(../block/table/__text/table__text.css);
-@import url(../block/table/__btn-save/table__btn-save.css);
 @import url(../block/table/__list/table__list.css);
+@import url(../block/table/__list/_size_l/table__list_size_l.css);
 @import url(../block/table/__objects/table__objects.css);
 @import url(../block/table/__add-table/table__add-table.css);
 @import url(../block/table/__select/table__select.css);
@@ -58,7 +59,6 @@
 @import url(../block/element/__type-orbit/element__type-orbit.css);
 @import url(../block/element/__item/_place/element__item_place_approach.css);
 
-@import url(../block/approach/__header-table/approach__header-table.css);
 
 @import url(../block/approach/__list-structure/approach__list-structure.css);
 @import url(../block/condition/__list-structure/condition__list-structure.css);

@@ -7,6 +7,9 @@
     background-color: rgba(38, 29, 126, 0.445);
     color: #000;
     transition: background-color .5s ease;
+    width: 200px;
+    margin: 0 0 0 auto;
+    min-height: 40px;
 }
 
 .button__add:hover {
