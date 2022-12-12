@@ -2,7 +2,13 @@
 .header{background-color:#010869;height:40px;margin:0;padding:0;width:100%}
 .main{margin:0 auto;max-width:1070px;padding:20px 0;width:90%}
 .button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;margin:0 0 0 auto;min-height:40px;min-width:200px;padding:5px 10px;transition:background-color .5s ease;width:200px}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
-.assingment{display:flex;flex-wrap:wrap;padding:15px 0}
+.edit{padding:20px 0}
+.edit__data{display:flex;flex-wrap:wrap}
+.edit__title{align-self:center;font-size:18px;font-weight:400;margin:3px 10px 3px 0}
+.edit__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:100px;padding:5px 10px}
+.edit__btn-add{margin:0 0 0 10%;max-width:100px}
+.assingment{padding:15px 0}
+.assingment__data{display:flex;flex-wrap:wrap}
 .assingment__title{margin:7px 0}
 .assingment__title_type_start{min-width:63.5%}
 .assingment__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:150px;padding:5px 10px}
@@ -16,13 +22,13 @@
 .table__objects{display:grid;grid-template-areas:"table table" ". add"}
 .table__add-table{margin:10px 0 10px 50px}
 .table__select{border:0;border-bottom:1px solid #9b9b9b;margin:2px 5px;padding:5px 10px}
-.list{margin:0 auto;max-width:900px;padding:10px 0;width:100%}
+.list{margin:0 auto 0 3%;max-width:900px;padding:10px 0;width:100%}
 .list__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:repeat(3,200px);margin:5px 0;padding:0}
 .massage{display:grid;grid-template-columns:20% auto;margin:0;padding:30px 0 20px}
 .massage__text{border:0;border-bottom:1px solid grey;margin:0;max-width:650px;padding:5px 15px;width:100%}
 .form__button{margin:30px 0}
 .form__btn-save{border-radius:25px;min-height:50px;min-width:200px}
-.form__btn-reset{background-color:rgba(128,0,0,.541)}.form__btn-reset:hover{background-color:rgba(128,0,0,.829)}
+.form__btn-reset{background-color:rgba(128,0,0,.541);border-radius:25px;margin-left:2%;min-height:50px;min-width:200px}.form__btn-reset:hover{background-color:rgba(128,0,0,.829)}
 
 
 .objects__text{margin:0 auto;text-align:center}
