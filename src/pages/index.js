@@ -11,7 +11,6 @@ import {
   Spacecraft,
      
   inputMassage,
-  buttonSaveAll,
 
   listTableLists
 
@@ -191,3 +190,9 @@ formFindDocument.addEventListener('submit', (evt)=> {
 
   console.log(data)
 })
+
+
+//___________________________________
+//  отрисовка полученного задания
+//___________________________________
+
