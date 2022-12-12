@@ -16,7 +16,7 @@
                 <input class="edit__input" type="text" name="Num" id="" placeholder="XXXX" required>
                 <p class="edit__title">от</p>
                 <input class="edit__input" type="datetime-local" value="" step="1" 
-                        name="TaskEpoch" id="">
+                        name="TaskEpoch" id="" required>
                 <p class="edit__title">на выполнение работ КСОЭС</p>
                 <p class="edit__title">Ответственное лицо ОТГ ГИАЦ АСПОС ОКП</p>
                 <input class="edit__input" type="text" name="ShiftBoss" id="" placeholder="Иванов А.А.">
@@ -42,7 +42,7 @@
                 <h3 class="table__title">Контроль опасных ситуаций</h3>
                 <div class="table__item ">
                     <h4 class="table__title">Контроль сближений</h4>
-                    <button class="button__add approach__btn-add">Добавить сближение</button>
+                    <button class="button__add approach__btn-add" type="button">Добавить сближение</button>
                 </div>
                 <div class="table__list approach__list table__list_size_l">
                     <div class="list__header-table approach__header-table approach__list-structure">
@@ -60,7 +60,7 @@
             <section class="list condition">
                 <div class="table__item ">
                     <h4 class="table__title">Контроль состояния КО</h4>
-                    <button class="button__add condition__btn-add">Добавить КО</button>
+                    <button class="button__add condition__btn-add" type="button">Добавить КО</button>
                 </div>
                 <div class="table__list condition__list">
                     <div class="list__header-table condition__header-table condition__list-structure">
@@ -76,7 +76,7 @@
             <section class="list destroy">
                 <div class="table__item ">
                     <h4 class="table__text">Выявление фактов разрушения КО</h4>
-                    <button class=" button__add destroy__btn-add">Добавить разрушенный КО</button>
+                    <button class=" button__add destroy__btn-add" type="button">Добавить разрушенный КО</button>
                 </div>
                 <div class="table__list destroy__list">
                     <div class="list__header-table destroy__header-table condition__list-structure">
@@ -92,7 +92,7 @@
             <section class="list deorbit">
                 <div class="table__item ">
                     <h4 class="table__text">Выявление фактов схождения КО с орбиты</h4>
-                    <button class="button__add deorbit__btn-add">Добавить сошедший с орбиты КО</button>
+                    <button class="button__add deorbit__btn-add" type="button">Добавить сошедший с орбиты КО</button>
                 </div>
                 <div class="table__list deorbit__list">
                     <div class="list__header-table deorbit__header-table condition__list-structure">
@@ -108,7 +108,7 @@
             <section class="list spacecraft table">
                 <div class="table__item ">
                     <h4 class="table__title">Изменение перечня контролируемых КА для выявления опасных сближений:</h4>
-                    <button class="button__add spacecraft__btn-add">Добавить КА</button>
+                    <button class="button__add spacecraft__btn-add" type="button">Добавить КА</button>
                 </div>
                 
                 <div class="table__list spacecraft__list table__list_size_l">
