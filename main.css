@@ -1,24 +1,25 @@
 .page{margin:0;padding:0}
 .header{background-color:#010869;height:40px;margin:0;padding:0;width:100%}
 .main{margin:0 auto;max-width:1070px;padding:20px 0;width:90%}
-.button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;min-width:200px;padding:5px 10px;transition:background-color .5s ease}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
-.assingment{display:flex;padding:15px 0}
-.assingment__title{margin:0}
-.assingment__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;min-width:150px;padding:5px 10px}
+.button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;margin:0 0 0 auto;min-height:40px;min-width:200px;padding:5px 10px;transition:background-color .5s ease;width:200px}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
+.assingment{display:flex;flex-wrap:wrap;padding:15px 0}
+.assingment__title{margin:7px 0}
+.assingment__title_type_start{min-width:63.5%}
+.assingment__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:150px;padding:5px 10px}
 .danger{padding:15px 0}
 .table{width:100%}
 .table__title{align-self:center;font-size:18px;font-weight:600;margin:0}
 .table__item{display:flex;justify-content:space-between;margin:5px 0;max-width:750px}
 .table__text{font-size:18px;font-weight:600;margin:0}
-.table__btn-save{grid-area:add;margin:0 0 0 auto;min-height:40px;width:200px}
 .table__list{margin:10px auto 0;width:90%}
+.table__list_size_l{width:100%}
 .table__objects{display:grid;grid-template-areas:"table table" ". add"}
 .table__add-table{margin:10px 0 10px 50px}
 .table__select{border:0;border-bottom:1px solid #9b9b9b;margin:2px 5px;padding:5px 10px}
-.list{padding:10px 0}
-.list__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:repeat(3,200px)}
+.list{margin:0 auto;max-width:900px;padding:10px 0;width:100%}
+.list__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:repeat(3,200px);margin:5px 0;padding:0}
 .massage{display:grid;grid-template-columns:20% auto;margin:0;padding:30px 0 20px}
-.massage__text{border:0;border-bottom:1px solid grey;margin:0;padding:5px 15px;width:100%}
+.massage__text{border:0;border-bottom:1px solid grey;margin:0;max-width:650px;padding:5px 15px;width:100%}
 .form__button{margin:30px 0}
 .form__btn-save{border-radius:25px;min-height:50px;min-width:200px}
 .form__btn-reset{background-color:rgba(128,0,0,.541)}.form__btn-reset:hover{background-color:rgba(128,0,0,.829)}
@@ -46,10 +47,9 @@
 .element__approach{display:flex;margin:7px 0}
 .element__type-orbit{align-self:center;margin:0}
 .element__item_place_approach{grid-template-columns:80px repeat(3,1fr)}
-.approach__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:100px repeat(3,1fr) 250px}
-.approach__list-structure{align-items:center;display:grid;gap:2%;grid-template-areas:"type item time save trash";grid-template-columns:70px 410px 230px repeat(2,50px)}
+.approach__list-structure{align-items:center;display:grid;gap:2%;grid-template-areas:"type item time save trash";grid-template-columns:70px 410px 210px repeat(2,45px)}
 .condition__list-structure{display:grid;gap:2%;grid-template-areas:"item save trash";grid-template-columns:minmax(430px,40%) 40px 40px}
-.spacecraft__list-structure{display:grid;gap:2%;grid-template-areas:"name inter giac norad save trash";grid-template-columns:repeat(4,170px) 50px 50px}
+.spacecraft__list-structure{display:grid;gap:2%;grid-template-areas:"name inter giac norad save trash";grid-template-columns:repeat(4,170px) repeat(2,45px)}
 .spacecraft__header-table{font-weight:500}
 .list__items{grid-area:item}
 .list__item{align-self:center;display:grid;gap:2%;grid-area:item;grid-template-areas:"object inter norad giac";grid-template-columns:30px 150px 90px 120px}
