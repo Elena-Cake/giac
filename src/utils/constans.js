@@ -1,4 +1,7 @@
 
+
+export const formAddDocument = document.querySelector('.form');
+
 // buttons
 
 export const buttonAddDocument = document.querySelector('.form__btn-save');

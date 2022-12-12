@@ -1,5 +1,6 @@
 import './index.css';
 import {
+  formAddDocument,
   Assingment,
 
   Approach,
@@ -115,7 +116,9 @@ function createSimpleObject (section, info) {
 
 const data = {}
 // сбор данных в объект
-buttonSaveAll.addEventListener('click', () =>{
+
+formAddDocument.addEventListener('submit', (evt) =>{
+    evt.preventDefault();
     data.TaskNum = getInputValues (Assingment.inputList)
     data.Directive = {}
     data.Message = inputMassage.value

@@ -1,5 +1,9 @@
 .form__btn-reset {
     background-color: rgba(128, 0, 0, 0.541);
+    margin-left: 2%;
+    border-radius: 25px;
+    min-width: 200px;
+    min-height: 50px;
 }
 
 .form__btn-reset:hover {

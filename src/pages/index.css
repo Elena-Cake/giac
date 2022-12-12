@@ -4,6 +4,8 @@
 @import url(../block/main/main.css);
 @import url(../block/button/__add/button__add.css);
 
+@import url(../block/edit/edit.css);
+
 @import url(../block/assingment/assingment.css);
 @import url(../block/assingment/__title/assingment__title.css);
 @import url(../block/assingment/__title/_type/assingment__title_type_start.css);
