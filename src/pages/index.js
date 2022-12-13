@@ -1,22 +1,17 @@
 import './index.css';
 import {
-  formFindDocument,
-  formAddDocument,
+  formFindDocument,formAddDocument,
 
-  Edit,
-  Assingment,
+  Edit,Assingment,
 
   Approach,
   Condition,Destroy,Deorbit,
   Spacecraft,
      
   inputMassage,
-
   listTableLists,
 
-  buttonAddDocument,
-  buttonResetForm,
-
+  buttonAddDocument, buttonResetForm,
   titleForm
 
   ,objInfo
@@ -50,6 +45,19 @@ const isTableNotEmpty = (listTable) => {
 // проверка пустоты таблиц при загрузке
 checkVisibleTableHeader ()
 
+// обработка формы при сбросе формы
+buttonResetForm.addEventListener('click', ()=>{
+  titleForm.textContent = 'Создание задания:';
+  clearForm(formAddDocument)
+})
+
+// зачистка
+function clearForm (form) {
+  form.reset();
+  const elementsList = document.querySelectorAll('.element')
+  elementsList.forEach(element=> element.remove())
+  checkVisibleTableHeader ()
+}
 
 //___________________________________
 //  Отрисовка карточек
@@ -67,9 +75,8 @@ function generateCard (section) {
   return card                 
 }
 
-const section =  new Section({
-  renderer: rendererCard
-});
+// класс отрисовки
+const section =  new Section({ renderer: rendererCard});
 
 //___________________________________
 //  Кнопки добавления
@@ -106,6 +113,7 @@ addListenerButtonAdd(Spacecraft)
 //  Сборка объекта
 //___________________________________
 
+// сборка значений инпутов в объект
 function getInputValues (inputList) {
   const inputsValues = {}
   inputList.forEach(input => {
@@ -114,20 +122,24 @@ function getInputValues (inputList) {
   return inputsValues
 }
 
+// создание массива внутри объекта согласно количеству элементов
 function createArrayObject (section, info) {
   const elementsList = (section.listTable.querySelectorAll('.element'));
   elementsList.forEach((element) => {
+    info.push(createSimpleObject(element))
   createSimpleObject(element, info)
   })
   return info
 }
 
-function createSimpleObject (element, info) {
+// создание объекта элемента
+function createSimpleObject (element) {
   const inputList = element.querySelectorAll('.item__input')
-  info.push(getInputValues(inputList))
+  return getInputValues(inputList)
 }
 
 let data = {}
+
 // сбор данных в объект
 
 formAddDocument.addEventListener('submit', (evt) =>{
@@ -137,7 +149,7 @@ formAddDocument.addEventListener('submit', (evt) =>{
       data.Directive = {}
       data.Message = inputMassage.value
 
-
+// проверка есть ли элементы в блоке
   // Condition
   if (isTableNotEmpty(Condition.listTable)) {
     data.Directive.Condition  = {}
@@ -186,84 +198,79 @@ formAddDocument.addEventListener('submit', (evt) =>{
   }
   // итоговый объект
       console.log (data)
+  // finnaly
       buttonAddDocument.textContent = 'Добавить задание'
       titleForm.textContent = 'Создание задания:'
       formAddDocument.reset()
 })
 
 
-// обработка названия формы при сбросе формы
-buttonResetForm.addEventListener('click', ()=>{
-  titleForm.textContent = 'Создание задания:'
-})
-
-
 //___________________________________
-//  запрос объекта (сбор из полей)
+//  Создание объекта для отправки на сервер
 //___________________________________
 
 formFindDocument.addEventListener('submit', (evt)=> {
-  data = {}
-    evt.preventDefault();
-    data.TaskNum = getInputValues (Edit.inputList)
+  evt.preventDefault();
+    data = {}
+    // объект для запроса
+    data.TaskNum = getInputValues(Edit.inputList)
+    console.log(data)
 
-  clearForm(formAddDocument)
-  setAssingmentInfo(Assingment,objInfo)
+    // finnaly
+    clearForm(formAddDocument)
 
-  
-  if (objInfo.Directive.CollisionApproach) {
-    const elementsListCollision = objInfo.Directive.CollisionApproach.Pairs;
-    setInfoCollision(Approach, elementsListCollision);
-  }
-  if (objInfo.Directive.Condition) {
-    const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
-    setInfoSimple(Condition, elementsListCondition);
-  }
-  if (objInfo.Directive.BreakUp) {
-    const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
-    setInfoSimple(Destroy, elementsListBrakeUp);
-  }
-  if (objInfo.Directive.Deorbit) {
-    const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
-    setInfoSimple(Deorbit, elementsListDeorbit);
-  }
-  if (objInfo.Directive.ConditionKA) {
-    const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
-    setInfoSimple(Spacecraft, elementsListSpacecraft)
-  }
+    // готовый объект
+    setInfo(objInfo)
+});
 
-  inputMassage.value = objInfo.Message
-  buttonAddDocument.textContent = 'Изменить задание'
-  titleForm.textContent = 'Редактирование задания:'
-})
+// Обработка ответа (objInfo)
+function setInfo (objInfo) {
+    // заполнение полей
+    setAssingmentInfo(Assingment,objInfo)
+    // проверка существует ли блок в ответе
+    if (objInfo.Directive.CollisionApproach) {
+      const elementsListCollision = objInfo.Directive.CollisionApproach.Pairs;
+      setInfoCollision(Approach, elementsListCollision);
+      Approach.listTable.classList.remove('header-table_hidden')
+    }
+    if (objInfo.Directive.Condition) {
+      const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
+      setInfoSimple(Condition, elementsListCondition);
+      Condition.listTable.classList.remove('header-table_hidden')
+    }
+    if (objInfo.Directive.BreakUp) {
+      const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
+      setInfoSimple(Destroy, elementsListBrakeUp);
+      Destroy.listTable.classList.remove('header-table_hidden')
+    }
+    if (objInfo.Directive.Deorbit) {
+      const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
+      setInfoSimple(Deorbit, elementsListDeorbit);
+      Deorbit.listTable.classList.remove('header-table_hidden')
+    }
+    if (objInfo.Directive.ConditionKA) {
+      const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
+      setInfoSimple(Spacecraft, elementsListSpacecraft);
+      Spacecraft.listTable.classList.remove('header-table_hidden')
+    }
 
-function clearForm (form) {
-  form.reset();
-  const elementsList = document.querySelectorAll('.element')
-  elementsList.forEach(element=> element.remove())
-  checkVisibleTableHeader ()
+    inputMassage.value = objInfo.Message
+    buttonAddDocument.textContent = 'Изменить задание'
+    titleForm.textContent = 'Редактирование задания:'
 }
 
-function doNotEditInputs (card) {
-  const listInputs = card.querySelectorAll('.item__input')
-  const buttonSave = card.querySelector('.element__btn-done')
-  listInputs.forEach(input =>{
-      input.readOnly = true
-      buttonSave.classList.add('element__btn-done_type_edit')
-      input.classList.add('item__input_type_readonly')
-   })
-  }
+//___________________________________
+//  функции отрисовки полученного задания 
+//___________________________________
 
-//___________________________________
-//  отрисовка полученного задания 
-//___________________________________
+// заполнение шапки задания
 function setAssingmentInfo (section, objInfo) {
-    
   section.inputList.forEach(input=>{
       input.value = objInfo.TaskNum[input.name]
     })
 }
 
+// создание одноуровневого элемента
 function setInfoSimple (section, elementsList) { 
   elementsList.forEach((element) => {
     const card = addElement(section);
@@ -277,6 +284,7 @@ function setInfoSimple (section, elementsList) {
   })
 }
 
+// создание элемента сближения
 function setInfoCollision (section, elementsList) { 
   elementsList.forEach((element) => {
     const card = addElement(section);
@@ -303,3 +311,17 @@ function setInfoCollision (section, elementsList) {
     doNotEditInputs(card)
   })
 }
+
+// перевод элементов в режим чтения
+function doNotEditInputs (card) {
+  const listInputs = card.querySelectorAll('.item__input')
+  const buttonSave = card.querySelector('.element__btn-done')
+  listInputs.forEach(input =>{
+      input.readOnly = true
+      buttonSave.classList.add('element__btn-done_type_edit')
+      input.classList.add('item__input_type_readonly')
+   })
+  }
+
+
+
