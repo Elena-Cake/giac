@@ -159,7 +159,6 @@ if (isTableNotEmpty(Approach.listTable)) {
   data.Directive.CollisionApproach  = {}
   const info = data.Directive.CollisionApproach.Pairs = []
   const elementsList = (document.querySelector('.approach__list').querySelectorAll('.element'));
-  const id = 1
   
   elementsList.forEach((element, index) => {
     const obj = {}
@@ -191,20 +190,20 @@ formFindDocument.addEventListener('submit', (evt)=> {
     evt.preventDefault();
     data.TaskNum = getInputValues (Edit.inputList)
 
-  // console.log(data)
   clearForm(formAddDocument)
+  setAssingmentInfo(Assingment,objInfo)
 
-  const elementsListCollision = objInfo.Directive.CollisionApproach.ObjectInfos;
+  const elementsListCollision = objInfo.Directive.CollisionApproach.Pairs;
   const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
   const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
   const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
   const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
 
-
-  setInfoKO(Condition, elementsListCondition)
-  setInfoKO(Destroy, elementsListBrakeUp)
-  setInfoKO(Deorbit, elementsListDeorbit)
-  setInfoKO(Spacecraft, elementsListSpacecraft)
+  setInfoCollision(Approach, elementsListCollision)
+  setInfoSimple(Condition, elementsListCondition)
+  setInfoSimple(Destroy, elementsListBrakeUp)
+  setInfoSimple(Deorbit, elementsListDeorbit)
+  setInfoSimple(Spacecraft, elementsListSpacecraft)
 })
 
 function clearForm (form) {
@@ -214,20 +213,61 @@ function clearForm (form) {
   checkVisibleTableHeader ()
 }
 
+function doNotEditInputs (card) {
+  const listInputs = card.querySelectorAll('.item__input')
+  const buttonSave = card.querySelector('.element__btn-done')
+  listInputs.forEach(input =>{
+      input.readOnly = true
+      buttonSave.classList.add('element__btn-done_type_edit')
+      input.classList.add('item__input_type_readonly')
+   })
+  }
+
 //___________________________________
 //  отрисовка полученного задания
 //___________________________________
+function setAssingmentInfo (section, infoObj) {
+    
+  section.inputList.forEach(input=>{
+      input.value = infoObj[input.name]
+    })
+}
 
-function setInfoKO (section, elementsList) { 
-  
-  
+function setInfoSimple (section, elementsList) { 
   elementsList.forEach((element) => {
     const card = addElement(section);
     const inputList = card.querySelectorAll('.item__input')
-
+    
     inputList.forEach(input=>{
-      const name = input.name
-      input.value = element[name]
+      input.value = element[input.name]
     })
+
+    doNotEditInputs(card)
+  })
+}
+
+function setInfoCollision (section, elementsList) { 
+  elementsList.forEach((element) => {
+    const card = addElement(section);
+    const itemList = card.querySelectorAll('.objects__item')
+    
+    const inputListKA = itemList[0].querySelectorAll('.item__input')
+    inputListKA.forEach(input=>{
+        input.value = element.FirstObject[input.name]
+      })
+
+    const inputListKO = itemList[1].querySelectorAll('.item__input')
+    inputListKO.forEach(input=>{
+        input.value = element.SecondObject[input.name]
+      })
+
+    const inputTime = card.querySelector('.item__input_type_time')
+    inputTime.value = element.CollisionApproachEpoch
+
+    const inputOrbite = card.querySelector('.item__input_type_orbite').getElementsByTagName('option');
+    for (let i = 0; i < inputOrbite.length; i++) {
+        if (inputOrbite[i].value === element.TypeOrbite) inputOrbite[i].selected = true;
+    }
+    doNotEditInputs(card)
   })
 }
