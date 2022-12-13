@@ -7,6 +7,7 @@ export const formAddDocument = document.querySelector('.form');
 export const buttonAddDocument = document.querySelector('.form__btn-save');
 export const buttonResetForm = document.querySelector('.form__btn-reset');
 
+export const titleForm = document.querySelector('.assingment__title');
 
 // massage
 export const inputMassage = document.querySelector('.massage__text');
@@ -64,3 +65,81 @@ export const Spacecraft = {
     selectorTemplate :  '.elements__list-ka',
     elementsList :      document.querySelector('.spacecraft__list').querySelectorAll('.element')
 }
+
+
+export const objInfo = {
+    Id: 3338,
+    TaskNum: {
+      Num: 1811,
+      TaskEpoch:  '2022-10-18T10:51:41' ,
+       ShiftBoss : "Ампилова О.�.",
+       TaskDescription :  'Задание' 
+    },
+     Directive : {
+       CollisionApproach : {
+         Pairs : [
+          {
+             IdPairs : 1,
+             FirstObject : {
+               ObjectNumber : 21675,
+               NoradNumber : 38978,
+               IntDes :  '2012-061B' ,
+               LocalNumber : null
+            },
+             SecondObject : {
+               ObjectNumber : 36025,
+               NoradNumber : 33749,
+               IntDes :  '2009-008A' ,
+               LocalNumber : null
+            },
+             CollisionApproachEpoch :   '2022-10-20T18:15:05.00' ,
+             OrbiteType :  'MOE' 
+          }
+        ]
+      },
+       BreakUp : {
+         ObjectInfos : [
+          {
+             ObjectNumber : 9793,
+             NoradNumber : 37951,
+             IntDes :  '2011-074B' ,
+             LocalNumber : null
+          }
+        ]
+      },
+       Deorbit : {
+         ObjectInfos : [
+          {
+             ObjectNumber : 47463,
+             NoradNumber : 37951,
+             IntDes :  '2011-074B' ,
+             LocalNumber : null
+          },
+          {
+            ObjectNumber : 43,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B' ,
+            LocalNumber : null
+         },
+         {
+            ObjectNumber : 475,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B' ,
+            LocalNumber : null
+         }
+        ]
+      },
+      ConditionKA : {
+        ObjectInfos : [
+         {
+            Name : 'KA obj',
+            ObjectNumber : 6793,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B '
+         }
+       ]
+     }
+    },
+     Message :  'Something' 
+  }
+  
