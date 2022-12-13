@@ -37,15 +37,15 @@ export default class Object{
       this._buttonTrash.addEventListener('click', this.removeButton = () => { 
         this._remove()
       })
-      this._buttonSave.addEventListener('click', this._save);
+      this._buttonSave.addEventListener('click', this.saveButton = () => this.save());
     }
 
     _removeEventListeners() {
       this._buttonTrash.removeEventListener('click', this.removeButton);
-      this._buttonSave.removeEventListener('click', this._save);
+      this._buttonSave.removeEventListener('click', this.saveButton);
     }
   
-    _save = () => {
+    save() {
        this._listInputs.forEach(input =>{
         if (input.readOnly) {
           input.readOnly = false
