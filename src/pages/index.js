@@ -14,6 +14,8 @@ import {
 
   listTableLists
 
+  ,objInfo
+
 } from '../utils/constans.js'
 
 import Object from '../scripts/Object.js';
@@ -81,6 +83,7 @@ function addElement({selectorTemplate, listTable, headerTable}) {
   const obj = new Object( {selectorTemplate, listTable, headerTable}
                         , checkVisibleTableHeader).createCard()
   addCard(listTable, obj)
+  return obj
 }
 
 function addCard(listTable, obj) {
@@ -188,11 +191,43 @@ formFindDocument.addEventListener('submit', (evt)=> {
     evt.preventDefault();
     data.TaskNum = getInputValues (Edit.inputList)
 
-  console.log(data)
+  // console.log(data)
+  clearForm(formAddDocument)
+
+  const elementsListCollision = objInfo.Directive.CollisionApproach.ObjectInfos;
+  const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
+  const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
+  const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
+  const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
+
+
+  setInfoKO(Condition, elementsListCondition)
+  setInfoKO(Destroy, elementsListBrakeUp)
+  setInfoKO(Deorbit, elementsListDeorbit)
+  setInfoKO(Spacecraft, elementsListSpacecraft)
 })
 
+function clearForm (form) {
+  form.reset();
+  const elementsList = document.querySelectorAll('.element')
+  elementsList.forEach(element=> element.remove())
+  checkVisibleTableHeader ()
+}
 
 //___________________________________
 //  отрисовка полученного задания
 //___________________________________
 
+function setInfoKO (section, elementsList) { 
+  
+  
+  elementsList.forEach((element) => {
+    const card = addElement(section);
+    const inputList = card.querySelectorAll('.item__input')
+
+    inputList.forEach(input=>{
+      const name = input.name
+      input.value = element[name]
+    })
+  })
+}
