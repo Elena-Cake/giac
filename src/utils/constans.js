@@ -7,6 +7,7 @@ export const formAddDocument = document.querySelector('.form');
 export const buttonAddDocument = document.querySelector('.form__btn-save');
 export const buttonResetForm = document.querySelector('.form__btn-reset');
 
+export const titleForm = document.querySelector('.assingment__title');
 
 // massage
 export const inputMassage = document.querySelector('.massage__text');
@@ -92,7 +93,7 @@ export const objInfo = {
                LocalNumber : null
             },
              CollisionApproachEpoch :   '2022-10-20T18:15:05.00' ,
-             OrbiteType :  'GEO' 
+             OrbiteType :  'MOE' 
           }
         ]
       },
@@ -126,16 +127,6 @@ export const objInfo = {
             IntDes :  '2011-074B' ,
             LocalNumber : null
          }
-        ]
-      },
-       Condition : {
-         ObjectInfos : [
-          {
-             ObjectNumber : 5793,
-             NoradNumber : 37951,
-             IntDes :  '2011-074B ',
-             LocalNumber : null
-          }
         ]
       },
       ConditionKA : {

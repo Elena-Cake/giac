@@ -12,7 +12,12 @@ import {
      
   inputMassage,
 
-  listTableLists
+  listTableLists,
+
+  buttonAddDocument,
+  buttonResetForm,
+
+  titleForm
 
   ,objInfo
 
@@ -109,75 +114,87 @@ function getInputValues (inputList) {
   return inputsValues
 }
 
-function createSimpleObject (section, info) {
+function createArrayObject (section, info) {
   const elementsList = (section.listTable.querySelectorAll('.element'));
-  
   elementsList.forEach((element) => {
-    const inputList = element.querySelectorAll('.item__input')
-    info.push(getInputValues(inputList))
+  createSimpleObject(element, info)
   })
   return info
+}
+
+function createSimpleObject (element, info) {
+  const inputList = element.querySelectorAll('.item__input')
+  info.push(getInputValues(inputList))
 }
 
 let data = {}
 // сбор данных в объект
 
 formAddDocument.addEventListener('submit', (evt) =>{
-  data = {}
-    evt.preventDefault();
-    data.TaskNum = getInputValues (Assingment.inputList)
-    data.Directive = {}
-    data.Message = inputMassage.value
+    data = {}
+      evt.preventDefault();
+      data.TaskNum = getInputValues (Assingment.inputList)
+      data.Directive = {}
+      data.Message = inputMassage.value
 
 
-// Condition
-if (isTableNotEmpty(Condition.listTable)) {
-  data.Directive.Condition  = {}
-  let info = data.Directive.Condition.ObjectInfos = []
-  info = createSimpleObject(Condition, info)
-}
-// Destroy
-if (isTableNotEmpty(Destroy.listTable)) {
-  data.Directive.BreakUp  = {}
-  let info = data.Directive.BreakUp.ObjectInfos = []
-  info = createSimpleObject(Destroy, info)
-}
-// Deorbit
-if (isTableNotEmpty(Deorbit.listTable)) {
-  data.Directive.Deorbit  = {}
-  let info = data.Directive.Deorbit.ObjectInfos = []
-  info = createSimpleObject(Deorbit, info)
-}
-// Spacecraft
-if (isTableNotEmpty(Spacecraft.listTable)) {
-  data.Directive.ConditionKA  = {}
-  let info = data.Directive.ConditionKA.ObjectInfos = []
-  info = createSimpleObject(Spacecraft, info)
-}
-// Approach
-if (isTableNotEmpty(Approach.listTable)) {
-  data.Directive.CollisionApproach  = {}
-  const info = data.Directive.CollisionApproach.Pairs = []
-  const elementsList = (document.querySelector('.approach__list').querySelectorAll('.element'));
-  
-  elementsList.forEach((element, index) => {
-    const obj = {}
-    obj.IdPairs = index+1
-    obj.CollisionApproachEpoch = element.querySelector('.item__input_type_time').value
-    obj.OrbiteType = element.querySelector('.item__input_type_orbite').value
+  // Condition
+  if (isTableNotEmpty(Condition.listTable)) {
+    data.Directive.Condition  = {}
+    let info = data.Directive.Condition.ObjectInfos = []
+    info = createArrayObject(Condition, info)
+  }
+  // Destroy
+  if (isTableNotEmpty(Destroy.listTable)) {
+    data.Directive.BreakUp  = {}
+    let info = data.Directive.BreakUp.ObjectInfos = []
+    info = createArrayObject(Destroy, info)
+  }
+  // Deorbit
+  if (isTableNotEmpty(Deorbit.listTable)) {
+    data.Directive.Deorbit  = {}
+    let info = data.Directive.Deorbit.ObjectInfos = []
+    info = createArrayObject(Deorbit, info)
+  }
+  // Spacecraft
+  if (isTableNotEmpty(Spacecraft.listTable)) {
+    data.Directive.ConditionKA  = {}
+    let info = data.Directive.ConditionKA.ObjectInfos = []
+    info = createArrayObject(Spacecraft, info)
+  }
+  // Approach
+  if (isTableNotEmpty(Approach.listTable)) {
+    data.Directive.CollisionApproach  = {}
+    const info = data.Directive.CollisionApproach.Pairs = []
+    const elementsList = (document.querySelector('.approach__list').querySelectorAll('.element'));
+    
+    elementsList.forEach((element, index) => {
+      const obj = {}
+      obj.IdPairs = index+1
+      obj.CollisionApproachEpoch = element.querySelector('.item__input_type_time').value
+      obj.OrbiteType = element.querySelector('.item__input_type_orbite').value
 
-    const itemList = element.querySelectorAll('.objects__item')
-    const inputList1 = itemList[0].querySelectorAll('.item__input')
-    const inputList2 = itemList[1].querySelectorAll('.item__input')
+      const itemList = element.querySelectorAll('.objects__item')
+      const inputList1 = itemList[0].querySelectorAll('.item__input')
+      const inputList2 = itemList[1].querySelectorAll('.item__input')
 
-    obj.FirstObject = (getInputValues(inputList1))
-    obj.SecondObject = (getInputValues(inputList2))
+      obj.FirstObject = (getInputValues(inputList1))
+      obj.SecondObject = (getInputValues(inputList2))
 
-    info.push(obj)
-  })
-}
-// итоговый объект
-    console.log (data)
+      info.push(obj)
+    })
+  }
+  // итоговый объект
+      console.log (data)
+      buttonAddDocument.textContent = 'Добавить задание'
+      titleForm.textContent = 'Создание задания:'
+      formAddDocument.reset()
+})
+
+
+// обработка названия формы при сбросе формы
+buttonResetForm.addEventListener('click', ()=>{
+  titleForm.textContent = 'Создание задания:'
 })
 
 
@@ -193,17 +210,31 @@ formFindDocument.addEventListener('submit', (evt)=> {
   clearForm(formAddDocument)
   setAssingmentInfo(Assingment,objInfo)
 
-  const elementsListCollision = objInfo.Directive.CollisionApproach.Pairs;
-  const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
-  const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
-  const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
-  const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
+  
+  if (objInfo.Directive.CollisionApproach) {
+    const elementsListCollision = objInfo.Directive.CollisionApproach.Pairs;
+    setInfoCollision(Approach, elementsListCollision);
+  }
+  if (objInfo.Directive.Condition) {
+    const elementsListCondition = objInfo.Directive.Condition.ObjectInfos;
+    setInfoSimple(Condition, elementsListCondition);
+  }
+  if (objInfo.Directive.BreakUp) {
+    const elementsListBrakeUp = objInfo.Directive.BreakUp.ObjectInfos;
+    setInfoSimple(Destroy, elementsListBrakeUp);
+  }
+  if (objInfo.Directive.Deorbit) {
+    const elementsListDeorbit = objInfo.Directive.Deorbit.ObjectInfos;
+    setInfoSimple(Deorbit, elementsListDeorbit);
+  }
+  if (objInfo.Directive.ConditionKA) {
+    const elementsListSpacecraft = objInfo.Directive.ConditionKA.ObjectInfos;
+    setInfoSimple(Spacecraft, elementsListSpacecraft)
+  }
 
-  setInfoCollision(Approach, elementsListCollision)
-  setInfoSimple(Condition, elementsListCondition)
-  setInfoSimple(Destroy, elementsListBrakeUp)
-  setInfoSimple(Deorbit, elementsListDeorbit)
-  setInfoSimple(Spacecraft, elementsListSpacecraft)
+  inputMassage.value = objInfo.Message
+  buttonAddDocument.textContent = 'Изменить задание'
+  titleForm.textContent = 'Редактирование задания:'
 })
 
 function clearForm (form) {
@@ -224,12 +255,12 @@ function doNotEditInputs (card) {
   }
 
 //___________________________________
-//  отрисовка полученного задания
+//  отрисовка полученного задания 
 //___________________________________
-function setAssingmentInfo (section, infoObj) {
+function setAssingmentInfo (section, objInfo) {
     
   section.inputList.forEach(input=>{
-      input.value = infoObj[input.name]
+      input.value = objInfo.TaskNum[input.name]
     })
 }
 
@@ -266,7 +297,8 @@ function setInfoCollision (section, elementsList) {
 
     const inputOrbite = card.querySelector('.item__input_type_orbite').getElementsByTagName('option');
     for (let i = 0; i < inputOrbite.length; i++) {
-        if (inputOrbite[i].value === element.TypeOrbite) inputOrbite[i].selected = true;
+        if (inputOrbite[i].value == element.OrbiteType)
+        inputOrbite[i].selected = true;
     }
     doNotEditInputs(card)
   })
