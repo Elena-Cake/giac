@@ -1,6 +1,8 @@
 import './index.css';
 import {
-  formFindDocument,formAddDocument,
+  formFindDocumentNum,
+  formFindDocumentDate,
+  formAddDocument,
 
   Edit,Assingment,
 
@@ -15,6 +17,7 @@ import {
   titleForm
 
   ,objInfo
+  ,objInfoNum
 
 } from '../utils/constans.js'
 
@@ -209,7 +212,24 @@ formAddDocument.addEventListener('submit', (evt) =>{
 //  Создание объекта для отправки на сервер
 //___________________________________
 
-formFindDocument.addEventListener('submit', (evt)=> {
+// по номеру
+formFindDocumentNum.addEventListener('submit', (evt)=> {
+  evt.preventDefault();
+    data = {}
+    // объект для запроса
+    data.TaskNum = getInputValues(Edit.inputList)
+    console.log(data)
+
+    // finnaly
+    clearForm(formAddDocument)
+
+    // готовый объект
+    setInfo(objInfoNum)
+});
+
+
+// по дате
+formFindDocumentDate.addEventListener('submit', (evt)=> {
   evt.preventDefault();
     data = {}
     // объект для запроса

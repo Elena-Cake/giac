@@ -1,5 +1,6 @@
 
-export const formFindDocument = document.querySelector('.edit__data');
+export const formFindDocumentNum = document.querySelector('.edit__num');
+export const formFindDocumentDate = document.querySelector('.edit__date');
 export const formAddDocument = document.querySelector('.form');
 
 // buttons
@@ -120,12 +121,6 @@ export const objInfo = {
             NoradNumber : 37951,
             IntDes :  '2011-074B' ,
             LocalNumber : null
-         },
-         {
-            ObjectNumber : 475,
-            NoradNumber : 37951,
-            IntDes :  '2011-074B' ,
-            LocalNumber : null
          }
         ]
       },
@@ -143,3 +138,74 @@ export const objInfo = {
      Message :  'Something' 
   }
   
+
+  export const objInfoNum = {
+    Id: 3336,
+    TaskNum: {
+      Num: 1253,
+      TaskEpoch:  '2022-10-18T10:51:41' ,
+       ShiftBoss : "Ivanov A.A.",
+       TaskDescription :  'Задание' 
+    },
+     Directive : {
+       CollisionApproach : {
+         Pairs : [
+          {
+             IdPairs : 1,
+             FirstObject : {
+               ObjectNumber : 21675,
+               NoradNumber : 38978,
+               IntDes :  '2012-061B' ,
+               LocalNumber : null
+            },
+             SecondObject : {
+               ObjectNumber : 36025,
+               NoradNumber : 33749,
+               IntDes :  '2009-008A' ,
+               LocalNumber : null
+            },
+             CollisionApproachEpoch :   '2022-10-20T18:15:05.00' ,
+             OrbiteType :  'MOE' 
+          },
+          {
+            IdPairs : 2,
+            FirstObject : {
+              ObjectNumber : 21675,
+              NoradNumber : 38567,
+              IntDes :  '2012-061B' ,
+              LocalNumber : null
+           },
+            SecondObject : {
+              ObjectNumber : 36967,
+              NoradNumber : 33735,
+              IntDes :  '2009-008A' ,
+              LocalNumber : null
+           },
+            CollisionApproachEpoch :   '2022-10-20T19:15:07.00' ,
+            OrbiteType :  'LEO' 
+         }
+        ]
+      },
+       BreakUp : {
+         ObjectInfos : [
+          {
+             ObjectNumber : 9793,
+             NoradNumber : 37951,
+             IntDes :  '2011-074B' ,
+             LocalNumber : null
+          }
+        ]
+      },
+      ConditionKA : {
+        ObjectInfos : [
+         {
+            Name : 'KA obj1',
+            ObjectNumber : 8594,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B '
+         }
+       ]
+     }
+    },
+     Message :  'Something else' 
+  }
