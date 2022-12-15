@@ -52,6 +52,7 @@
 @import url(../block/item/__text/item__text.css);
 @import url(../block/item/__input/item__input.css);
 @import url(../block/item/__input/_type/item__input_type_readonly.css);
+@import url(../block/item/__input/_type/item__input_type_empty.css);
 @import url(../block/item/_orientation/item_orientation_vertical.css);
 @import url(../block/element/__item/_place/element__item_place_KA.css);
 

@@ -120,6 +120,7 @@ addListenerButtonAdd(Spacecraft)
 function getInputValues (inputList) {
   const inputsValues = {}
   inputList.forEach(input => {
+      checkInvalidInput(input)
       inputsValues[input.name] = input.value
   });
   return inputsValues
@@ -130,7 +131,6 @@ function createArrayObject (section, info) {
   const elementsList = (section.listTable.querySelectorAll('.element'));
   elementsList.forEach((element) => {
     info.push(createSimpleObject(element))
-  createSimpleObject(element, info)
   })
   return info
 }
@@ -140,6 +140,19 @@ function createSimpleObject (element) {
   const inputList = element.querySelectorAll('.item__input')
   return getInputValues(inputList)
 }
+
+// невалидный инпут
+function checkInvalidInput (input) {
+  if(input.value == '') {
+    let redFocus;
+    input.classList.add('item__input_type_empty')
+    input.addEventListener('focus', redFocus = () =>{
+      input.classList.remove('item__input_type_empty')
+      input.removeEventListener('focus', redFocus)
+    })
+  }
+}
+
 
 let data = {}
 
@@ -199,12 +212,20 @@ formAddDocument.addEventListener('submit', (evt) =>{
       info.push(obj)
     })
   }
-  // итоговый объект
-      console.log (data)
+
   // finnaly
-      buttonAddDocument.textContent = 'Добавить задание'
-      titleForm.textContent = 'Создание задания:'
-      formAddDocument.reset()
+  if ( !document.querySelector('.item__input_type_empty')) {
+    buttonAddDocument.textContent = 'Добавить задание'
+    titleForm.textContent = 'Создание задания:'
+    formAddDocument.reset()
+
+    // итоговый объект
+    console.log (data)
+    console.log('okey')
+  } else {
+    console.log('not okey')
+  }
+     
 })
 
 

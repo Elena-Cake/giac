@@ -1,0 +1,5 @@
+.item__input_type_empty {
+    border: 2px solid rgb(194, 56, 56);
+    border-radius: 10px;
+    background-color: rgb(194, 56, 56, .1);
+}
