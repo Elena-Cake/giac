@@ -42,6 +42,7 @@
 .item__text{margin:0}
 .item__input{border:0;border-bottom:1px solid #9b9b9b;padding:3px;width:90%}
 .item__input_type_readonly{border-bottom:1px solid hsla(0,0%,61%,.2);text-align:center}
+.item__input_type_empty{background-color:rgba(194,56,56,.1);border:2px solid #c23838;border-radius:10px}
 .item_orientation_vertical{display:flex;flex-direction:column}
 .element__item_place_KA{display:grid;gap:1%;grid-template-columns:40px 150px 150px 100px 80px 80px 150px 80px;width:100%}
 .approach{padding:15px 0}
