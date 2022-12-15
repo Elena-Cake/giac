@@ -2,13 +2,13 @@
 .header{background-color:#010869;height:40px;margin:0;padding:0;width:100%}
 .main{margin:0 auto;max-width:1070px;width:90%}
 .button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;margin:0 0 0 auto;min-height:40px;min-width:200px;padding:5px 10px;transition:background-color .5s ease;width:200px}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
-.edit{display:flex;gap:3%;padding:20px 0}
+.edit{display:flex;gap:3%;padding:30px 0 10px}
 .edit__data{display:grid;grid-template-columns:100px minmax(30px,200px) 130px;margin-bottom:10px}
 .edit__title{font-size:20px;font-weight:400;margin:0 10px 20px 0}
 .edit__text{align-self:center;font-size:18px;font-weight:400;margin:0;text-align:right}
 .edit__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:100px;padding:5px 10px}
 .edit__btn-add{margin:0 0 0 10%;min-height:20px;min-width:120px;padding:0;width:130px}
-.assingment{padding:15px 0}
+.assingment{padding:10px 0}
 .assingment__data{display:flex;flex-wrap:wrap}
 .assingment__title{margin:7px 0}
 .assingment__title_type_start{min-width:63.5%}
@@ -23,7 +23,7 @@
 .table__objects{display:grid;grid-template-areas:"table table" ". add"}
 .table__add-table{margin:10px 0 10px 50px}
 .table__select{border:0;border-bottom:1px solid #9b9b9b;margin:2px 5px;padding:5px 10px}
-.list{margin:0 auto 0 3%;max-width:900px;padding:10px 0;width:100%}
+.list{margin:0 auto 0 3%;max-width:900px;padding:7px 0;width:100%}
 .list__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:repeat(3,200px);margin:5px 0;padding:0}
 .massage{display:grid;grid-template-columns:20% auto;margin:0;padding:30px 0 20px}
 .massage__text{border:0;border-bottom:1px solid grey;margin:0;max-width:650px;padding:5px 15px;width:100%}
@@ -45,7 +45,7 @@
 .item__input_type_empty{background-color:rgba(194,56,56,.1);border:2px solid #c23838;border-radius:10px}
 .item_orientation_vertical{display:flex;flex-direction:column}
 .element__item_place_KA{display:grid;gap:1%;grid-template-columns:40px 150px 150px 100px 80px 80px 150px 80px;width:100%}
-.approach{padding:15px 0}
+.approach{padding:15px 0 0}
 .element{margin:5px 0;padding:0}
 .element__items{display:block;min-width:70%}
 .element__item{display:grid;gap:1%;grid-template-columns:40px 150px 100px 100px 100px 150px 100px;width:100%}
