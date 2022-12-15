@@ -7,6 +7,7 @@
 @import url(../block/edit/edit.css);
 @import url(../block/edit/__data/edit__data.css);
 @import url(../block/edit/__title/edit__title.css);
+@import url(../block/edit/__text/edit__text.css);
 @import url(../block/edit/__input/edit__input.css);
 @import url(../block/edit/__btn-add/edit__btn-add.css);
 

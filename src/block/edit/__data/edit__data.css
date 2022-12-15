@@ -1,4 +1,5 @@
 .edit__data {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 100px repeat(2,minmax(30px,200px));
+    margin-bottom: 10px;
 }
