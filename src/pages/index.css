@@ -6,9 +6,13 @@
 
 @import url(../block/edit/edit.css);
 @import url(../block/edit/__data/edit__data.css);
+@import url(../block/edit/__date/edit__date.css);
+@import url(../block/edit/__container/edit__container.css);
 @import url(../block/edit/__title/edit__title.css);
 @import url(../block/edit/__text/edit__text.css);
+@import url(../block/edit/__input-date/_type/edit__input-date_type_to.css);
 @import url(../block/edit/__input/edit__input.css);
+@import url(../block/edit/__input-date/edit__input-date.css);
 @import url(../block/edit/__btn-add/edit__btn-add.css);
 
 @import url(../block/assingment/assingment.css);

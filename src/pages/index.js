@@ -255,7 +255,8 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
   evt.preventDefault();
     data = {}
     // объект для запроса
-    data.TaskNum = getInputValues(Edit.inputDate)
+    data.TaskNum = getInputValues(Edit.inputListDate)
+    Edit.inputDateTo.classList.remove('item__input_type_empty')
     console.log(data)
 
     // finnaly

@@ -1,5 +1,7 @@
 .edit__data {
-    display: grid;
-    grid-template-columns: 100px minmax(30px,200px) 130px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+    gap: auto;
 }

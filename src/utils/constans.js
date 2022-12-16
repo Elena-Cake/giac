@@ -19,9 +19,10 @@ export const buttonSaveAll = document.querySelector('.form__btn-save')
 export const listTableLists = document.querySelectorAll('.table__list') 
 
 export const Edit = {
-    inputList :   document.querySelector('.edit').querySelectorAll('.edit__input'),
-    inputNum :    document.querySelector('.edit').querySelectorAll('.edit__input-num'),
-    inputDate :   document.querySelector('.edit').querySelectorAll('.edit__input-date')
+    inputList :     document.querySelector('.edit').querySelectorAll('.edit__input'),
+    inputNum :      document.querySelector('.edit').querySelectorAll('.edit__input-num'),
+    inputListDate : document.querySelector('.edit').querySelectorAll('.edit__input-date'),
+    inputDateTo :   document.querySelector('.edit').querySelector('.edit__input-date_type_to')
 }
 
 export const Assingment = {

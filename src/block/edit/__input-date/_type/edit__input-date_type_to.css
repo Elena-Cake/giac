@@ -1,0 +1,7 @@
+.edit__input-date_type_to {
+    opacity: 0.5;
+}
+
+.edit__input-date_type_to:focus {
+    opacity: 1;
+}
