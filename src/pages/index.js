@@ -217,10 +217,10 @@ formAddDocument.addEventListener('submit', (evt) =>{
   if ( !document.querySelector('.item__input_type_empty')) {
     buttonAddDocument.textContent = 'Добавить задание'
     titleForm.textContent = 'Создание задания:'
-    formAddDocument.reset()
 
     // итоговый объект
     console.log (data)
+    clearForm(formAddDocument)
     console.log('okey')
   } else {
     console.log('not okey')
@@ -238,13 +238,13 @@ formFindDocumentNum.addEventListener('submit', (evt)=> {
   evt.preventDefault();
     data = {}
     // объект для запроса
-    data.TaskNum = getInputValues(Edit.inputList)
+    data.TaskNum = getInputValues(Edit.inputNum)
     console.log(data)
 
     // finnaly
     clearForm(formAddDocument)
 
-    // готовый объект
+    // готовый объект - будет приходить с сервера
     setInfo(objInfoNum)
 });
 
@@ -254,13 +254,13 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
   evt.preventDefault();
     data = {}
     // объект для запроса
-    data.TaskNum = getInputValues(Edit.inputList)
+    data.TaskNum = getInputValues(Edit.inputDate)
     console.log(data)
 
     // finnaly
     clearForm(formAddDocument)
 
-    // готовый объект
+    // готовый объект - будет приходить с сервера
     setInfo(objInfo)
 });
 
