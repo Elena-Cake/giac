@@ -242,6 +242,7 @@ formFindDocumentNum.addEventListener('submit', (evt)=> {
     console.log(data)
 
     // finnaly
+    clearForm(formFindDocumentNum)
     clearForm(formAddDocument)
 
     // готовый объект - будет приходить с сервера
@@ -258,6 +259,7 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
     console.log(data)
 
     // finnaly
+    clearForm(formFindDocumentDate)
     clearForm(formAddDocument)
 
     // готовый объект - будет приходить с сервера
