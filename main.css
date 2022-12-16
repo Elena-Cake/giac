@@ -3,11 +3,15 @@
 .main{margin:0 auto;max-width:1070px;width:90%}
 .button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;margin:0 0 0 auto;min-height:40px;min-width:200px;padding:5px 10px;transition:background-color .5s ease;width:200px}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
 .edit{display:flex;gap:3%;padding:30px 0 10px}
-.edit__data{display:grid;grid-template-columns:100px minmax(30px,200px) 130px;margin-bottom:10px}
+.edit__data{display:flex;gap:auto;justify-content:space-between;margin-bottom:10px;width:100%}
+.edit__date{display:grid;gap:1px;grid-template-columns:15px 160px 5px 160px 130px}
+.edit__container{min-width:500px}
 .edit__title{font-size:20px;font-weight:400;margin:0 10px 20px 0}
 .edit__text{align-self:center;font-size:18px;font-weight:400;margin:0;text-align:right}
+.edit__input-date_type_to{opacity:.5}.edit__input-date_type_to:focus{opacity:1}
 .edit__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:100px;padding:5px 10px}
-.edit__btn-add{margin:0 0 0 10%;min-height:20px;min-width:120px;padding:0;width:130px}
+.edit__input-date{letter-spacing:.01px;margin:0;min-width:100px;padding:5px 1px}
+.edit__btn-add{min-height:20px;min-width:120px;padding:0;width:130px}
 .assingment{padding:10px 0}
 .assingment__data{display:flex;flex-wrap:wrap}
 .assingment__title{margin:7px 0}
