@@ -74,7 +74,7 @@ export const objInfo = {
     Id: 3338,
     TaskNum: {
       Num: 1811,
-      TaskEpoch:  '2022-10-18T10:51:41' ,
+      TaskEpoch:  '2022-10-18T10:51' ,
        ShiftBoss : "Ампилова О.�.",
        TaskDescription :  'Задание' 
     },
@@ -145,7 +145,7 @@ export const objInfo = {
     Id: 3336,
     TaskNum: {
       Num: 1253,
-      TaskEpoch:  '2022-10-18T10:51:41' ,
+      TaskEpoch:  '2022-10-18T10:55' ,
        ShiftBoss : "Ivanov A.A.",
        TaskDescription :  'Задание' 
     },
