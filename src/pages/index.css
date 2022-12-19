@@ -69,7 +69,6 @@
 @import url(../block/element/__btn-trash/element__btn-trash.css);
 @import url(../block/element/__btn-done/element__btn-done.css);
 @import url(../block/element/__btn-done/_type/element__btn-done_type_edit.css);
-@import url(../block/element/__approach/element__approach.css);
 @import url(../block/element/__type-orbit/element__type-orbit.css);
 @import url(../block/element/__item/_place/element__item_place_approach.css);
 
@@ -91,3 +90,6 @@
 @import url(../block/list/__name/list__name.css);
 
 @import url(../block/header-table/_hidden/header-table_hidden.css);
+
+@import url(../block/finder/finder__structure.css);
+@import url(../block/finder/__list/finder__list.css);

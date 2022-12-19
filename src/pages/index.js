@@ -2,9 +2,9 @@ import './index.css';
 import {
   formFindDocumentNum,
   formFindDocumentDate,
-  formAddDocument,
+  formDocument,
 
-  Edit,Assingment,
+  Edit,Assingment,Finder,
 
   Approach,
   Condition,Destroy,Deorbit,
@@ -23,6 +23,7 @@ import {
 
 import Object from '../scripts/Object.js';
 import Section from '../scripts/Section.js';
+import TableTr from '../scripts/TableTr.js';
 
 //___________________________________
 //  Проверка таблиц
@@ -38,6 +39,7 @@ const checkVisibleTableHeader = () => {
       tableList.classList.add('header-table_hidden')
     }
   })
+  document.querySelector('.finder__structure').classList.remove('header-table_hidden')
 }
 
 // проверка пустоты таблицы
@@ -51,13 +53,13 @@ checkVisibleTableHeader ()
 // обработка формы при сбросе формы
 buttonResetForm.addEventListener('click', ()=>{
   titleForm.textContent = 'Создание задания:';
-  clearForm(formAddDocument)
+  clearForm(formDocument)
 })
 
 // зачистка
-function clearForm (form) {
+const clearForm = (form) => {
   form.reset();
-  const elementsList = document.querySelectorAll('.element')
+  const elementsList = form.querySelectorAll('.element')
   elementsList.forEach(element=> element.remove())
   checkVisibleTableHeader ()
 }
@@ -158,7 +160,7 @@ let data = {}
 
 // сбор данных в объект
 
-formAddDocument.addEventListener('submit', (evt) =>{
+formDocument.addEventListener('submit', (evt) =>{
     data = {}
       evt.preventDefault();
       data.TaskNum = getInputValues (Assingment.inputList)
@@ -218,9 +220,9 @@ formAddDocument.addEventListener('submit', (evt) =>{
     buttonAddDocument.textContent = 'Добавить задание'
     titleForm.textContent = 'Создание задания:'
 
-    // итоговый объект
+  // итоговый объект
     console.log (data)
-    clearForm(formAddDocument)
+    clearForm(formDocument)
     console.log('okey')
   } else {
     console.log('not okey')
@@ -243,10 +245,10 @@ formFindDocumentNum.addEventListener('submit', (evt)=> {
 
     // finnaly
     clearForm(formFindDocumentNum)
-    clearForm(formAddDocument)
+    clearForm(formDocument)
 
     // готовый объект - будет приходить с сервера
-    setInfo(objInfoNum)
+    setInfo(objInfo)
 });
 
 
@@ -261,11 +263,67 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
 
     // finnaly
     clearForm(formFindDocumentDate)
-    clearForm(formAddDocument)
+    clearForm(formDocument)
 
-    // готовый объект - будет приходить с сервера
-    setInfo(objInfo)
+    // готовый массив - будет приходить с сервера
+
+    objInfoNum.forEach(item => {
+      addElementWithData(Finder, item)
+    })
 });
+
+//___________________________________
+//  Добавление поисковика
+//___________________________________
+
+// функция добавления строки поиска
+function addElementWithData({selectorTemplate, listTable, headerTable}, item) {
+  const data = createObjFinder(item)
+  const obj = new TableTr( {selectorTemplate, listTable, headerTable}
+                        , findObject, clearForm, formDocument, data).createCard()
+  addCardWithData(listTable, obj)
+  Finder.listTable.classList.remove('header-table_hidden')
+  return obj
+}
+
+function addCardWithData(listTable, obj) {
+  section.addItem(obj, listTable)
+}
+
+function createObjFinder (item) {
+const data = {}
+data.Num = item.TaskNum.Num
+data.TaskEpoch = item.TaskNum.TaskEpoch
+data.countApproach = (item.Directive.CollisionApproach) ? 
+  item.Directive.CollisionApproach.Pairs.length : 0
+data.countCondition = (item.Directive.Condition) ?
+  item.Directive.Condition.ObjectInfos.length : 0
+data.countBreakUp = (item.Directive.BreakUp) ?
+  item.Directive.BreakUp.ObjectInfos.length : 0
+data.countDeorbit = (item.Directive.Deorbit) ?
+  item.Directive.Deorbit.ObjectInfos.length : 0
+data.countConditionKA = (item.Directive.ConditionKA) ? 
+  item.Directive.ConditionKA.ObjectInfos.length : 0
+data.Message = item.Message
+  return data
+}
+
+
+//___________________________________
+//  функция выбора задания из ответа
+//___________________________________
+
+const findObject = (num) => {
+  objInfoNum.map((item)=> {
+    if (item.TaskNum.Num == num) {
+      setInfo(item)
+    }
+  })
+}
+
+//___________________________________
+//  Обработка ответа
+//___________________________________
 
 // Обработка ответа (objInfo)
 function setInfo (objInfo) {
