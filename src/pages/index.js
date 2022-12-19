@@ -1,4 +1,5 @@
 import './index.css';
+
 import {
   formFindDocumentNum,
   formFindDocumentDate,
@@ -24,6 +25,8 @@ import {
 import Object from '../scripts/Object.js';
 import Section from '../scripts/Section.js';
 import TableTr from '../scripts/TableTr.js';
+
+import table from '../scripts/dataTble.js';
 
 //___________________________________
 //  Проверка таблиц

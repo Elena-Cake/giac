@@ -1,6 +1,6 @@
 .form {
-    width: 1070px;
+    max-width: 1170px;
     min-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 0 2%;
     padding: 0 0 40px;
 }
