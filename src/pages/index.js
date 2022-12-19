@@ -282,6 +282,14 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
 // функция добавления строки поиска
 function addElementWithData({selectorTemplate, listTable, headerTable}, item) {
   const data = createObjFinder(item)
+  const data1 = createObjFinderArray(item)
+  
+  $(document).ready(function () {
+    $('.finder__list').DataTable({
+      data: data1
+    });
+  });
+
   const obj = new TableTr( {selectorTemplate, listTable, headerTable}
                         , findObject, clearForm, formDocument, data).createCard()
   addCardWithData(listTable, obj)
@@ -310,6 +318,25 @@ data.countConditionKA = (item.Directive.ConditionKA) ?
 data.Message = item.Message
   return data
 }
+
+function createObjFinderArray (item) {
+  const data = []
+  data.push(item.TaskNum.Num)
+  data.push(item.TaskNum.TaskEpoch)
+  data.push((item.Directive.CollisionApproach) ? 
+    item.Directive.CollisionApproach.Pairs.length : 0)
+  data.push((item.Directive.Condition) ?
+    item.Directive.Condition.ObjectInfos.length : 0)
+  data.push((item.Directive.BreakUp) ?
+    item.Directive.BreakUp.ObjectInfos.length : 0)
+  data.push((item.Directive.Deorbit) ?
+    item.Directive.Deorbit.ObjectInfos.length : 0)
+  data.push((item.Directive.ConditionKA) ? 
+    item.Directive.ConditionKA.ObjectInfos.length : 0)
+  data.push(item.Message)
+  console.log(data);
+    return data
+  }
 
 
 //___________________________________
