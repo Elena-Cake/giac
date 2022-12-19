@@ -1,6 +1,5 @@
 // Добавление строк для поиска и отрисовки заданий
 
-
 export default class TableTr{
     constructor({selectorTemplate, elementsList, headerTable}, findObject, clearForm, formDocument, data) {
       this.selectorTemplate = selectorTemplate
