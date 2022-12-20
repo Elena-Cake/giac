@@ -26,10 +26,7 @@ export const Edit = {
 }
 
 export const Finder = {
-  listTable :         document.querySelector('.finder__list'),
-  headerTable :       document.querySelector('.finder__structure'),
-  selectorTemplate :  '.elements__list-find',
-  elementsList :      document.querySelector('.finder__list').querySelectorAll('.element')
+  headerTable :       document.querySelector('.finder__hedder-table')
 }
 
 export const Assingment = {

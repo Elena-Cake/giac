@@ -254,6 +254,7 @@ formFindDocumentNum.addEventListener('submit', (evt)=> {
     setInfo(objInfo)
 });
 
+Finder.headerTable.classList.add('header-table_hidden')
 
 // по дате
 formFindDocumentDate.addEventListener('submit', (evt)=> {
@@ -269,15 +270,30 @@ formFindDocumentDate.addEventListener('submit', (evt)=> {
     clearForm(formDocument)
 
     // готовый массив - будет приходить с сервера
-if (objInfoNum.length < 7) {
-    objInfoNum.forEach(item => {
-      addElementWithData(Finder, item)
-    })
-} else {
+
+    // for dataTable
+    let array = []
+    for (let item of objInfoNum) {
+      array.push(createObjFinderArray(item))
+    }
+console.log(array);
+
+Finder.headerTable.classList.remove('header-table_hidden')
+  $(document).ready(function () {
+    $('.finder__table').DataTable({
+      data: array
+    });
+  });
+
   
-}
+// }
 
-
+    // for TableTr
+    // if (objInfoNum.length < 7) {
+    //   objInfoNum.forEach(item => {
+    //         addElementWithData(Finder, item)
+    //       })
+    //   } else {}
 });
 
 
@@ -286,75 +302,68 @@ if (objInfoNum.length < 7) {
 //___________________________________
 
 // функция добавления строки поиска
-function addElementWithData({selectorTemplate, listTable, headerTable}, item) {
-  const data = createObjFinder(item)
-  // const data1 = createObjFinderArray(item)
+// function addElementWithData({selectorTemplate, listTable, headerTable}, item) {
+//   const data = createObjFinder(item)
   
-  // $(document).ready(function () {
-  //   $('.finder__list').DataTable({
-  //     data: data1
-  //   });
-  // });
+//   const obj = new TableTr( {selectorTemplate, listTable, headerTable}
+//                         , findObject, clearForm, formDocument, data).createCard()
+//   addCardWithData(listTable, obj)
+//   Finder.listTable.classList.remove('header-table_hidden')
+//   return obj
+// }
 
-  const obj = new TableTr( {selectorTemplate, listTable, headerTable}
-                        , findObject, clearForm, formDocument, data).createCard()
-  addCardWithData(listTable, obj)
-  Finder.listTable.classList.remove('header-table_hidden')
-  return obj
-}
+// function addCardWithData(listTable, obj) {
+//   section.addItem(obj, listTable)
+// }
 
-function addCardWithData(listTable, obj) {
-  section.addItem(obj, listTable)
-}
+// function createObjFinder (item) {
+// const data = {}
+// data.Num = item.TaskNum.Num
+// data.TaskEpoch = item.TaskNum.TaskEpoch
+// data.countApproach = (item.Directive.CollisionApproach) ? 
+//   item.Directive.CollisionApproach.Pairs.length : 0
+// data.countCondition = (item.Directive.Condition) ?
+//   item.Directive.Condition.ObjectInfos.length : 0
+// data.countBreakUp = (item.Directive.BreakUp) ?
+//   item.Directive.BreakUp.ObjectInfos.length : 0
+// data.countDeorbit = (item.Directive.Deorbit) ?
+//   item.Directive.Deorbit.ObjectInfos.length : 0
+// data.countConditionKA = (item.Directive.ConditionKA) ? 
+//   item.Directive.ConditionKA.ObjectInfos.length : 0
+// data.Message = item.Message
+//   return data
+// }
 
-function createObjFinder (item) {
-const data = {}
-data.Num = item.TaskNum.Num
-data.TaskEpoch = item.TaskNum.TaskEpoch
-data.countApproach = (item.Directive.CollisionApproach) ? 
-  item.Directive.CollisionApproach.Pairs.length : 0
-data.countCondition = (item.Directive.Condition) ?
-  item.Directive.Condition.ObjectInfos.length : 0
-data.countBreakUp = (item.Directive.BreakUp) ?
-  item.Directive.BreakUp.ObjectInfos.length : 0
-data.countDeorbit = (item.Directive.Deorbit) ?
-  item.Directive.Deorbit.ObjectInfos.length : 0
-data.countConditionKA = (item.Directive.ConditionKA) ? 
-  item.Directive.ConditionKA.ObjectInfos.length : 0
-data.Message = item.Message
-  return data
-}
-
-// function createObjFinderArray (item) {
-//   const data = []
-//   data.push(item.TaskNum.Num)
-//   data.push(item.TaskNum.TaskEpoch)
-//   data.push((item.Directive.CollisionApproach) ? 
-//     item.Directive.CollisionApproach.Pairs.length : 0)
-//   data.push((item.Directive.Condition) ?
-//     item.Directive.Condition.ObjectInfos.length : 0)
-//   data.push((item.Directive.BreakUp) ?
-//     item.Directive.BreakUp.ObjectInfos.length : 0)
-//   data.push((item.Directive.Deorbit) ?
-//     item.Directive.Deorbit.ObjectInfos.length : 0)
-//   data.push((item.Directive.ConditionKA) ? 
-//     item.Directive.ConditionKA.ObjectInfos.length : 0)
-//   data.push(item.Message)
-//     return data
-//   }
+function createObjFinderArray (item) {
+  const data = []
+  data.push(item.TaskNum.Num)
+  data.push(item.TaskNum.TaskEpoch)
+  data.push((item.Directive.CollisionApproach) ? 
+    item.Directive.CollisionApproach.Pairs.length : 0)
+  data.push((item.Directive.Condition) ?
+    item.Directive.Condition.ObjectInfos.length : 0)
+  data.push((item.Directive.BreakUp) ?
+    item.Directive.BreakUp.ObjectInfos.length : 0)
+  data.push((item.Directive.Deorbit) ?
+    item.Directive.Deorbit.ObjectInfos.length : 0)
+  data.push((item.Directive.ConditionKA) ? 
+    item.Directive.ConditionKA.ObjectInfos.length : 0)
+  data.push(item.Message)
+    return data
+  }
 
 
 //___________________________________
 //  функция выбора задания из ответа
 //___________________________________
 
-const findObject = (num) => {
-  objInfoNum.map((item)=> {
-    if (item.TaskNum.Num == num) {
-      setInfo(item)
-    }
-  })
-}
+// const findObject = (num) => {
+//   objInfoNum.map((item)=> {
+//     if (item.TaskNum.Num == num) {
+//       setInfo(item)
+//     }
+//   })
+// }
 
 //___________________________________
 //  Обработка ответа

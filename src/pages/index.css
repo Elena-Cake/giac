@@ -91,5 +91,15 @@
 
 @import url(../block/header-table/_hidden/header-table_hidden.css);
 
-@import url(../block/finder/finder__structure.css);
 @import url(../block/finder/__list/finder__list.css);
+
+
+@import url(../block/datatable/__item/datatable__item.css);
+@import url(../block/datatable/_num/datatable_num.css);
+@import url(../block/datatable/_date/datatable_date.css);
+@import url(../block/datatable/_approach/datatable_approach.css);
+@import url(../block/datatable/_condition/datatable_condition.css);
+@import url(../block/datatable/_destroy/datatable_destroy.css);
+@import url(../block/datatable/_deorbit/datatable_deorbit.css);
+@import url(../block/datatable/_spacecraft/datatable_spacecraft.css);
+@import url(../block/datatable/_massage/datatable_massage.css);
