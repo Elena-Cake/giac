@@ -214,7 +214,7 @@ export const objInfo = {
        ]
      }
     },
-     Message :  'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum' 
+     Message :  'Lorem Ipsum Lorem Ipsum Lorem Ipsum' 
   },
   {
     Id: 3338,
