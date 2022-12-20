@@ -50,7 +50,7 @@ export function addTableFinder(objInfoNum,setInfo){
     $(document).ready(function () {
         $('.finder__table').DataTable({
           data: arrayOfFinder,
-          "lengthMenu" : [2, 5, 10, "All"]
+          "lengthMenu" : [2, 5, 10]
         });
         let table = $('.finder__table').DataTable();
         $('.finder__table tbody').on('click', 'tr', function () {
