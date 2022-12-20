@@ -1,14 +1,14 @@
 .page{margin:0;padding:0}
 .header{background-color:#010869;height:40px;margin:0;padding:0;width:100%}
-.main{margin:0 auto;max-width:1070px;width:90%}
+.main{margin:0 auto;max-width:1270px;width:90%}
 .button__add{background-color:rgba(38,29,126,.445);border:0;border-radius:20px;color:#000;cursor:pointer;margin:0 0 0 auto;min-height:40px;min-width:200px;padding:5px 10px;transition:background-color .5s ease;width:200px}.button__add:hover{background-color:rgba(15,3,117,.788);color:#fffdfd}
-.edit{display:flex;gap:3%;padding:30px 0 10px}
+.edit{display:flex;gap:3%;margin-left:3%;padding:30px 0 10px}
 .edit__data{display:flex;gap:auto;justify-content:space-between;margin-bottom:10px;width:100%}
 .edit__date{display:grid;gap:1px;grid-template-columns:15px 160px 5px 160px 130px}
 .edit__container{min-width:500px}
 .edit__title{font-size:20px;font-weight:400;margin:0 10px 20px 0}
 .edit__text{align-self:center;font-size:18px;font-weight:400;margin:0;text-align:right}
-.edit__input-date_type_to{opacity:.5}.edit__input-date_type_to:focus{opacity:1}
+.edit__input-date_type_to{opacity:.4}.edit__input-date_type_to:focus{opacity:1}
 .edit__input{border:0;border-bottom:1px solid #9b9b9b;margin:0 5px;max-width:200px;min-width:100px;padding:5px 10px}
 .edit__input-date{letter-spacing:.01px;margin:0;min-width:100px;padding:5px 1px}
 .edit__btn-add{min-height:20px;min-width:120px;padding:0;width:130px}
@@ -27,11 +27,11 @@
 .table__objects{display:grid;grid-template-areas:"table table" ". add"}
 .table__add-table{margin:10px 0 10px 50px}
 .table__select{border:0;border-bottom:1px solid #9b9b9b;margin:2px 5px;padding:5px 10px}
-.list{margin:0 auto 0 3%;max-width:900px;padding:7px 0;width:100%}
-.list__header-table{display:grid;font-weight:500;gap:2%;grid-template-columns:repeat(3,200px);margin:5px 0;padding:0}
+.list{margin:0 auto 0 3%;max-width:1070px;padding:7px 0;width:100%}
+.list__header-table{display:grid;font-weight:400;gap:2%;grid-template-columns:repeat(3,200px);margin:5px 0;padding:0}
 .massage{display:grid;grid-template-columns:20% auto;margin:0;padding:30px 0 20px}
 .massage__text{border:0;border-bottom:1px solid grey;margin:0;max-width:650px;padding:5px 15px;width:100%}
-.form{margin:0 auto;min-width:90%;padding:0 0 40px;width:1070px}
+.form{margin:0 auto 0 2%;max-width:1170px;min-width:90%;padding:0 0 40px}
 .form__button{margin:30px 0}
 .form__btn-save{border-radius:25px;min-height:50px;min-width:200px}
 .form__btn-reset{background-color:rgba(128,0,0,.541);border-radius:25px;margin-left:2%;min-height:50px;min-width:200px}.form__btn-reset:hover{background-color:rgba(128,0,0,.829)}
@@ -57,7 +57,6 @@
 .element__btn-trash{background-color:transparent;background-image:url(54d63b6a5b955cd38798.svg);background-position:50%;background-repeat:no-repeat;background-size:20px 28px;border:0;grid-area:trash;height:30px;opacity:.6;padding:5px;transition:opacity .5s ease}.element__btn-trash:hover{opacity:.4}
 .element__btn-done{background-color:transparent;background-image:url(091f788a019551ff804e.svg);background-position:50%;background-repeat:no-repeat;background-size:38px 35px;border:0;grid-area:save;height:30px;opacity:.6;padding:5px;transition:opacity .5s ease}.element__btn-done:hover{opacity:.4}
 .element__btn-done_type_edit{background-image:url(f24f87284da6487aa7b9.svg);background-position:50%;background-repeat:no-repeat;background-size:30px 30px}
-.element__approach{display:flex;margin:7px 0}
 .element__type-orbit{align-self:center;margin:0}
 .element__item_place_approach{grid-template-columns:80px repeat(3,1fr)}
 .approach__list-structure{align-items:center;display:grid;gap:2%;grid-template-areas:"type item time save trash";grid-template-columns:70px 410px 210px repeat(2,45px)}
@@ -74,6 +73,16 @@
 .list__time{grid-area:time}
 .list__name{grid-area:name}
 .header-table_hidden{display:none}
+.finder__list{margin:10px auto 0;width:100%}
+.datatable__item{cursor:pointer;padding:2px 4px}
+.datatable_num{width:50px!important}
+.datatable_date{width:160px!important}
+.datatable_approach{width:80px!important}
+.datatable_condition{width:80px!important}
+.datatable_destroy{width:80px!important}
+.datatable_deorbit{width:80px!important}
+.datatable_spacecraft{width:80px!important}
+.datatable_massage{width:300px!important}
 
 
 /*# sourceMappingURL=main.css.map*/
