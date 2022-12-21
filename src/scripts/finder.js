@@ -15,7 +15,6 @@ import {clearForm} from '../scripts/valdationTables.js'
 //  Создание объекта для отправки на сервер
 //___________________________________
 
-
 // по дате
 
 export function createReqvestDate(data) {
