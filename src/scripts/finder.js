@@ -38,9 +38,7 @@ export function addTableFinder(objInfoNum,setInfo){
         arrayOfFinder.push(createObjFinderArray(item))
       }
     }
-    pushToArray()
-    pushToArray()
-    pushToArray()
+    console.log(arrayOfFinder)
     pushToArray()
   
     Finder.headerTable.classList.remove('header-table_hidden')
