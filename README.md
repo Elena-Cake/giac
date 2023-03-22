@@ -19,11 +19,10 @@ ___________________________________
 ПРО ДОСТУП
 
 Для просмотра работы можно зайти по ссылке:
-https://kumiho1.github.io/giac/
-
+https://elena-cake.github.io/giac/
 
 Репозиторий размешен на Гитхабе:
-https://github.com/Kumiho1/giac
+https://github.com/Elena-Cake/giac
 
 ___________________________________
 ПРО ОСОБЕННОСТИ
