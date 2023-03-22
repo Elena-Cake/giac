@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<%=require('./images/icon-star.png')%>" rel="icon" type="image/icon"> 
-    <title>GIAC KSOES</title>
+
+    <!-- datatable -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
+    
+<title>GIAC KSOES</title>
 </head>
 <body class="page">
     <header class="header"></header>
@@ -28,6 +36,24 @@
                 </form>
             </div>
         </section>
+
+        <section class="list finder">
+            <table class="finder__table finder__structure datatable" style="width:100%"> 
+                <thead>
+                    <tr class="finder__hedder-table datatable__tr">
+                        <th data-class-name="datatable__item datatable_num">Задание &#8470;</th>
+                        <th data-class-name="datatable__item datatable_date">Дата</th>
+                        <th data-class-name="datatable__item datatable_approach">Сближений</th>
+                        <th data-class-name="datatable__item datatable_condition">Добавлено КО</th>
+                        <th data-class-name="datatable__item datatable_destroy">Разрушений</th>
+                        <th data-class-name="datatable__item datatable_deorbit">Схождений с орбиты</th>
+                        <th data-class-name="datatable__item datatable_spacecraft">Добавлено КА</th>
+                        <th data-class-name="datatable__item datatable_massage">Сообщение</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
         <form class="form">
             <section class="assingment">
                 <h2 class="assingment__title">Создание заданий:</h2>

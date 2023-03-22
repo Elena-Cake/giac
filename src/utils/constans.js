@@ -1,7 +1,7 @@
 
 export const formFindDocumentNum = document.querySelector('.edit__num');
 export const formFindDocumentDate = document.querySelector('.edit__date');
-export const formAddDocument = document.querySelector('.form');
+export const formDocument = document.querySelector('.form');
 
 // buttons
 
@@ -23,6 +23,10 @@ export const Edit = {
     inputNum :      document.querySelector('.edit').querySelectorAll('.edit__input-num'),
     inputListDate : document.querySelector('.edit').querySelectorAll('.edit__input-date'),
     inputDateTo :   document.querySelector('.edit').querySelector('.edit__input-date_type_to')
+}
+
+export const Finder = {
+  headerTable :       document.querySelector('.finder__hedder-table')
 }
 
 export const Assingment = {
@@ -142,7 +146,7 @@ export const objInfo = {
   }
   
 
-  export const objInfoNum = {
+  export const objInfoNum = [{
     Id: 3336,
     TaskNum: {
       Num: 1253,
@@ -210,5 +214,75 @@ export const objInfo = {
        ]
      }
     },
-     Message :  'Something else' 
+     Message :  'Lorem Ipsum Lorem Ipsum Lorem Ipsum' 
+  },
+  {
+    Id: 3338,
+    TaskNum: {
+      Num: 1811,
+      TaskEpoch:  '2022-10-18T10:51' ,
+       ShiftBoss : "Ампилова О.�.",
+       TaskDescription :  'Задание' 
+    },
+     Directive : {
+       CollisionApproach : {
+         Pairs : [
+          {
+             IdPairs : 1,
+             FirstObject : {
+               ObjectNumber : 21675,
+               NoradNumber : 38978,
+               IntDes :  '2012-061B' ,
+               LocalNumber : null
+            },
+             SecondObject : {
+               ObjectNumber : 36025,
+               NoradNumber : 33749,
+               IntDes :  '2009-008A' ,
+               LocalNumber : null
+            },
+             CollisionApproachEpoch :   '2022-10-20T18:15:05.00' ,
+             OrbiteType :  'MOE' 
+          }
+        ]
+      },
+       BreakUp : {
+         ObjectInfos : [
+          {
+             ObjectNumber : 9793,
+             NoradNumber : 37951,
+             IntDes :  '2011-074B' ,
+             LocalNumber : null
+          }
+        ]
+      },
+       Deorbit : {
+         ObjectInfos : [
+          {
+             ObjectNumber : 47463,
+             NoradNumber : 37951,
+             IntDes :  '2011-074B' ,
+             LocalNumber : null
+          },
+          {
+            ObjectNumber : 43,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B' ,
+            LocalNumber : null
+         }
+        ]
+      },
+      ConditionKA : {
+        ObjectInfos : [
+         {
+            Name : 'KA obj',
+            ObjectNumber : 6793,
+            NoradNumber : 37951,
+            IntDes :  '2011-074B '
+         }
+       ]
+     }
+    },
+     Message :  'Something' 
   }
+]
